@@ -10,7 +10,7 @@
 
   <!-- ========== Bootstrap 5 CSS ========== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- ========== AOS CSS (Animate On Scroll) ========== -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@
   <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
@@ -38,109 +38,48 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-
-
   <style>
     body {
       font-family: Arial, sans-serif;
     }
 
-    /* Sección de Título */
     .section-title {
       text-align: center;
       margin-bottom: 40px;
     }
 
-    /* Imagen de cada integrante */
-    .team .member img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    /*
-      Estilos para las flechas del carrusel:
-      - Quitamos el fondo oscuro por defecto
-      - Colocamos un círculo azul pequeño con el signo de + y -
-    */
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: auto !important;
-      background-color: transparent !important;
-      border: none !important;
-    }
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
-      background-color: transparent !important;
-    }
-    /* El span que contiene el signo */
-    .carousel-control-prev span,
-    .carousel-control-next span {
-      display: inline-block;
-      background-color: #0d6efd; /* Azul de Bootstrap */
-      color: #fff;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      text-align: center;
-      line-height: 28px;
-      font-size: 1rem;
-    }
-
-    /* Opcional: separaciones */
-    .member-info {
-      margin-bottom: 2rem; /* separa el texto del carrusel */
-    }
     .custom-logo {
-            width: 300px; /* Ajusta el ancho */
-            height: auto; /* Mantén la proporción */
-        }
-    
-  .portfolio-info {
-    border: 1px solid #ddd; /* Borde alrededor de la tarjeta */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 15px; /* Espacio interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-  }
+      width: 300px;
+      height: auto;
+    }
 
-  .portfolio-info img {
-    border-radius: 10px 10px 0 0; /* Bordes redondeados solo para la parte superior de la imagen */
-  }
-
-  .portfolio-info {
-    border: 1px solid #ddd; /* Borde alrededor de la tarjeta */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 15px; /* Espacio interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-  }
-
-  .portfolio-info img {
-    border-radius: 10px 10px 0 0; /* Bordes redondeados solo para la parte superior de la imagen */
-  
+    /* Puedes agregar/ajustar aquí tus estilos personalizados */
   </style>
 </head>
 
 <body class="index-page">
 
+  <!-- ======== Header / Nav ======== -->
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-<img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180">
-      
+      <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180">
 
       <nav id="navmenu" class="navmenu">
         <ul>
+          <!-- Enlaces internos hacia secciones de esta misma página -->
           <li><a href="#hero" class="active">Inicio</a></li>
           <li><a href="#about">Sobre nosotros</a></li>
           <li><a href="#services">Características</a></li>
-          <li><a href="#portfolio">Portafolio</a></li>
-          <li><a href="#team">Equipo</a></li>
-          <!-- <li><a href="#contact">Contact</a></li>-->
+
+          <!-- Enlaces a otras páginas -->
+          <li><a href="portafolio.html">Portafolio</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+  <!-- /Header -->
 
   <main class="main">
 
@@ -163,7 +102,7 @@
       </div>
     </section>
     <!-- /Hero Section -->
-    
+
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container">
@@ -233,7 +172,6 @@
               y gestionar dinero, liderando la adopción masiva de tecnologías emergentes y promoviendo un futuro 
               financiero más accesible para todos.
             </p>
-            
           </div>
         </div><!-- Features Item -->
 
@@ -255,50 +193,42 @@
           </div>
         </div><!-- Features Item -->
 
-        
-          <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="300">
-              <img src="assets/img/features-3.svg" class="img-fluid" alt="Control total con Flowi">
-            </div>
-            <div class="col-md-7" data-aos="fade-up" data-aos-delay="300">
-              <h3>Objetivos de Flowi</h3>
-              <ul>
-                <li><i class="bi bi-check"></i> Ofrecer una solución segura y eficiente para el intercambio de criptomonedas.</li>
-                <li><i class="bi bi-check"></i> Proveer a los usuarios herramientas inteligentes para la gestión de sus finanzas.</li>
-                <li><i class="bi bi-check"></i> Incrementar la accesibilidad de servicios financieros para pequeños comercios.</li>
-                <li><i class="bi bi-check"></i> Implementar tecnologías avanzadas como IA para análisis predictivo y seguridad de datos.</li>
-                <li><i class="bi bi-check"></i> Desarrollar una plataforma web y móvil fácil de usar y disponible en múltiples dispositivos.</li>
-                <li><i class="bi bi-check"></i> Crear un sistema de atención al cliente eficiente y automatizado mediante chatbots.</li>
-              </ul>
-            </div> 
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="300">
+            <img src="assets/img/features-3.svg" class="img-fluid" alt="Control total con Flowi">
           </div>
-          
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="300">
+            <h3>Objetivos de Flowi</h3>
+            <ul>
+              <li><i class="bi bi-check"></i> Ofrecer una solución segura y eficiente para el intercambio de criptomonedas.</li>
+              <li><i class="bi bi-check"></i> Proveer a los usuarios herramientas inteligentes para la gestión de sus finanzas.</li>
+              <li><i class="bi bi-check"></i> Incrementar la accesibilidad de servicios financieros para pequeños comercios.</li>
+              <li><i class="bi bi-check"></i> Implementar tecnologías avanzadas como IA para análisis predictivo y seguridad de datos.</li>
+              <li><i class="bi bi-check"></i> Desarrollar una plataforma web y móvil fácil de usar y disponible en múltiples dispositivos.</li>
+              <li><i class="bi bi-check"></i> Crear un sistema de atención al cliente eficiente y automatizado mediante chatbots.</li>
+            </ul>
+          </div>
         </div><!-- Features Item -->
 
       </div>
     </section>
     <!-- /Features Section -->
 
-
     <!-- Características Section -->
     <section id="services" class="services section light-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Características</h2>
         <p>Mejorando la accesibilidad de los servicios financieros para usuarios y pequeños comercios.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
-
         <div class="row gy-4">
-
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
+            <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-cash-stack" style="color: #0dcaf0;"></i>
               </div>
-              <a href="" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Gestión de Pagos</h3>
               </a>
               <p>Facilita pagos con tarjeta o dispositivos móviles mediante terminales de punto de venta (TPV)
@@ -311,7 +241,7 @@
               <div class="icon">
                 <i class="bi bi-currency-bitcoin" style="color: #fd7e14;"></i>
               </div>
-              <a href="" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Criptoactivos</h3>
               </a>
               <p>Gestiona tus criptoactivos y moneda local en un solo lugar, de manera segura y eficiente.</p>
@@ -323,7 +253,7 @@
               <div class="icon">
                 <i class="bi bi-chat-text" style="color: #20c997;"></i>
               </div>
-              <a href="" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Soporte por Chat</h3>
               </a>
               <p>Automatización de procesos internos mediante bots para la atención al cliente y la gestión de
@@ -336,7 +266,7 @@
               <div class="icon">
                 <i class="bi bi-credit-card-2-front" style="color: #df1529;"></i>
               </div>
-              <a href="" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Seguridad</h3>
               </a>
               <p>Implementa cifrado de datos y autentificación multifactor (MFA) para proteger a los usuarios.</p>
@@ -348,7 +278,7 @@
               <div class="icon">
                 <i class="bi bi-globe" style="color: #6610f2;"></i>
               </div>
-              <a href="" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Base de Datos en la Nube</h3>
               </a>
               <p>Utiliza bases de datos como MongoDB o MySQL para almacenar información de usuarios y transacciones de
@@ -361,7 +291,7 @@
               <div class="icon">
                 <i class="bi bi-clock" style="color: #f3268c;"></i>
               </div>
-              <a href="" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Notificaciones</h3>
               </a>
               <p>Implementa herramientas de comunicación como notificaciones push, correos electrónicos y soporte por
@@ -370,28 +300,23 @@
           </div><!-- End Service Item -->
 
         </div>
-
       </div>
-
-    </section><!-- /Características Section -->
+    </section>
+    <!-- /Características Section -->
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us section dark-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>¿Por Qué Elegirnos?</h2>
         <p>La revolución financiera a tu alcance con seguridad, rapidez y sin fronteras.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
-
         <div class="row gy-4">
-
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="card-item">
               <span>01</span>
-              <h4><a href="" class="stretched-link">Seguridad Inigualable</a></h4>
+              <h4><a href="#" class="stretched-link">Seguridad Inigualable</a></h4>
               <p>Tus transacciones están protegidas con cifrado avanzado y autenticación multifactor (MFA), brindando
                 una seguridad de nivel bancario en cada operación.</p>
             </div>
@@ -400,7 +325,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card-item">
               <span>02</span>
-              <h4><a href="" class="stretched-link">Transacciones Instantáneas</a></h4>
+              <h4><a href="#" class="stretched-link">Transacciones Instantáneas</a></h4>
               <p>Envía y recibe dinero al instante, sin comisiones ocultas ni retrasos. La velocidad y eficiencia que
                 necesitas para tu vida diaria.</p>
             </div>
@@ -409,7 +334,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="card-item">
               <span>03</span>
-              <h4><a href="" class="stretched-link">Tecnología Innovadora</a></h4>
+              <h4><a href="#" class="stretched-link">Tecnología Innovadora</a></h4>
               <p>Usamos la última tecnología blockchain para asegurar la transparencia y confiabilidad en todas tus
                 transacciones. Siempre a la vanguardia para ofrecerte lo mejor.</p>
             </div>
@@ -418,7 +343,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="card-item">
               <span>04</span>
-              <h4><a href="" class="stretched-link">Apoyo a Micro Negocios</a></h4>
+              <h4><a href="#" class="stretched-link">Apoyo a Micro Negocios</a></h4>
               <p>Potenciamos a los pequeños comercios con herramientas de gestión de pagos y financiamiento, ayudándolos
                 a crecer y prosperar en un mundo digital.</p>
             </div>
@@ -427,7 +352,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
             <div class="card-item">
               <span>05</span>
-              <h4><a href="" class="stretched-link">Inteligencia Artificial</a></h4>
+              <h4><a href="#" class="stretched-link">Inteligencia Artificial</a></h4>
               <p>Implementamos inteligencia artificial para ofrecer recomendaciones personalizadas y análisis de gastos,
                 mejorando tu experiencia y control financiero.</p>
             </div>
@@ -436,633 +361,33 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
             <div class="card-item">
               <span>06</span>
-              <h4><a href="" class="stretched-link">Soporte 24/7</a></h4>
+              <h4><a href="#" class="stretched-link">Soporte 24/7</a></h4>
               <p>Estamos aquí para ti en cualquier momento. Nuestro equipo de soporte está disponible las 24 horas del
                 día, los 7 días de la semana, para resolver cualquier duda o incidente.</p>
             </div>
           </div><!-- Card Item -->
-
         </div>
-
       </div>
-
-    </section><!-- /Why Us Section -->
-
-    <!-- Sección de Portafolio -->
-    <section id="portfolio" class="portfolio section py-5">
-      <!-- Título de la sección -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2 class="mb-3">Portafolio</h2>
-        <p>
-          Organización, eficiencia y creatividad en cada tarea. Aquí encontrarás un vistazo a los proyectos
-          en los que he trabajado, destacando soluciones prácticas y bien estructuradas para diferentes desafíos.
-          ¡Cada tarea es un paso más hacia la excelencia!
-        </p>
-      </div>
-      <!-- Fin del Título de la sección -->
-      <div class="container">
-
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-          <!-- ===================== CHAMPFROGS ===================== -->
-          <!-- Item 1: Champfrogs -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-info">
-              <img src="https://miro.medium.com/v2/resize:fit:1200/1*Z23bGUReu_7nfnWalBQhLQ.png" alt="Champfrogs" class="img-fluid">
-              <h4>Champfrogs</h4>
-              <p>Los 10 motivadores intrínsecos según Jurgen Appelo Management 3.0</p></br></br>
-              <a href="https://ugbedu-my.sharepoint.com/:w:/g/personal/smss015622_ugb_edu_sv/Ec3qMzioPcFKhHUkWg84Id0B7WBWlVO06pEzgEJeiFwKRA?e=NAuauF"
-                class="btn btn-primary me-2" target="_blank">Ver Documento</a>
-              <a href="https://ugbedu-my.sharepoint.com/:v:/g/personal/smss042622_ugb_edu_sv/EVB0fCLcIjxLv-XUo2CFocABbLSlWggOLYR1mdqZLyVkyA?e=UA6SeP&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D"
-                class="btn btn-secondary" target="_blank">Ver Grabación</a>
-            </div>
-          </div>
-          <!-- Fin Item 1 -->
-        
-          <!-- ===================== WORKEXPO ===================== -->
-          <!-- Item 3: WorkExpo -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-            <div class="portfolio-info">
-              <img src="https://www.grupodigital.eu/blog/wp-content/uploads/2020/03/Celebration-Grids.jpg" alt="WorkExpo" class="img-fluid">
-              <h4>WorkExpo</h4>
-              <p>"¿Por qué?" ¿Por qué la gente decide trabajar junta? Una forma eficaz de obtener
-                respuesta a esta pregunta es creando una exposición de su trabajo.</p>
-              <a href="https://miro.com/app/board/uXjVLlBNHdg=/" class="btn btn-primary me-2" target="_blank">Ver
-                Celebration Grid</a>
-              <a href="https://www.youtube.com/watch?v=44D4u_LnYlI" class="btn btn-secondary" target="_blank">Ver
-                Grabación</a>
-            </div>
-          </div>
-          <!-- Fin Item 3 -->
-        
-          <!-- ===================== OKRS ===================== -->
-          <!-- Item 5: OKRS -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-            <div class="portfolio-info">
-              <img src="https://www.trplane.com/wp-content/uploads/2021/08/okrs.jpg" alt="OKRS" class="img-fluid">
-              <h4>OKRS</h4>
-              <p>Metodología de gestión y definición de metas utilizada por empresas o equipos.</p></br></br>
-              <a href="https://ugbedu-my.sharepoint.com/:w:/g/personal/smss015622_ugb_edu_sv/ER1hieeTzFlBsaVsQxnJvjYB9P_4V1uggPnqoZPifH6NRQ?e=gDgNla"
-                class="btn btn-primary me-2" target="_blank">Ver Documento</a>
-              <a href="https://www.youtube.com/watch?v=ArRf6s9qsGw" class="btn btn-secondary" target="_blank">Ver
-                Grabación</a>
-            </div>
-          </div>
-          <!-- Fin Item 5 -->
-        
-        </div>
-        
-        <!-- Fin del contenedor de elementos -->
-
-      </div>
-      <!-- Fin container -->
     </section>
-    <!-- /Sección de Portafolio -->
+    <!-- /Why Us Section -->
 
-    <!-- ========================
-       SECCIÓN DE EQUIPO
-       ======================== -->
-  <section id="team" class="team section py-5">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Equipo</h2>
-      <p>
-        Somos un equipo apasionado y multidisciplinario, comprometido con soluciones
-        innovadoras e impactantes. La colaboración y la excelencia nos guían en cada
-        proyecto para superar expectativas y generar resultados duraderos.
-      </p>
-    </div>
-
-    <div class="container">
-      <div class="row gy-5">
-        <!-- =======================
-             1. INTEGRANTE: JEFFERSON
-             ======================= -->
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-          <div class="member-img">
-            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Jefferson">
-            <div class="social">
-              <a href="https://www.instagram.com/whereis.jefff?igsh=MWtlMHE1dmNpaWQ5eQ=="><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/jeffersonesperanza"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="member-info text-center">
-            <h4>Jefferson Esperanza</h4>
-            <span>Back-End</span>
-            <p>Soy autodidacta, proactivo y altamente enfocado, capaz de aprender rápido gracias a mi memoria y lógica. Me sumerjo por completo en lo que me apasiona hasta lograr el mejor resultado.</p>
-            <!-- Botón CV -->
-            <a href="https://drive.google.com/file/d/1E3kemoqoLFRW6aGoDcgZiQrM_7Fv_8hT/view?usp=sharing" class="btn btn-primary mt-2" target="_blank">Ver CV</a>
-          </div>
-          <!-- Carrusel para JEFFERSON (10 imágenes) -->
-          <div id="carouselJefferson" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Slide 1 (3 imágenes) -->
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/aceptacion.png" class="d-block w-100" alt="Jefferson 1">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/poder.png" class="d-block w-100" alt="Jefferson 2">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/orden.png" class="d-block w-100" alt="Jefferson 3">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 2 (3 imágenes) -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/estatus.png" class="d-block w-100" alt="Jefferson 4">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/relaciones.png" class="d-block w-100" alt="Jefferson 5">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/maestria.png" class="d-block w-100" alt="Jefferson 6">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 (3 imágenes) -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/honra.png" class="d-block w-100" alt="Jefferson 7">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/curiosidad.png" class="d-block w-100" alt="Jefferson 8">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/libertad.png" class="d-block w-100" alt="Jefferson 9">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 (1 imagen) -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/meta.png" class="d-block w-100" alt="Jefferson 10">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Controles (flechas) -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselJefferson" data-bs-slide="prev">
-              <!-- Signo “-” dentro de un círculo azul -->
-              <span aria-hidden="true">-</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselJefferson" data-bs-slide="next">
-              <!-- Signo “+” dentro de un círculo azul -->
-              <span aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <!-- FIN Integrante Jefferson -->
-
-
-        <!-- =======================
-             2. INTEGRANTE: SOFÍA
-             ======================= -->
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-          <div class="member-img">
-            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Sofía">
-            <div class="social">
-              <a href="https://www.facebook.com/share/14sS6n9qU1/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/sofimaaar?igsh=MWw3OWN4bjY3YW9wdw%3D%3D&utm_source=qr"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/sof%C3%ADa-margarita-romero-rodr%C3%ADguez-6abb0029b"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="member-info text-center">
-            <h4>Sofía Romero</h4>
-            <span>Front-End</span>
-            <p>Soy auténtica y cautivadora. No sigo tendencias, las creo. Mi expontaneidad y extravagancia me hacen única y mi creatividad redefine lo posible.</p>
-            <!-- Botón CV --></br>
-            <a href="https://drive.google.com/file/d/189W-hSFuSgsjld23mrSfLb5FHIo6zGYG/view?usp=sharing" class="btn btn-primary mt-2" target="_blank">Ver CV</a>
-          </div>
-          <!-- Carrusel para SOFÍA -->
-          <div id="carouselSofia" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/aceptacion.png" class="d-block w-100" alt="Sofía 1">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/poder.png" class="d-block w-100" alt="Sofía 2">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/estatus.png" class="d-block w-100" alt="Sofía 3">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/maestria.png" class="d-block w-100" alt="Sofía 4">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/relaciones.png" class="d-block w-100" alt="Sofía 5">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/libertad.png" class="d-block w-100" alt="Sofía 6">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/curiosidad.png" class="d-block w-100" alt="Sofía 7">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/honra.png" class="d-block w-100" alt="Sofía 8">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/meta.png" class="d-block w-100" alt="Sofía 9">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/orden.png" class="d-block w-100" alt="Sofía 10">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Flechas -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSofia" data-bs-slide="prev">
-              <span aria-hidden="true">-</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselSofia" data-bs-slide="next">
-              <span aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <!-- FIN Integrante Sofía -->
-
-        <!-- =======================
-             3. INTEGRANTE: ÁNGEL
-             ======================= -->
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-          <div class="member-img">
-            <img src="assets/img/team/Angel.jpg" class="img-fluid" alt="Ángel">
-            <div class="social">
-              <a href="https://x.com/i/flow/login?redirect_after_login=%2FJosue_Guevara19" target="_blank"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://www.facebook.com/josue.portillo.5836711/" target="_blank"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/josue_guevara_22/" target="_blank"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/josu%C3%A9-guevara-41653327b/" target="_blank"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="member-info text-center">
-            <h4>Ángel Guevara</h4>
-            <span>Front-End</span>
-            <p>Proactivo y apasionado por la tecnología, valoro las relaciones humanas. Mi objetivo es seguir creciendo profesionalmente y contribuir al éxito empresarial.</p>
-            <!-- Botón CV --></br>
-            <a href="https://drive.google.com/file/d/1Xf3QeBsNeFoVmRC9YEAq9Ed5jYOGAjo8/view?usp=sharing"
-               target="_blank" class="btn btn-primary mt-2" download="Angel.pdf">Ver CV</a>
-          </div>
-          <!-- Carrusel para ÁNGEL -->
-          <div id="carouselAngel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/aceptacion.png" class="d-block w-100" alt="Ángel 1">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/poder.png" class="d-block w-100" alt="Ángel 2">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/honra.png" class="d-block w-100" alt="Ángel 3">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/orden.png" class="d-block w-100" alt="Ángel 4">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/estatus.png" class="d-block w-100" alt="Ángel 5">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/maestria.png" class="d-block w-100" alt="Ángel 6">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/relaciones.png" class="d-block w-100" alt="Ángel 7">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/libertad.png" class="d-block w-100" alt="Ángel 8">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/curiosidad.png" class="d-block w-100" alt="Ángel 9">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/meta.png" class="d-block w-100" alt="Ángel 10">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Flechas -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAngel" data-bs-slide="prev">
-              <span aria-hidden="true">-</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselAngel" data-bs-slide="next">
-              <span aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <!-- FIN Integrante Ángel -->
-
-
-        <!-- =======================
-             4. INTEGRANTE: CÉSAR
-             ======================= -->
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-          <div class="member-img">
-            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="César">
-            <div class="social">
-              
-              <a href="https://www.instagram.com/alex.vasquez.03?igsh=bXFjZGFmYmQ5YWEz"><i class="bi bi-instagram"></i></a>
-              
-            </div>
-          </div>
-          <div class="member-info text-center">
-            <h4>César Romero</h4>
-            <span>QA</span>
-            <p>Soy una persona entusiasta y alegre, siempre enfocada en ver el lado positivo de la vida. Me motiva ayudar y comprender a los demás, ya que todos enfrentamos situaciones difíciles que, en ocasiones, pueden ser incomprendidas.</p>
-            <!-- Botón CV -->
-            <a href="https://drive.google.com/file/d/19Bm3j-V2fE-kx9qdSswPw88LPFwY_eNc/view?usp=sharing" class="btn btn-primary mt-2" target="_blank">Ver CV</a>
-          </div>
-          <!-- Carrusel para CÉSAR -->
-          <div id="carouselCesar" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/estatus.png" class="d-block w-100" alt="César 1">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/poder.png" class="d-block w-100" alt="César 2">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/aceptacion.png" class="d-block w-100" alt="César 3">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/libertad.png" class="d-block w-100" alt="César 4">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/maestria.png" class="d-block w-100" alt="César 5">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/orden.png" class="d-block w-100" alt="César 6">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/meta.png" class="d-block w-100" alt="César 7">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/curiosidad.png" class="d-block w-100" alt="César 8">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/relaciones.png" class="d-block w-100" alt="César 9">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/honra.png" class="d-block w-100" alt="César 10">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Flechas -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCesar" data-bs-slide="prev">
-              <span aria-hidden="true">-</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselCesar" data-bs-slide="next">
-              <span aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <!-- FIN Integrante César -->
-
-
-        <!-- =======================
-             5. INTEGRANTE: GERSON
-             ======================= -->
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-          <div class="member-img">
-            <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="Gerson">
-            <div class="social">
-           
-              <a href="https://www.instagram.com/gerson.argueta.1420?igsh=eGEzN3l0aGhiOWU="><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/gerson-argueta-a94b95206/"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="member-info text-center">
-            <h4>Gerson Argueta</h4>
-            <span>Back-End</span>
-            <p>Soy Gerson Argueta, una combinación única de espontaneidad, ingenio y un toque de extravagancia. Me encanta aprender, explorar nuevas ideas y encontrar soluciones donde otros solo ven problemas.</p>
-            <!-- Botón CV --></br>
-            <a href="https://drive.google.com/file/d/1tDtPxGgF4Yi2jrKKg0vARWaAJ4Opwawj/view?usp=sharing" class="btn btn-primary mt-2" target="_blank">Ver CV</a>
-          </div>
-          <!-- Carrusel para GERSON -->
-          <div id="carouselGerson" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/aceptacion.png" class="d-block w-100" alt="Gerson 1">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/curiosidad.png" class="d-block w-100" alt="Gerson 2">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/libertad.png" class="d-block w-100" alt="Gerson 3">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/relaciones.png" class="d-block w-100" alt="Gerson 4">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/poder.png" class="d-block w-100" alt="Gerson 5">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/meta.png" class="d-block w-100" alt="Gerson 6">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/estatus.png" class="d-block w-100" alt="Gerson 7">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/honra.png" class="d-block w-100" alt="Gerson 8">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/maestria.png" class="d-block w-100" alt="Gerson 9">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/orden.png" class="d-block w-100" alt="Gerson 10">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Flechas -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGerson" data-bs-slide="prev">
-              <span aria-hidden="true">-</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselGerson" data-bs-slide="next">
-              <span aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <!-- FIN Integrante Gerson -->
-
-
-        <!-- =======================
-             6. INTEGRANTE: EDWIN
-             ======================= -->
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-          <div class="member-img">
-            <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="Edwin">
-            <div class="social">
-              
-              <a href="https://www.instagram.com/alexander_villalta._?igsh=MTN2ZG81bGpjdWR1eA=="><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/edwinalexandervillaltaortiz0108?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="member-info text-center">
-            <h4>Edwin Villalta</h4>
-            <span>QA</span>
-            <p>Me considero una persona perseverante, que no se rinde fácilmente y que sigue adelante a pesar de las dificultades. Esta perseverancia, junto con mi resiliencia, son dos de mis mayores fortalezas.</p>
-            <!-- Botón CV --></br>
-            <a href="https://drive.google.com/file/d/1PX4tDQQl0turPtAkvxdUpPI1omFeCOGr" class="btn btn-primary mt-2" target="_blank">Ver CV</a>
-          </div>
-          <!-- Carrusel para EDWIN -->
-          <div id="carouselEdwin" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/orden.png" class="d-block w-100" alt="Edwin 1">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/maestria.png" class="d-block w-100" alt="Edwin 2">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/curiosidad.png" class="d-block w-100" alt="Edwin 3">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/libertad.png" class="d-block w-100" alt="Edwin 4">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/relaciones.png" class="d-block w-100" alt="Edwin 5">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/aceptacion.png" class="d-block w-100" alt="Edwin 6">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/poder.png" class="d-block w-100" alt="Edwin 7">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/honra.png" class="d-block w-100" alt="Edwin 8">
-                  </div>
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/estatus.png" class="d-block w-100" alt="Edwin 9">
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img src="assets/img/portfolio/meta.png" class="d-block w-100" alt="Edwin 10">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Flechas -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselEdwin" data-bs-slide="prev">
-              <span aria-hidden="true">-</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselEdwin" data-bs-slide="next">
-              <span aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <!-- FIN Integrante Edwin -->
-
-      </div>
-    </div>
-  </section>
+    <!-- 
+      SE ELIMINAN LAS SECCIONES DE PORTAFOLIO (#portfolio) Y EQUIPO (#team) 
+      PARA CUMPLIR LO SOLICITADO
+    -->
 
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="footer dark-background">
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by Kompilo</a>
+        Designed by Kompilo
       </div>
     </div>
   </footer>
+  <!-- /Footer -->
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
