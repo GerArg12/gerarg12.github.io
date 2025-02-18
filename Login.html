@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowi - Billetera Digital</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .gradient-custom-2 {
+            background-image: url('https://img.freepik.com/free-vector/shiny-dark-blue-bitcoin-background_1017-10083.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (min-width: 768px) {
+            .gradient-form {
+                height: 100vh !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .gradient-custom-2 {
+                border-top-right-radius: .3rem;
+                border-bottom-right-radius: .3rem;
+            }
+        }
+
+        .logo-align-left {
+            display: block;
+            margin-left: 0;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .form-control {
+            font-size: 0.9rem;
+        }
+
+        .form-control::placeholder {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .form-outline {
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color:#2242c6;
+            border-color:#2242c6;
+        }
+
+        .btn-primary:hover {
+            background-color:#2242c6;
+            border-color: #2242c6;
+        }
+
+        /* Botón "Volver atrás" */
+        .btn-back {
+            background: none;
+            border: none;
+            color: #021736;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -5px; /* Menos separación */
+        }
+
+        .btn-back i {
+            font-size: 1.2rem;
+            margin-right: 6px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-left">
+                                        <img src="./assets/img/Cortado.png" style="width: 130px;" alt="logo" class="logo-align-left">
+                                    </div>
+                                    <form>
+                                        <p>Por favor, inicia sesión en tu cuenta</p>
+                                        <div data-mdb-input-init class="form-outline">
+                                            <label class="form-label" for="form2Example11">Usuario</label>
+                                            <input type="email" id="form2Example11" class="form-control" placeholder="Introduce tu correo electrónico" />
+                                        </div>
+                                        <div data-mdb-input-init class="form-outline">
+                                            <label class="form-label" for="form2Example22">Contraseña</label>
+                                            <input type="password" id="form2Example22" class="form-control" placeholder="Escribe tu contraseña" />
+                                        </div>
+                                        <div class="text-center pt-1 mb-3 pb-1 d-flex flex-column align-items-center">
+                                          <button class="btn btn-primary btn-block fa-lg mb-2" type="button">Iniciar sesión</button>
+                                          <button class="btn-back mt-2" onclick="history.back()">
+                                              <i class="bi bi-arrow-left"></i> Volver al inicio
+                                          </button>
+                                      </div>
+                                      
+                                    </form>
+                                   
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <!-- Se elimina la imagen dentro del div -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
