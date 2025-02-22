@@ -14,7 +14,8 @@ function checkAccess() {
   const role = getCookie('role');
   if (!role || !(role === 'admin')) {
     window.location.href = 'login.html';
-    return;
+  } else {
+    console.log('Role valido');
   }
 }
 
@@ -22,7 +23,10 @@ function protectPage() {
   const token = getCookie('token');
   if (!token) {
     window.location.href = 'login.html';
-  }
+  } else {
+    console.log('Token válido');
+  } 
+
   checkAccess();
 }
 
