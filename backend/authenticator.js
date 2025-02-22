@@ -30,5 +30,5 @@ document.getElementById("loginButton").addEventListener("click", function () {
 });
 
 document.getElementById("backButton").addEventListener("click", function () {
-    window.location.href = "../index.html";
+    window.location.href = "/index.html";
 });
