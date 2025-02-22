@@ -12,7 +12,7 @@ function getCookie(name) {
   
   function checkAccess() {
     const role = getCookie('role');
-    if (!role || !(role === 'admin') || !(role === 'guess')) {
+    if (!role || !(role === 'admin' || role === 'guess')) {
       window.location.href = 'login.html';
     } else {
       console.log('Role valido');
