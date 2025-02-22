@@ -12,7 +12,10 @@ function getCookie(name) {
 
 function checkAccess() {
   const role = getCookie('role');
-  if (!role || !(role === 'admin')) {
+  if (role === 'guess') {
+    alert('No tienes permisos para acceder a esta página');
+    window.location.href = 'index.html';
+  } else if ( !role || !(role === 'admin')) {
     window.location.href = 'login.html';
   } else {
     console.log('Role valido');

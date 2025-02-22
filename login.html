@@ -126,6 +126,13 @@
                           placeholder="Introduce tu correo electrónico"
                           required
                         />
+                        <div
+                          id="userError"
+                          class="text-danger"
+                          style="display: none"
+                        >
+                          Por favor, introduce tu usuario.
+                        </div>
                       </div>
                       <div data-mdb-input-init class="form-outline">
                         <label class="form-label" for="form2Example22"
@@ -138,6 +145,20 @@
                           placeholder="Escribe tu contraseña"
                           required
                         />
+                        <div
+                          id="passwordError"
+                          class="text-danger"
+                          style="display: none"
+                        >
+                          Por favor, introduce tu contraseña.
+                        </div>
+                      </div>
+                      <div
+                        id="loginError"
+                        class="text-danger"
+                        style="display: none"
+                      >
+                        Credenciales incorrectas. Por favor, inténtalo de nuevo.
                       </div>
                       <div
                         class="text-center pt-1 mb-3 pb-1 d-flex flex-column align-items-center"

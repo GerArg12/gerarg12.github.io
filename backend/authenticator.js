@@ -41,11 +41,13 @@ function login(user, password) {
       console.log('Usuario loggeado');
       window.location.href = 'index.html';
     } else {
+      document.getElementById("loginError").style.display = "block";
       console.log('Error al iniciar sesión');
     }
   })
   .catch(error => {
     console.error('Error:', error);
+    document.getElementById("loginError").style.display = "block";
     console.log('Error al iniciar sesión');
   });
 }
@@ -59,6 +61,22 @@ function logout() {
 document.getElementById("loginButton").addEventListener("click", function () {
   const user = document.getElementById("form2Example11").value;
   const password = document.getElementById("form2Example22").value;
+  
+  // Resetear mensajes de error
+  document.getElementById("userError").style.display = "none";
+  document.getElementById("passwordError").style.display = "none";
+  document.getElementById("loginError").style.display = "none";
+
+  // Validar campos vacíos
+  if (!user) {
+    document.getElementById("userError").style.display = "block";
+    return;
+  }
+  if (!password) {
+    document.getElementById("passwordError").style.display = "block";
+    return;
+  }
+
   login(user, password);
 });
 
