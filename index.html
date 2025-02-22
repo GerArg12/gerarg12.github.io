@@ -1,428 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Inicio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Inicio</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <!-- ========== Bootstrap 5 CSS ========== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- ========== Bootstrap 5 CSS ========== -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ========== AOS CSS (Animate On Scroll) ========== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
 
-  <!-- ========== AOS CSS (Animate On Scroll) ========== -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- ========== Íconos de Bootstrap ========== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-  <!-- ========== Íconos de Bootstrap ========== -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Favicons -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-    rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+      .custom-logo {
+        width: 300px;
+        height: auto;
+      }
 
-    .custom-logo {
-      width: 300px;
-      height: auto;
-    }
+      .navmenu a.active {
+        color: #007bff; /* Texto en negro */
+        font-weight: bold; /* Negrita */
+      }
 
-    .navmenu a.active {
-  color: #007bff;         /* Texto en negro */
-  font-weight: bold;   /* Negrita */
-}
+      /* Puedes agregar/ajustar aquí tus estilos personalizados */
+    </style>
+  </head>
 
-    /* Puedes agregar/ajustar aquí tus estilos personalizados */
-  </style>
-</head>
+  <body class="index-page">
+    <!-- ======== Header / Nav ======== -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
 
-<body class="index-page">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <!-- Enlaces internos hacia secciones de esta misma página -->
+            <li><a href="#hero" class="active">Inicio</a></li>
+            <li><a href="#about">Sobre nosotros</a></li>
+            <li><a href="#services">Características</a></li>
 
-  <!-- ======== Header / Nav ======== -->
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180">
+            <!-- Enlaces a otras páginas -->
+            <li><a href="login.html">Portafolio</a></li>
+            <li><a href="login.html">Equipo</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+    <!-- /Header -->
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <!-- Enlaces internos hacia secciones de esta misma página -->
-          <li><a href="#hero" class="active">Inicio</a></li>
-          <li><a href="#about">Sobre nosotros</a></li>
-          <li><a href="#services">Características</a></li>
-
-          <!-- Enlaces a otras páginas -->
-          <li><a href="portafolio.html">Portafolio</a></li>
-          <li><a href="equipo.html">Equipo</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-    </div>
-  </header>
-  <!-- /Header -->
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="Flowi - Billetera Digital">
-          </div>
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1>FLOWI: TU BILLETERA DIGITAL SEGURA 🚀</h1>
-            <p>💳 Envía, recibe y gestiona tus criptoactivos y moneda local en un solo lugar. Rápido, seguro y sin
-              fronteras. ⚡</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Empieza con Flowi</a>
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section dark-background">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-5 order-lg-last hero-img"
+              data-aos="zoom-out"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/img/hero-img.svg"
+                class="img-fluid animated"
+                alt="Flowi - Billetera Digital"
+              />
+            </div>
+            <div
+              class="col-lg-6 d-flex flex-column justify-content-center"
+              data-aos="fade-in"
+            >
+              <h1>FLOWI: TU BILLETERA DIGITAL SEGURA 🚀</h1>
+              <p>
+                💳 Envía, recibe y gestiona tus criptoactivos y moneda local en
+                un solo lugar. Rápido, seguro y sin fronteras. ⚡
+              </p>
+              <div class="d-flex">
+                <a href="#about" class="btn-get-started">Empieza con Flowi</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- /Hero Section -->
+      </section>
+      <!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container">
-        <div class="row gy-4">
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-6 position-relative align-self-start order-lg-last order-first"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src="assets/img/about.svg"
+                class="img-fluid"
+                alt="Flowi - Billetera Digital"
+              />
+              <a
+                href="https://www.youtube.com/watch?v=hEGOKzxfn3w"
+                class="glightbox pulsating-play-btn"
+              ></a>
+            </div>
 
-          <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up"
-            data-aos-delay="200">
-            <img src="assets/img/about.svg" class="img-fluid" alt="Flowi - Billetera Digital">
-            <a href="https://www.youtube.com/watch?v=hEGOKzxfn3w" class="glightbox pulsating-play-btn"></a>
+            <div
+              class="col-lg-6 content order-last order-lg-first"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3>¿Qué es Flowi?</h3>
+              <p>
+                Flowi es mucho más que una billetera digital: es tu pasaporte
+                financiero al futuro. Nuestra plataforma te permite enviar,
+                recibir y gestionar criptoactivos y moneda local con total
+                seguridad y facilidad.
+              </p>
+
+              <ul>
+                <li>
+                  <i class="bi bi-shield-lock"></i>
+                  <div>
+                    <h5>Seguridad de nivel bancario</h5>
+                    <p>
+                      Tus transacciones están protegidas con cifrado avanzado y
+                      autenticación multifactor (MFA).
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-lightning"></i>
+                  <div>
+                    <h5>Transacciones instantáneas</h5>
+                    <p>
+                      Realiza pagos y transferencias en segundos, sin
+                      complicaciones ni demoras.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-phone"></i>
+                  <div>
+                    <h5>Accesible desde cualquier dispositivo</h5>
+                    <p>
+                      Usa Flowi en tu smartphone o en la web, sin importar dónde
+                      estés.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <p>
+                🚀 Únete a la revolución financiera con Flowi y lleva el control
+                de tu dinero a otro nivel.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+      <!-- /About Section -->
 
-          <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
-            <h3>¿Qué es Flowi?</h3>
-            <p>Flowi es mucho más que una billetera digital: es tu pasaporte financiero al futuro. Nuestra
-              plataforma te permite enviar, recibir y gestionar criptoactivos y moneda local con total seguridad y
-              facilidad.</p>
+      <!-- Features Section -->
+      <section id="features" class="features section">
+        <div class="container">
+          <div class="row gy-4 align-items-center features-item">
+            <div
+              class="col-md-5 d-flex align-items-center"
+              data-aos="zoom-out"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/img/features-1.svg"
+                class="img-fluid"
+                alt="Seguridad Flowi"
+              />
+            </div>
+            <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+              <h3>Misión</h3>
+              <p class="fst-italic">
+                Empoderar a las personas y negocios con soluciones financieras
+                simples y seguras que integran moneda local y criptoactivos,
+                impulsando la inclusión y el crecimiento en la economía digital.
+              </p>
+              <h3>Visión</h3>
+              <p class="fst-italic">
+                Convertirnos en la plataforma financiera de referencia que
+                revoluciona la manera de enviar, recibir y gestionar dinero,
+                liderando la adopción masiva de tecnologías emergentes y
+                promoviendo un futuro financiero más accesible para todos.
+              </p>
+            </div>
+          </div>
+          <!-- Features Item -->
 
-            <ul>
-              <li>
-                <i class="bi bi-shield-lock"></i>
-                <div>
-                  <h5>Seguridad de nivel bancario</h5>
-                  <p>Tus transacciones están protegidas con cifrado avanzado y autenticación multifactor (MFA).</p>
+          <div class="row gy-4 align-items-center features-item">
+            <div
+              class="col-md-5 order-lg-last d-flex align-items-center"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
+              <img
+                src="assets/img/features-2.svg"
+                class="img-fluid"
+                alt="Pagos instantáneos Flowi"
+              />
+            </div>
+            <div class="col-md-7" data-aos="fade-up" data-aos-delay="200">
+              <h3>Pagos instantáneos y sin fronteras</h3>
+              <p class="fst-italic">
+                Realiza pagos en segundos con cripto o moneda local, sin
+                comisiones ocultas ni retrasos.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>
+                    Envía y recibe dinero al instante en cualquier lugar del
+                    mundo.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span> Compatibilidad con tarjetas y códigos QR.</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>
+                    Integra Flowi con comercios y plataformas de pago.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Features Item -->
+
+          <div class="row gy-4 align-items-center features-item">
+            <div
+              class="col-md-5 d-flex align-items-center"
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            >
+              <img
+                src="assets/img/features-3.svg"
+                class="img-fluid"
+                alt="Control total con Flowi"
+              />
+            </div>
+            <div class="col-md-7" data-aos="fade-up" data-aos-delay="300">
+              <h3>Objetivos de Flowi</h3>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i> Ofrecer una solución segura y
+                  eficiente para el intercambio de criptomonedas.
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> Proveer a los usuarios
+                  herramientas inteligentes para la gestión de sus finanzas.
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> Incrementar la accesibilidad de
+                  servicios financieros para pequeños comercios.
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> Implementar tecnologías avanzadas
+                  como IA para análisis predictivo y seguridad de datos.
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> Desarrollar una plataforma web y
+                  móvil fácil de usar y disponible en múltiples dispositivos.
+                </li>
+                <li>
+                  <i class="bi bi-check"></i> Crear un sistema de atención al
+                  cliente eficiente y automatizado mediante chatbots.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Features Item -->
+        </div>
+      </section>
+      <!-- /Features Section -->
+
+      <!-- Características Section -->
+      <section id="services" class="services section light-background">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Características</h2>
+          <p>
+            Mejorando la accesibilidad de los servicios financieros para
+            usuarios y pequeños comercios.
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-cash-stack" style="color: #0dcaf0"></i>
                 </div>
-              </li>
-              <li>
-                <i class="bi bi-lightning"></i>
-                <div>
-                  <h5>Transacciones instantáneas</h5>
-                  <p>Realiza pagos y transferencias en segundos, sin complicaciones ni demoras.</p>
+                <a href="#" class="stretched-link">
+                  <h3>Gestión de Pagos</h3>
+                </a>
+                <p>
+                  Facilita pagos con tarjeta o dispositivos móviles mediante
+                  terminales de punto de venta (TPV) integrados.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-currency-bitcoin" style="color: #fd7e14"></i>
                 </div>
-              </li>
-              <li>
-                <i class="bi bi-phone"></i>
-                <div>
-                  <h5>Accesible desde cualquier dispositivo</h5>
-                  <p>Usa Flowi en tu smartphone o en la web, sin importar dónde estés.</p>
+                <a href="#" class="stretched-link">
+                  <h3>Criptoactivos</h3>
+                </a>
+                <p>
+                  Gestiona tus criptoactivos y moneda local en un solo lugar, de
+                  manera segura y eficiente.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-chat-text" style="color: #20c997"></i>
                 </div>
-              </li>
-            </ul>
+                <a href="#" class="stretched-link">
+                  <h3>Soporte por Chat</h3>
+                </a>
+                <p>
+                  Automatización de procesos internos mediante bots para la
+                  atención al cliente y la gestión de transacciones.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
 
-            <p> 🚀 Únete a la revolución financiera con Flowi y lleva el control de tu dinero a otro nivel.</p>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i
+                    class="bi bi-credit-card-2-front"
+                    style="color: #df1529"
+                  ></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Seguridad</h3>
+                </a>
+                <p>
+                  Implementa cifrado de datos y autentificación multifactor
+                  (MFA) para proteger a los usuarios.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-globe" style="color: #6610f2"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Base de Datos en la Nube</h3>
+                </a>
+                <p>
+                  Utiliza bases de datos como MongoDB o MySQL para almacenar
+                  información de usuarios y transacciones de forma segura.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-clock" style="color: #f3268c"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Notificaciones</h3>
+                </a>
+                <p>
+                  Implementa herramientas de comunicación como notificaciones
+                  push, correos electrónicos y soporte por chat.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
           </div>
-
         </div>
-      </div>
-    </section>
-    <!-- /About Section -->
+      </section>
+      <!-- /Características Section -->
 
-    <!-- Features Section -->
-    <section id="features" class="features section">
-      <div class="container">
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/features-1.svg" class="img-fluid" alt="Seguridad Flowi">
-          </div>
-          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Misión</h3>
-            <p class="fst-italic">
-              Empoderar a las personas y negocios con soluciones financieras simples y seguras que integran 
-              moneda local y criptoactivos, impulsando la inclusión y el crecimiento en la economía digital.
-            </p>
-            <h3>Visión</h3>
-            <p class="fst-italic">
-              Convertirnos en la plataforma financiera de referencia que revoluciona la manera de enviar, recibir 
-              y gestionar dinero, liderando la adopción masiva de tecnologías emergentes y promoviendo un futuro 
-              financiero más accesible para todos.
-            </p>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 order-lg-last d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/features-2.svg" class="img-fluid" alt="Pagos instantáneos Flowi">
-          </div>
-          <div class="col-md-7" data-aos="fade-up" data-aos-delay="200">
-            <h3>Pagos instantáneos y sin fronteras</h3>
-            <p class="fst-italic">
-              Realiza pagos en segundos con cripto o moneda local, sin comisiones ocultas ni retrasos.
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span> Envía y recibe dinero al instante en cualquier lugar del
-                  mundo.</span></li>
-              <li><i class="bi bi-check"></i> <span> Compatibilidad con tarjetas y códigos QR.</span></li>
-              <li><i class="bi bi-check"></i> <span> Integra Flowi con comercios y plataformas de pago.</span></li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="300">
-            <img src="assets/img/features-3.svg" class="img-fluid" alt="Control total con Flowi">
-          </div>
-          <div class="col-md-7" data-aos="fade-up" data-aos-delay="300">
-            <h3>Objetivos de Flowi</h3>
-            <ul>
-              <li><i class="bi bi-check"></i> Ofrecer una solución segura y eficiente para el intercambio de criptomonedas.</li>
-              <li><i class="bi bi-check"></i> Proveer a los usuarios herramientas inteligentes para la gestión de sus finanzas.</li>
-              <li><i class="bi bi-check"></i> Incrementar la accesibilidad de servicios financieros para pequeños comercios.</li>
-              <li><i class="bi bi-check"></i> Implementar tecnologías avanzadas como IA para análisis predictivo y seguridad de datos.</li>
-              <li><i class="bi bi-check"></i> Desarrollar una plataforma web y móvil fácil de usar y disponible en múltiples dispositivos.</li>
-              <li><i class="bi bi-check"></i> Crear un sistema de atención al cliente eficiente y automatizado mediante chatbots.</li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
-      </div>
-    </section>
-    <!-- /Features Section -->
-
-    <!-- Características Section -->
-    <section id="services" class="services section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Características</h2>
-        <p>Mejorando la accesibilidad de los servicios financieros para usuarios y pequeños comercios.</p>
-      </div>
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-cash-stack" style="color: #0dcaf0;"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Gestión de Pagos</h3>
-              </a>
-              <p>Facilita pagos con tarjeta o dispositivos móviles mediante terminales de punto de venta (TPV)
-                integrados.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-currency-bitcoin" style="color: #fd7e14;"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Criptoactivos</h3>
-              </a>
-              <p>Gestiona tus criptoactivos y moneda local en un solo lugar, de manera segura y eficiente.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-text" style="color: #20c997;"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Soporte por Chat</h3>
-              </a>
-              <p>Automatización de procesos internos mediante bots para la atención al cliente y la gestión de
-                transacciones.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-credit-card-2-front" style="color: #df1529;"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Seguridad</h3>
-              </a>
-              <p>Implementa cifrado de datos y autentificación multifactor (MFA) para proteger a los usuarios.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-globe" style="color: #6610f2;"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Base de Datos en la Nube</h3>
-              </a>
-              <p>Utiliza bases de datos como MongoDB o MySQL para almacenar información de usuarios y transacciones de
-                forma segura.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-clock" style="color: #f3268c;"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Notificaciones</h3>
-              </a>
-              <p>Implementa herramientas de comunicación como notificaciones push, correos electrónicos y soporte por
-                chat.</p>
-            </div>
-          </div><!-- End Service Item -->
-
+      <!-- Why Us Section -->
+      <section id="why-us" class="why-us section dark-background">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>¿Por Qué Elegirnos?</h2>
+          <p>
+            La revolución financiera a tu alcance con seguridad, rapidez y sin
+            fronteras.
+          </p>
         </div>
-      </div>
-    </section>
-    <!-- /Características Section -->
 
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section dark-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>¿Por Qué Elegirnos?</h2>
-        <p>La revolución financiera a tu alcance con seguridad, rapidez y sin fronteras.</p>
-      </div>
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-item">
-              <span>01</span>
-              <h4><a href="#" class="stretched-link">Seguridad Inigualable</a></h4>
-              <p>Tus transacciones están protegidas con cifrado avanzado y autenticación multifactor (MFA), brindando
-                una seguridad de nivel bancario en cada operación.</p>
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-item">
+                <span>01</span>
+                <h4>
+                  <a href="#" class="stretched-link">Seguridad Inigualable</a>
+                </h4>
+                <p>
+                  Tus transacciones están protegidas con cifrado avanzado y
+                  autenticación multifactor (MFA), brindando una seguridad de
+                  nivel bancario en cada operación.
+                </p>
+              </div>
             </div>
-          </div><!-- Card Item -->
+            <!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-item">
-              <span>02</span>
-              <h4><a href="#" class="stretched-link">Transacciones Instantáneas</a></h4>
-              <p>Envía y recibe dinero al instante, sin comisiones ocultas ni retrasos. La velocidad y eficiencia que
-                necesitas para tu vida diaria.</p>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-item">
+                <span>02</span>
+                <h4>
+                  <a href="#" class="stretched-link"
+                    >Transacciones Instantáneas</a
+                  >
+                </h4>
+                <p>
+                  Envía y recibe dinero al instante, sin comisiones ocultas ni
+                  retrasos. La velocidad y eficiencia que necesitas para tu vida
+                  diaria.
+                </p>
+              </div>
             </div>
-          </div><!-- Card Item -->
+            <!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-item">
-              <span>03</span>
-              <h4><a href="#" class="stretched-link">Tecnología Innovadora</a></h4>
-              <p>Usamos la última tecnología blockchain para asegurar la transparencia y confiabilidad en todas tus
-                transacciones. Siempre a la vanguardia para ofrecerte lo mejor.</p>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-item">
+                <span>03</span>
+                <h4>
+                  <a href="#" class="stretched-link">Tecnología Innovadora</a>
+                </h4>
+                <p>
+                  Usamos la última tecnología blockchain para asegurar la
+                  transparencia y confiabilidad en todas tus transacciones.
+                  Siempre a la vanguardia para ofrecerte lo mejor.
+                </p>
+              </div>
             </div>
-          </div><!-- Card Item -->
+            <!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-item">
-              <span>04</span>
-              <h4><a href="#" class="stretched-link">Apoyo a Micro Negocios</a></h4>
-              <p>Potenciamos a los pequeños comercios con herramientas de gestión de pagos y financiamiento, ayudándolos
-                a crecer y prosperar en un mundo digital.</p>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-item">
+                <span>04</span>
+                <h4>
+                  <a href="#" class="stretched-link">Apoyo a Micro Negocios</a>
+                </h4>
+                <p>
+                  Potenciamos a los pequeños comercios con herramientas de
+                  gestión de pagos y financiamiento, ayudándolos a crecer y
+                  prosperar en un mundo digital.
+                </p>
+              </div>
             </div>
-          </div><!-- Card Item -->
+            <!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="card-item">
-              <span>05</span>
-              <h4><a href="#" class="stretched-link">Inteligencia Artificial</a></h4>
-              <p>Implementamos inteligencia artificial para ofrecer recomendaciones personalizadas y análisis de gastos,
-                mejorando tu experiencia y control financiero.</p>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-item">
+                <span>05</span>
+                <h4>
+                  <a href="#" class="stretched-link">Inteligencia Artificial</a>
+                </h4>
+                <p>
+                  Implementamos inteligencia artificial para ofrecer
+                  recomendaciones personalizadas y análisis de gastos, mejorando
+                  tu experiencia y control financiero.
+                </p>
+              </div>
             </div>
-          </div><!-- Card Item -->
+            <!-- Card Item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="card-item">
-              <span>06</span>
-              <h4><a href="#" class="stretched-link">Soporte 24/7</a></h4>
-              <p>Estamos aquí para ti en cualquier momento. Nuestro equipo de soporte está disponible las 24 horas del
-                día, los 7 días de la semana, para resolver cualquier duda o incidente.</p>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="card-item">
+                <span>06</span>
+                <h4><a href="#" class="stretched-link">Soporte 24/7</a></h4>
+                <p>
+                  Estamos aquí para ti en cualquier momento. Nuestro equipo de
+                  soporte está disponible las 24 horas del día, los 7 días de la
+                  semana, para resolver cualquier duda o incidente.
+                </p>
+              </div>
             </div>
-          </div><!-- Card Item -->
+            <!-- Card Item -->
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- /Why Us Section -->
+      </section>
+      <!-- /Why Us Section -->
 
-    <!-- 
+      <!-- 
       SE ELIMINAN LAS SECCIONES DE PORTAFOLIO (#portfolio) Y EQUIPO (#team) 
       PARA CUMPLIR LO SOLICITADO
-    -->
+    --></main>
 
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background">
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Designed by Kompilo
+    <!-- Footer -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
       </div>
-    </div>
-  </footer>
-  <!-- /Footer -->
+    </footer>
+    <!-- /Footer -->
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-  <!-- ========== Bootstrap 5 JS ========== -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ========== Bootstrap 5 JS ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- ========== AOS JS ========== -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-</body>
-
+    <!-- ========== AOS JS ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>

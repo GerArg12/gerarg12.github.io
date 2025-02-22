@@ -18,7 +18,7 @@ function login(user, password) {
   })
   .catch(error => {
     console.error('Error:', error);
-    alert('Error al iniciar sesión');
+    console.log('Error al iniciar sesión');
   });
 }
 
@@ -27,4 +27,8 @@ document.getElementById("loginButton").addEventListener("click", function () {
     const user = document.getElementById("form2Example11").value;
     const password = document.getElementById("form2Example22").value;
     login(user, password);
+});
+
+document.getElementById("backButton").addEventListener("click", function () {
+    window.location.href = "index.html";
 });
