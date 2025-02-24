@@ -9,15 +9,27 @@ function getCookie(name) {
     return null;
   }
   
+  function parseJwt(token) {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      return null;
+    }
+  }
+  
   function protectPage() {
     const token = getCookie('token');
-    const role = getCookie('role');
     
-    if (token && (role === 'admin' || role === 'guess')) {
-      window.location.href = 'index.html'; // Redirigir a una página específica
+    if (token) {
+      const decodedToken = parseJwt(token);
+      if (decodedToken && (decodedToken.role === 'admin' || decodedToken.role === 'guess')) {
+        window.location.href = 'index.html'; // Redirigir a una página específica
+      } else {
+        console.log('No hay cookies válidas, permitir acceso a login');
+      }
     } else {
       console.log('No hay cookies válidas, permitir acceso a login');
-    } 
+    }
   }
   
   // Llamar a esta función en las páginas que necesitan protección

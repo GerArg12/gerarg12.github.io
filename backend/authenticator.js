@@ -10,22 +10,19 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
 
-function eraseCookie(name) {
-  document.cookie = name + '=; Max-Age=-99999999;';
+function parseJwt(token) {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch (e) {
+    return null;
+  }
 }
 
 function login(user, password) {
+  document.getElementById("loginButton").disabled = true;
+  document.getElementById("loadingSpinner").style.display = "block";
+  
   fetch('https://flowi-api.onrender.com/flowi/login', {
     method: 'POST',
     headers: {
@@ -35,9 +32,12 @@ function login(user, password) {
   })
   .then(response => response.json())
   .then(data => {
+    document.getElementById("loginButton").disabled = false;
+    document.getElementById("loadingSpinner").style.display = "none";
+    
     if (data.success) {
       setCookie('token', data.token, 1);
-      setCookie('role', data.role, 1);
+      const decodedToken = parseJwt(data.token);
       console.log('Usuario loggeado');
       window.location.href = 'index.html';
     } else {
@@ -46,16 +46,13 @@ function login(user, password) {
     }
   })
   .catch(error => {
+    document.getElementById("loginButton").disabled = false;
+    document.getElementById("loadingSpinner").style.display = "none";
+    
     console.error('Error:', error);
     document.getElementById("loginError").style.display = "block";
     console.log('Error al iniciar sesión');
   });
-}
-
-function logout() {
-  eraseCookie('token');
-  eraseCookie('role');
-  window.location.href = 'index.html';
 }
 
 document.getElementById("loginButton").addEventListener("click", function () {

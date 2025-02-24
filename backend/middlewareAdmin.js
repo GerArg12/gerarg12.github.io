@@ -1,4 +1,3 @@
-
 function getCookie(name) {
   const nameEQ = name + "=";
   const ca = document.cookie.split(';');
@@ -10,12 +9,27 @@ function getCookie(name) {
   return null;
 }
 
+function parseJwt(token) {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch (e) {
+    return null;
+  }
+}
+
 function checkAccess() {
-  const role = getCookie('role');
+  const token = getCookie('token');
+  const decodedToken = parseJwt(token);
+  if (!decodedToken) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  const role = decodedToken.role;
   if (role === 'guess') {
     alert('No tienes permisos para acceder a esta página');
     window.location.href = 'index.html';
-  } else if ( !role || !(role === 'admin')) {
+  } else if (role !== 'admin') {
     window.location.href = 'login.html';
   } else {
     console.log('Role valido');
@@ -28,7 +42,7 @@ function protectPage() {
     window.location.href = 'login.html';
   } else {
     console.log('Token válido');
-  } 
+  }
 
   checkAccess();
 }

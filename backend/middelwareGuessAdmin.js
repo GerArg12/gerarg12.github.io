@@ -1,4 +1,3 @@
-
 function getCookie(name) {
     const nameEQ = name + "=";
     const ca = document.cookie.split(';');
@@ -9,10 +8,25 @@ function getCookie(name) {
     }
     return null;
   }
+
+  function parseJwt(token) {
+    try {
+      return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+      return null;
+    }
+  }
   
   function checkAccess() {
-    const role = getCookie('role');
-    if (!role || !(role === 'admin' || role === 'guess')) {
+    const token = getCookie('token');
+    const decodedToken = parseJwt(token);
+    if (!decodedToken) {
+      window.location.href = 'login.html';
+      return;
+    }
+  
+    const role = decodedToken.role;
+    if (!(role === 'admin' || role === 'guess')) {
       window.location.href = 'login.html';
     } else {
       console.log('Role valido');
@@ -32,4 +46,3 @@ function getCookie(name) {
   
   // Llamar a esta función en las páginas que necesitan protección
   protectPage();
-  

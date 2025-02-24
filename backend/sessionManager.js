@@ -13,18 +13,29 @@ function eraseCookie(name) {
   document.cookie = name + '=; Max-Age=-99999999;';
 }
 
+function parseJwt(token) {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch (e) {
+    return null;
+  }
+}
+
 function updateNavbar() {
   const token = getCookie('token');
-  const role = getCookie('role');
   const loginItem = document.getElementById('loginItem');
 
-  if (token && role) {
-    loginItem.innerHTML = '<a href="#" id="logoutButton" class="text-danger">Cerrar sesión</a>';
-    document.getElementById('logoutButton').addEventListener('click', function () {
-      eraseCookie('token');
-      eraseCookie('role');
-      window.location.href = 'index.html';
-    });
+  if (token) {
+    const decodedToken = parseJwt(token);
+    if (decodedToken) {
+      loginItem.innerHTML = '<a href="#" id="logoutButton" class="text-danger">Cerrar sesión</a>';
+      document.getElementById('logoutButton').addEventListener('click', function () {
+        eraseCookie('token');
+        window.location.href = 'index.html';
+      });
+    } else {
+      loginItem.innerHTML = '<a href="login.html" class="text-danger">Login</a>';
+    }
   } else {
     loginItem.innerHTML = '<a href="login.html" class="text-danger">Login</a>';
   }
