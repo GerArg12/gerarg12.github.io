@@ -33,10 +33,7 @@
       rel="stylesheet"
     />
     <!-- Vendor CSS -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
@@ -51,8 +48,18 @@
     <link href="assets/css/main.css" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      /* Fuente global: Poppins */
+      body h5{
+        font-family: 'Poppins', sans-serif;
+      }
+      h4{
+        font-family: 'Poppins', sans-serif;
+      }
+      h6{
+        font-weight: bold;
+      }
+      .nav-link{
+        font-family: 'Poppins', sans-serif;
       }
       .section-title {
         text-align: center;
@@ -68,33 +75,60 @@
         border-radius: 5px;
       }
       .navmenu a.active {
-        color: #007bff; /* Texto en negro */
-        font-weight: bold; /* Negrita */
+        color: #007bff;
+        font-weight: bold;
       }
+
+      /* Menú Izquierdo: Se adapta al contenido */
+      .left-nav-col {
+        width: 25%;
+      }
+
+      /* Tablas: borde azul más grueso, esquinas redondeadas, fondo celeste */
+      .table {
+        border-radius: 8px !important;
+        overflow: hidden;
+        border: 2px solid #0d6efd !important;
+      }
+      .table-bordered th,
+      .table-bordered td {
+        border: 2px solid #0d6efd !important;
+      }
+      /* Justificar todo el texto en tablas, cards, párrafos y listas */
+      td,
+      .card-body,
+      .card-text,
+      
+      li {
+        text-align: justify !important;
+      }
+      #footer{
+  padding-top: 3px;
+  padding-bottom: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+
+      
     </style>
     <script src="backend/middlewareAdmin.js"></script>
   </head>
-
   <body>
     <!-- Header / Nav -->
     <header id="header" class="header d-flex align-items-center sticky-top">
-      <div
-        class="container-fluid container-xl d-flex align-items-center justify-content-between"
-      >
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="portafolio.html">Portafolio</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Asignaciones
-              </a>
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Asignaciones</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="champfrogs.html">Champfrogs</a></li>
                 <li><a class="dropdown-item" href="workexpo.html">WorkExpo</a></li>
                 <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
-                <li><a class="dropdown-item" href="casoNegocio.html" class="active">Caso de negocio</a></li>
+                <li><a class="dropdown-item active" href="casoNegocio.html">Caso de negocio</a></li>
                 <li><a class="dropdown-item" href="parcial1.html">Parcial 1</a></li>
               </ul>
             </li>
@@ -103,53 +137,1303 @@
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-        
       </div>
     </header>
 
-    <main id="main">
-      <section class="section py-5">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Caso de negocio</h2>
-            <p>
-              Acuerdo legal que establece las obligaciones y derechos entre las
-              partes.
-            </p>
-          </div>
-          <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-              <h4>Documento (PDF)</h4>
-              <div class="iframe-container">
-                <iframe
-                src="assets/Asignaciones/PLANTILLA CASO DE NEGOCIO.pdf"
-                >
-                </iframe>
+    <main id="main" class="container-fluid mt-3">
+      <div class="row">
+        <!-- Menú de la Tabla de Contenido (Columna Izquierda) -->
+        <div class="col-auto left-nav-col">
+          <nav id="navbar-example3" class="h-100 flex-column align-items-stretch border-end pe-2">
+            <nav class="nav nav-pills flex-column">
+              <!-- Sección 1 -->
+              <a class="nav-link" href="#item-1">1. Identificación del proyecto</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-1-1">1.1 Resumen Ejecutivo</a>
+              </nav>
+              <!-- Sección 2 -->
+              <a class="nav-link" href="#item-2">2. Necesidades del negocio</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-2-1">2.1 Justificación</a>
+                <a class="nav-link ms-3 my-1" href="#item-2-2">2.2 Interesados afectados</a>
+                <a class="nav-link ms-3 my-1" href="#item-2-3">2.3 Alcance del proyecto</a>
+              </nav>
+              <!-- Sección 3 -->
+              <a class="nav-link" href="#item-3">3. Análisis de la situación</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-3-1">3.1 Estrategias, metas y objetivos de la empresa</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ms-5 my-1" href="#item-3-1-1">3.1.1 Estrategias</a>
+                  <a class="nav-link ms-5 my-1" href="#item-3-1-2">3.1.2 Metas</a>
+                  <a class="nav-link ms-5 my-1" href="#item-3-1-3">3.1.3 Objetivos</a>
+                </nav>
+                <a class="nav-link ms-3 my-1" href="#item-3-2">3.2 Problema, causa raíz u oportunidad</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-3">3.3 Brechas: Capacidades requeridas vs actuales</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-4">3.4 Riesgos conocidos</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-5">3.5 Factores críticos de éxito (FCE)</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-6">3.6 Criterios de decisión</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-7">3.7 Impacto del proyecto</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-8">3.8 Conjunto de opciones</a>
+              </nav>
+              <!-- Sección 4 -->
+              <a class="nav-link" href="#item-4">4. Recomendación</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-4-1">4.1 Enunciado</a>
+                <a class="nav-link ms-3 my-1" href="#item-4-2">4.2 Enfoque de Implementación: de la mejor opción</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ms-5 my-1" href="#item-4-2-1">Hitos y Dependencias</a>
+                  <a class="nav-link ms-5 my-1" href="#item-4-2-2">Roles y Responsabilidades</a>
+                </nav>
+              </nav>
+              <!-- Sección 5 -->
+              <a class="nav-link" href="#item-5">5. Evaluación</a>
+            </nav>
+          </nav>
+        </div>
+
+        <!-- Contenido (Columna Derecha) -->
+        <div class="col">
+          <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+            <!-- Sección 1: Identificación del proyecto -->
+            <div id="item-1">
+              <h4>1. Identificación del proyecto</h4>
+              <div class="container mt-4">
+                <h5 class="mb-4">Identificación del Proyecto</h5>
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <tbody>
+                    <tr>
+                      <th>Nombre del proyecto</th>
+                      <td>Implementación de billetera digital de criptoActivos para flowi</td>
+                    </tr>
+                    <tr>
+                      <th>Empresa que desarrolla el proyecto</th>
+                      <td>Kompil0</td>
+                    </tr>
+                    <tr>
+                      <th>Nombre de la persona que ejerza como representante legal</th>
+                      <td>Ángel Josue Guevara Portillo</td>
+                    </tr>
+                    <tr>
+                      <th>Dirección, teléfono, email Persona Natural y/o quien ejerza como representante legal</th>
+                      <td>Ciudad Barrios, San Miguel, [email protected]</td>
+                    </tr>
+                    <tr>
+                      <th>Fechas</th>
+                      <td>
+                        <div>Inicio: 20 Enero 2025</div>
+                        <div>Fin: 15 Junio 2025</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Cliente</th>
+                      <td>Flowi</td>
+                    </tr>
+                    <tr>
+                      <th>Patrocinador</th>
+                      <td>Universidad Gerardo Barrios</td>
+                    </tr>
+                    <tr>
+                      <th>Tipo de Proyecto</th>
+                      <td>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="tipoProyecto" id="capex" value="capex" checked style="vertical-align: middle;" />
+                          <label class="form-check-label" for="capex" style="vertical-align: middle;">CAPEX</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="tipoProyecto" id="opex" value="opex" style="vertical-align: middle;" />
+                          <label class="form-check-label" for="opex" style="vertical-align: middle;">OPEX</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="item-1-1" class="mt-4">
+              <h5>1.1 Resumen Ejecutivo</h5>
+              <p>
+                Flowi es una fintech innovadora dedicada a ofrecer soluciones financieras simples y seguras que integran moneda local y Bitcoin, facilitando la inclusión de personas y pequeños negocios en la economía digital. La empresa pretende desarrollar una plataforma web y móvil, que permita gestionar pagos, ahorro e inversión en Bitcoin. Además, se integrarán terminales de punto de venta (TPV) para comercios, con bases de datos seguras en la nube y medidas avanzadas de seguridad como cifrado y autenticación multifactor. Flowi busca atender a usuarios no bancarizados, emprendedores y comerciantes, brindando acceso rápido y seguro a servicios financieros modernos.
+              </p>
+              <p>
+                En un mercado con creciente adopción de Bitcoin, Flowi se diferencia por su facilidad de uso, enfoque en la inclusión financiera y una infraestructura segura y escalable. Su estrategia de captación se basa en alianzas con comercios, campañas de marketing digital y educación financiera. Se proyecta un crecimiento del 30-50% anual en usuarios, con ingresos provenientes de transacciones y suscripciones. Para su desarrollo inicial, se requiere financiamiento en tecnología, marketing y regulaciones, considerando opciones como inversión de capital de riesgo y alianzas estratégicas. Además, la plataforma incluirá herramientas de comunicación, automatización de pagos y recomendaciones inteligentes, garantizando una solución innovadora y competitiva en la industria financiera digital.
+              </p>
+            </div>
+
+            <!-- Sección 2: Necesidades del negocio -->
+            <div id="item-2" class="mt-4">
+              <h4>2. Necesidades del negocio</h4>
+            </div>
+
+            <div id="item-2-1">
+              <h5>2.1 Justificación</h5>
+              <div class="mt-4">
+                <!-- Primera fila: 2 cards -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                      <div class="card-header">Motivación</div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          La digitalización financiera avanza rápidamente, pero muchas personas y pequeños negocios aún enfrentan barreras para acceder a servicios bancarios tradicionales. Flowi nace con el propósito de mejorar la inclusión financiera mediante una plataforma que facilita el uso de Bitcoin como medio de pago, ahorro e inversión. Su objetivo es proporcionar una solución segura, accesible y eficiente para personas y comercios que buscan integrarse a la economía digital sin depender de intermediarios tradicionales.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                      <div class="card-header">Problema que solucionará el proyecto</div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          La falta de acceso a servicios financieros modernos y eficientes afecta a millones de personas y pequeños negocios, limitando su crecimiento económico. Flowi permitirá realizar transacciones seguras con Bitcoin, eliminando costos elevados y barreras burocráticas, brindando así una alternativa viable para quienes no tienen acceso a la banca convencional.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Segunda fila: 2 cards -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                      <div class="card-header">Valor</div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          La implementación de Flowi beneficiará a personas y empresas al ofrecer pagos rápidos, reducción de costos en transacciones y una alternativa confiable para la gestión de activos digitales. Además, fomentará la inclusión financiera y fortalecerá el crecimiento económico al proporcionar herramientas accesibles para comerciantes y emprendedores.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                      <div class="card-header">Métricas e indicadores de éxito</div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          Para medir el impacto de Flowi, se utilizarán métricas clave como el número de usuarios activos, el volumen de transacciones realizadas, la cantidad de comercios afiliados y el crecimiento mensual de nuevos registros en la plataforma. Estas métricas permitirán evaluar la adopción del servicio y su efectividad en la inclusión financiera.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="item-2-2">
+           
+              <div class="mt-4">
+                <h5>2.2 Interesados afectados</h5>
+                <div class="table-responsive">
+                  <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Departamento / Tipo</th>
+                        <th>Cargo / Descripción</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- PARTICIPANTES -->
+                      <tr>
+                        <td>Ángel Josué Guevara Portillo</td>
+                        <td>Desarrollo</td>
+                        <td>Representante Legal</td>
+                      </tr>
+                      <tr>
+                        <td>Jefferson Josué Esperanza Ortiz</td>
+                        <td>Desarrollo</td>
+                        <td>Coordinador Técnico</td>
+                      </tr>
+                      <tr>
+                        <td>Gerson Nahún Argueta Hernández</td>
+                        <td>Desarrollo</td>
+                        <td>Líder de Seguridad</td>
+                      </tr>
+                      <tr>
+                        <td>Sofía Margarita Romero Vásquez</td>
+                        <td>Desarrollo</td>
+                        <td>Diseñadora UI/UX</td>
+                      </tr>
+                      <tr>
+                        <td>Edwin Alexander Villalta Ortiz</td>
+                        <td>Desarrollo</td>
+                        <td>Desarrollador Frontend</td>
+                      </tr>
+                      <tr>
+                        <td>Flowi</td>
+                        <td>Externo</td>
+                        <td>Cliente</td>
+                      </tr>
+                      <tr>
+                        <td>Banco Agrícola</td>
+                        <td>Finanzas</td>
+                        <td>Proveedor de Servicios Bancarios</td>
+                      </tr>
+                      <tr>
+                        <td>Banco Cuscatlán</td>
+                        <td>Finanzas</td>
+                        <td>Proveedor de Servicios Bancarios</td>
+                      </tr>
+                      <tr>
+                        <td>Banco G&amp;T Continental</td>
+                        <td>Finanzas</td>
+                        <td>Proveedor de Servicios Bancarios</td>
+                      </tr>
+                      <tr>
+                        <td>Banco Davivienda El Salvador</td>
+                        <td>Finanzas</td>
+                        <td>Proveedor de Servicios Bancarios</td>
+                      </tr>
+                      <tr>
+                        <td>Servicios de internet</td>
+                        <td>Externo</td>
+                        <td>Proveedor</td>
+                      </tr>
+                      <tr>
+                        <td>Amazon Web Services (AWS)</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Servicios en la Nube</td>
+                      </tr>
+                      <tr>
+                        <td>NCR Corporation</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Cajeros Automáticos</td>
+                      </tr>
+                      <!-- PROVEEDORES -->
+                      <tr>
+                        <td>Diebold Nixdorf</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Cajeros Automáticos</td>
+                      </tr>
+                      <tr>
+                        <td>CPI (Currency Systems)</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Cajeros Automáticos</td>
+                      </tr>
+                      <tr>
+                        <td>Cisco Systems</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Infraestructura de Red</td>
+                      </tr>
+                      <tr>
+                        <td>Fortinet</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Seguridad de Red</td>
+                      </tr>
+                      <tr>
+                        <td>Hewlett Packard Enterprise (HPE)</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Hardware</td>
+                      </tr>
+                      <tr>
+                        <td>Dell Technologies</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Hardware</td>
+                      </tr>
+                      <tr>
+                        <td>Microsoft</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Software y Plataforma</td>
+                      </tr>
+                      <tr>
+                        <td>Veeam Software</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Backup y Recuperación</td>
+                      </tr>
+                      <tr>
+                        <td>Tigo El Salvador</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Servicios de Internet</td>
+                      </tr>
+                      <tr>
+                        <td>Claro El Salvador</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Servicios de Internet</td>
+                      </tr>
+                      <tr>
+                        <td>Movistar El Salvador</td>
+                        <td>Externo</td>
+                        <td>Proveedor de Servicios de Internet</td>
+                      </tr>
+                      <tr>
+                        <td>Universidad Gerardo Barrios</td>
+                        <td>Externo</td>
+                        <td>Patrocinador</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div id="item-2-3">
+              <h5>2.3 Alcance del proyecto</h5>
+              <div class="mt-4" id="obj-y-acordeones">
+                <h5>Objetivos del proyecto</h5>
+                <p>
+                  El objetivo principal de este proyecto es desarrollar una plataforma web y móvil que permita a los usuarios gestionar pagos, ahorro e inversión en Bitcoin. Esta solución facilitará la inclusión financiera para personas y pequeños comercios, ofreciendo servicios financieros modernos y accesibles a través de la tecnología blockchain. El proyecto incluirá la integración de cajeros automáticos (ATM) para facilitar la conversión de Bitcoin a moneda local, además de un sistema de gestión de datos en la nube que garantice la seguridad de las transacciones y la protección de los datos de los usuarios.
+                </p>
+                <!-- Acordeones -->
+                <div class="accordion" id="accordionExample">
+                  <!-- Recursos -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingRecursos">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRecursos" aria-expanded="false" aria-controls="collapseRecursos">
+                        Recursos
+                      </button>
+                    </h2>
+                    <div id="collapseRecursos" class="accordion-collapse collapse" aria-labelledby="headingRecursos" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul>
+                          <li><strong>Equipo de desarrollo (6 personas):</strong> 30 horas de trabajo por semana durante 5 meses. Incluye programadores backend (Node.js), frontend (React o Vue) y un equipo de QA.</li>
+                          <li><strong>Gerente de proyecto (1 persona):</strong> 10 horas de trabajo por semana durante toda la duración del proyecto para supervisar las actividades y coordinar el equipo.</li>
+                          <li><strong>Consultores de seguridad (2 personas):</strong> 5 horas de trabajo por semana para auditar la seguridad de la plataforma y garantizar el cumplimiento de normativas (cifrado de datos, autenticación multifactor, etc.).</li>
+                          <li><strong>Servicios en la nube (MongoDB/MySQL):</strong> Costo estimado de $500 mensuales por uso de base de datos en la nube, que se cubrirá durante la fase de desarrollo y mantenimiento.</li>
+                          <li><strong>Hardware:</strong> Adquisición de 5 cajeros automáticos para la conversión de Bitcoin a moneda local, con un costo estimado de $10,000 cada uno.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Entregables -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEntregables">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEntregables" aria-expanded="false" aria-controls="collapseEntregables">
+                        Entregables
+                      </button>
+                    </h2>
+                    <div id="collapseEntregables" class="accordion-collapse collapse" aria-labelledby="headingEntregables" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ol>
+                          <li><strong>Plataforma funcional:</strong> La plataforma web y móvil completa, con capacidades de pago, ahorro e inversión en Bitcoin, disponible para usuarios finales.</li>
+                          <li><strong>Integración de cajeros automáticos:</strong> Cajeros automáticos instalados en puntos estratégicos para la conversión de Bitcoin a moneda local.</li>
+                          <li><strong>Sistema de seguridad implementado:</strong> Soluciones de seguridad que incluyen cifrado de datos y autenticación multifactor.</li>
+                          <li><strong>Documentación técnica y manuales:</strong> Detalles completos sobre la arquitectura, instrucciones para usuarios y administradores, y guías de mantenimiento.</li>
+                          <li><strong>Capacitación:</strong> Formación para los comercios que utilizarán los cajeros y para los usuarios sobre cómo utilizar la plataforma.</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Hoja de ruta y cronograma -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCronograma">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCronograma" aria-expanded="false" aria-controls="collapseCronograma">
+                        Hoja de ruta del proyecto y cronograma
+                      </button>
+                    </h2>
+                    <div id="collapseCronograma" class="accordion-collapse collapse" aria-labelledby="headingCronograma" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul>
+                          <li><strong>20 de enero de 2025:</strong> Inicio de la planificación del proyecto, definición de requisitos y diseño arquitectónico.</li>
+                          <li><strong>1 de febrero de 2025:</strong> Inicio del desarrollo backend y frontend.</li>
+                          <li><strong>1 de marzo de 2025:</strong> Instalación y configuración de cajeros automáticos.</li>
+                          <li><strong>1 de abril de 2025:</strong> Implementación de sistemas de seguridad y pruebas de calidad.</li>
+                          <li><strong>1 de mayo de 2025:</strong> Capacitación a comercios y usuarios sobre el uso de la plataforma.</li>
+                          <li><strong>15 de junio de 2025:</strong> Lanzamiento oficial de la plataforma.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Fuera del alcance -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFueraAlcance">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFueraAlcance" aria-expanded="false" aria-controls="collapseFueraAlcance">
+                        Fuera del alcance
+                      </button>
+                    </h2>
+                    <div id="collapseFueraAlcance" class="accordion-collapse collapse" aria-labelledby="headingFueraAlcance" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul>
+                          <li>Desarrollo de funcionalidades para criptomonedas adicionales a Bitcoin (se incluirán solo funcionalidades para Bitcoin en la primera versión).</li>
+                          <li>Diseño de aplicaciones personalizadas para grandes comercios (enfoque inicial en comercios pequeños y medianos).</li>
+                          <li>Creación de nuevos sistemas de gestión de activos digitales (DAM).</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sección 3: Análisis de la situación -->
+            <div id="item-3" class="mt-4">
+              <h4>3. Análisis de la situación</h4>
+              <p>
+                El mercado salvadoreño ofrece un contexto único para el desarrollo de plataformas de criptoactivos, especialmente desde la adopción del Bitcoin como moneda de curso legal. Esta decisión gubernamental ha generado tanto oportunidades como desafíos, ya que si bien ha abierto el camino hacia la innovación financiera, también ha establecido una competencia directa con Chivo Wallet, una plataforma respaldada por el Estado con una infraestructura sólida y una amplia base de usuarios. En este escenario, la nueva plataforma de criptoactivos se enfrenta a la necesidad de diferenciarse, ofreciendo una propuesta de valor centrada en la seguridad, la eficiencia y la experiencia del usuario. Además, el cumplimiento con las regulaciones nacionales e internacionales, como las normativas de prevención de lavado de dinero (AML) y el conocimiento del cliente (KYC), será fundamental para operar de manera legal y ganar la confianza de los usuarios.
+              </p>
+              <p>
+                A nivel interno, el éxito de esta plataforma dependerá de la solidez de su infraestructura tecnológica y la capacidad de su equipo para desarrollar y mantener un sistema eficiente y escalable. La administración adecuada de los recursos financieros y humanos también jugará un papel crucial, asegurando una operación sostenible y la posibilidad de innovar continuamente. Por otro lado, en el entorno externo, será esencial monitorear la aceptación de las criptomonedas en el país, las políticas gubernamentales y la evolución del mercado digital, adaptándose rápidamente a las condiciones cambiantes. Este análisis permitirá identificar fortalezas, debilidades, oportunidades y amenazas, y determinará el posicionamiento y crecimiento de la plataforma.
+              </p>
+            </div>
+
+            <!-- Sección 3.1: Estrategias, metas y objetivos -->
+            <div id="item-3-1">
+              <h5>3.1 Estrategias, metas y objetivos de la empresa</h5>
+              <div class="card border-primary mb-3" style="background-color: #E0F7FA;">
+                <div class="card-body">
+                  <p>
+                    Es importante aclarar que, en este caso, el proyecto aún no existe como una empresa operativa, sino que se trata de un desarrollo en su fase conceptual. La plataforma de criptoactivos está alineada con la visión estratégica de la empresa que busca posicionarse como una alternativa confiable y competitiva en el mercado salvadoreño de soluciones para el manejo de activos digitales. Esta visión tiene como objetivo central la mejora de la accesibilidad, la seguridad y la trazabilidad de las transacciones y el almacenamiento de los activos digitales.
+                  </p>
+                  <p>
+                    Para lograr estos objetivos, las estrategias, metas y objetivos se desglosan de la siguiente manera:
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div id="item-3-1-1">
+              <h6>3.1.1 Estrategias</h6>
+              <div>
+                <p>Para el éxito del proyecto, se han definido las siguientes estrategias:</p>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <strong>Desarrollo de una infraestructura tecnológica escalable:</strong>
+                        <p>Se creará un sistema modular que pueda adaptarse a las necesidades futuras de la empresa y sus usuarios.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <strong>Implementación de metodologías ágiles:</strong>
+                        <p>Se adoptarán enfoques como Scrum para optimizar el desarrollo y la entrega de funcionalidades.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <strong>Fomento de la seguridad digital:</strong>
+                        <p>Se integrarán protocolos de encriptación y autenticación robustos para proteger la información sensible.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <strong>Automatización de procesos:</strong>
+                        <p>Se utilizará inteligencia artificial y machine learning para mejorar la eficiencia operativa.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <strong>Capacitación continua del equipo:</strong>
+                        <p>Se implementarán programas de formación para asegurar que el personal esté actualizado con las últimas tecnologías y mejores prácticas del sector.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>Estas estrategias contribuirán al cumplimiento de los objetivos del proyecto y garantizarán su impacto positivo dentro de la organización y en el mercado.</p>
+              </div>
+            </div>
+
+            <div id="item-3-1-2">
+              <h6>3.1.2 Metas</h6>
+              <div class="mt-4">
+                <p>Las metas son los resultados generales que la empresa busca alcanzar a largo plazo. En este caso:</p>
+                <ul class="list-group">
+                  <li class="list-group-item" style="background-color: #E0F7FA;">🎯 Establecer una base de usuarios significativa dentro de los primeros 18 meses.</li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">🎯 Posicionarse como una alternativa competitiva frente a plataformas como Chivo Wallet en términos de accesibilidad y seguridad.</li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">🎯 Ser reconocidos como un actor confiable en el mercado salvadoreño de criptoactivos para el manejo de activos digitales.</li>
+                </ul>
+              </div>
+            </div>
+<br>
+            <div id="item-3-1-3">
+              <h6>3.1.3 Objetivos</h6>
+              <div class="container mt-4">
+                <div class="row" data-masonry='{"percentPosition": true }'>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Establecer una base de usuarios significativa dentro de los primeros 18 meses. Este objetivo tiene como fin asegurar una adopción temprana de la plataforma, con el objetivo de crear una base sólida de usuarios activos.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Posicionarse como una alternativa competitiva frente a plataformas como Chivo Wallet en términos de accesibilidad y seguridad. La meta es ofrecer una experiencia de usuario superior en estos dos aspectos clave, garantizando que la plataforma sea vista como una opción más confiable y fácil de usar en comparación con la competencia estatal.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Ser reconocidos como un actor confiable en el mercado salvadoreño de criptoactivos para el manejo de activos digitales. La plataforma debe lograr una percepción positiva entre los usuarios y convertirse en un referente confiable dentro del ecosistema cripto de El Salvador.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Lograr la implementación de la plataforma en un período no mayor a 12 meses. Para garantizar un desarrollo eficiente y rápido que permita su entrada al mercado dentro de un plazo competitivo.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Asegurar una tasa de adopción del 80% por parte de los usuarios en los primeros seis meses. Este objetivo se logra mediante estrategias de marketing efectivas y una plataforma que ofrezca un valor claro a los usuarios.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Reducir en un 40% los tiempos de gestión de activos digitales mediante la automatización de procesos. Mejorar la eficiencia operativa de la plataforma con el uso de tecnologías innovadoras.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Garantizar la seguridad y confiabilidad de la plataforma con al menos un 99.9% de disponibilidad. Asegurar que la plataforma esté operativa la mayor parte del tiempo y sea confiable en la gestión de activos digitales.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #E0F7FA;">
+                      <div class="card-body">
+                        <p class="card-text">
+                          Obtener retroalimentación positiva de al menos el 85% de los usuarios en el primer año de operación. Medir la satisfacción de los usuarios de manera efectiva para realizar mejoras continuas y asegurarse de que la plataforma cumpla con las expectativas del mercado.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="item-3-2">
+              <h5>3.2 Problema, causa raíz u oportunidad</h5>
+              <p>Presentar un análisis del problema indicando su causa raíz y las oportunidades de mejora que presenta.</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Causa Raíz del Problema</th>
+                      <th>Oportunidad de Mejora</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Falta de acceso a servicios financieros tradicionales debido a burocracia y requisitos estrictos</td>
+                      <td>Crear una billetera digital accesible que permita transacciones seguras sin intermediarios, facilitando la inclusión financiera.</td>
+                    </tr>
+                    <tr>
+                      <td>Baja adopción de Bitcoin en el comercio debido a la falta de herramientas seguras y confiables para las transacciones</td>
+                      <td>Integrar terminales de pago (TPV) y conversión automática de Bitcoin a moneda local para comercios, promoviendo la adopción.</td>
+                    </tr>
+                    <tr>
+                      <td>Riesgos de seguridad y fraude en transacciones con criptomonedas, lo cual genera desconfianza en los usuarios</td>
+                      <td>Implementar medidas avanzadas de seguridad como encriptación, autenticación multifactor y recuperación de cuentas seguras.</td>
+                    </tr>
+                    <tr>
+                      <td>Desconocimiento sobre Bitcoin y poca familiarización en la población no bancarizada</td>
+                      <td>Incluir un componente educativo en la plataforma para orientar al usuario sobre el manejo seguro y efectivo de sus bitcoins.</td>
+                    </tr>
+                    <tr>
+                      <td>Procesos manuales y descentralizados en la gestión de activos digitales, generando ineficiencia y riesgo</td>
+                      <td>Automatizar procesos con tecnología blockchain e inteligencia artificial, mejorando la trazabilidad y seguridad de las transacciones.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="item-3-3">
+              <h5>3.3 Brechas: Capacidades requeridas vs actuales</h5>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Capacidades requeridas</th>
+                      <th>Capacidades actuales</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>• Gestión automatizada de activos digitales</td>
+                      <td>• Gestión manual y descentralizada</td>
+                    </tr>
+                    <tr>
+                      <td>• Implementación de seguridad avanzada</td>
+                      <td>• Seguridad limitada con protocolos básicos</td>
+                    </tr>
+                    <tr>
+                      <td>• Interfaz de usuario intuitiva y adaptable</td>
+                      <td>• Interfaz básica con funcionalidad limitada</td>
+                    </tr>
+                    <tr>
+                      <td>• Soporte para integración con terceros</td>
+                      <td>• Falta de compatibilidad con sistemas externos</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="item-3-4">
+              <h5>3.4 Riesgos conocidos</h5>
+              <div class="mt-4">
+                <ul class="list-group">
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-exclamation-circle-fill text-danger me-2"></i>
+                    Resistencia al uso de la aplicación por temor al cambio.
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-exclamation-circle-fill text-danger me-2"></i>
+                    Posibles fallos de seguridad que puedan comprometer los activos digitales.
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-exclamation-circle-fill text-danger me-2"></i>
+                    Retrasos en la implementación debido a problemas técnicos.
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-exclamation-circle-fill text-danger me-2"></i>
+                    Falta de capacitación del personal para el uso de la plataforma.
+                  </li>
+                </ul>
+              </div>
+            </div>
+<br>
+            <div id="item-3-5">
+              <h5>3.5 Factores críticos de éxito (FCE)</h5>
+              <div class="mt-4">
+                <ul class="list-group">
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Gestión y desarrollo eficaz de cada una de las fases del proyecto.
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Reuniones (mensuales, semanales, quincenales) con el cliente para la validación de entregables del proyecto (documentos, prototipos).
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Capacitación adecuada para los usuarios finales.
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Implementación de medidas de seguridad robustas.
+                  </li>
+                  <li class="list-group-item" style="background-color: #E0F7FA;">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Integración eficiente con otros sistemas de la empresa.
+                  </li>
+                </ul>
+              </div>
+            </div>
+<br>
+            <div id="item-3-6">
+              <h5>3.6 Criterios de decisión</h5>
+              <p>Identificar los criterios de decisión mediante los cuales se puede evaluar los diferentes cursos de acción del proyecto a desarrollar.</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th colspan="6" class="text-center">Categorías</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Requerido</td>
+                      <td>✓</td>
+                      <td>Deseable</td>
+                      <td>☐</td>
+                      <td>Opcional</td>
+                      <td>☐</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="item-3-7">
+              <h5>3.7 Impacto del proyecto</h5>
+              <p>Indicar el impacto que tendría el proyecto para la empresa o usuarios.</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Área</th>
+                      <th>Impacto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tecnología</td>
+                      <td>
+                        La plataforma mejorará la tecnología de la empresa, haciéndola más moderna y segura. Se utilizarán herramientas como blockchain y encriptación para hacerla más rápida y confiable, lo que ayudará a la empresa a crecer de manera segura.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Procesos</td>
+                      <td>
+                        Los procesos serán más rápidos y eficaces. Gracias a la automatización y a la reducción de tiempos, se evitarán cuellos de botella en los procesos críticos y se eliminarán errores. Además, se mejorará la transparencia de las tareas y los roles de los involucrados.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Estructura</td>
+                      <td>
+                        Habrá una mejora en la organización interna. Se reorganizarán las tareas para que todo funcione de manera más ágil. Se definirá la estructura del equipo y la forma en que se relacionan para trabajar de forma más eficiente.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cultura</td>
+                      <td>
+                        Se fomentará una cultura más digital, enfocada en la innovación y la mejora continua. Esto implicará cambios en la mentalidad y la forma de trabajar, impulsando la colaboración y la formación constante.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Habilidades del personal</td>
+                      <td>
+                        Con el aprendizaje de nuevas habilidades, especialmente en el ámbito digital, los empleados crecerán profesionalmente y estarán más preparados para los retos del mercado. Esto ayudará a la empresa a crecer profesionalmente.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="item-3-8">
+              <h5>3.8 Conjunto de opciones</h5>
+              <p>Identificar el conjunto de opciones para tener en cuenta para abordar el problema o la oportunidad de negocio. Las opciones también pueden describirse como escenarios de negocios.</p>
+              <p>Cada una de estas opciones aborda una parte clave del desarrollo y operatividad de Flowi, asegurando una solución integral para la inclusión financiera basada en criptoactivos.</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Acciones posibles</th>
+                      <th>Observaciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Infraestructura</td>
+                      <td>
+                        Flowi proyecta abrir locales físicos en puntos clave del país para fortalecer la confianza en el sistema y ofrecer asistencia directa a los usuarios. Estos locales también funcionarán como centros de transacción para los usuarios que prefieran una interacción más directa y una mejor vinculación con los cajeros automáticos.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aplicación Móvil</td>
+                      <td>
+                        La plataforma digital será accesible a través de una aplicación móvil intuitiva, fácil de usar, y con funcionalidades completas para realizar transacciones y pagos. Además, los usuarios podrán realizar transacciones, consultar saldo, hacer pagos en comercios afiliados, y enviar/recibir dinero con un solo clic. Se integrarán módulos para cajeros automáticos y otros puntos de servicio.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Plataforma Local</td>
+                      <td>
+                        En paralelo a la app, se creará una plataforma web o local que permitirá gestionar grandes transacciones y realizar conversiones de manera centralizada. Este enfoque será clave para negocios que manejan un alto volumen de operaciones, asegurando robustez y eficiencia en su flujo de caja.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cajeros Automáticos</td>
+                      <td>
+                        Los cajeros automáticos serán parte fundamental del ecosistema Flowi, permitiendo a los usuarios depositar y retirar criptoactivos o convertirlos en dinero local. Estos cajeros permitirán transacciones seguras, tanto en criptomonedas como en efectivo, y estarán ubicados en puntos estratégicos para maximizar el acceso.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Sección 4: Recomendación -->
+            <div id="item-4" class="mt-4">
+              <h4>4. Recomendación</h4>
+            </div>
+            <div id="item-4-1">
+              <h5>4.1 Enunciado</h5>
+              <p>• Resultado del Análisis</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Acciones posibles</th>
+                      <th>Resultados del Análisis</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Infraestructura</td>
+                      <td>
+                        El análisis de la infraestructura revela que la creación de locales físicos es esencial para aumentar la confianza de los usuarios y ofrecer asistencia directa. Además, puntos de contacto físicos serán clave para gestionar las transacciones de criptoactivos de forma segura, facilitando la expansión y el acceso de la población.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aplicación Móvil</td>
+                      <td>
+                        La implementación de la aplicación facilitará el canal principal de interacción. Permitirá la gestión de transacciones, criptomonedas y acceso rápido y seguro, brindando soporte en tiempo real que fortalecerá la confianza y la adopción.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Plataforma Local</td>
+                      <td>
+                        La creación de una plataforma local permitirá realizar transacciones desde dispositivos fijos, ofreciendo más opciones de acceso y gestionando cajeros automáticos con altos estándares de seguridad y eficiencia, permitiendo una integración profunda con los sistemas de la empresa.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cajeros Automáticos</td>
+                      <td>
+                        Los cajeros automáticos, ubicados en puntos estratégicos, facilitarán la conversión de criptoactivos a moneda local, dando solvencia al usuario y consolidando a Flowi como una solución integral para la gestión de criptoactivos.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>• Restricciones / Limitaciones</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Acciones posibles</th>
+                      <th>Restricciones / Limitaciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Infraestructura</strong></td>
+                      <td>
+                        <p><strong>Altos costos iniciales y de mantenimiento:</strong> La creación de locales físicos implica un gasto elevado en infraestructura, alquiler y operación.</p>
+                        <p><strong>Regulaciones locales y normativas:</strong> Las autoridades locales pueden imponer restricciones sobre el tipo de estructuras o servicios relacionados con criptoactivos en espacios físicos.</p>
+                        <p><strong>Accesibilidad geográfica:</strong> La expansión a nivel nacional o internacional puede verse limitada por la ubicación de la infraestructura.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aplicación Móvil</strong></td>
+                      <td>
+                        <p><strong>Compatibilidad con dispositivos:</strong> La app debe ser compatible con diversos dispositivos y sistemas operativos, lo que puede generar desafíos técnicos.</p>
+                        <p><strong>Dependencia de la conectividad móvil:</strong> En regiones con baja calidad de red, los usuarios podrían tener dificultades para acceder de forma constante.</p>
+                        <p><strong>Seguridad en la transmisión de datos:</strong> Es fundamental mantener altos estándares de seguridad, requiriendo constantes actualizaciones y parches.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Plataforma Local</strong></td>
+                      <td>
+                        <p><strong>Costos de infraestructura:</strong> Requiere inversión significativa en hardware, software y mantenimiento, limitando su expansión.</p>
+                        <p><strong>Integración con otros sistemas:</strong> La plataforma debe integrarse con sistemas existentes, lo cual puede ser un desafío técnico.</p>
+                        <p><strong>Escalabilidad:</strong> Debe poder manejar un creciente volumen de usuarios y transacciones, lo que es difícil si no se planifica desde el inicio.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cajeros Automáticos</strong></td>
+                      <td>
+                        <p><strong>Altos costos operativos:</strong> Los cajeros son costosos en adquisición y mantenimiento.</p>
+                        <p><strong>Dependencia de infraestructura externa:</strong> Requieren conexión constante a internet y energía eléctrica, lo que puede ser problemático en áreas con infraestructura deficiente.</p>
+                        <p><strong>Regulaciones y seguridad:</strong> Deben cumplir normativas estrictas que pueden aumentar los costos operativos.</p>
+                        <p><strong>Logística de mantenimiento:</strong> La gestión de repuestos y reparaciones en ubicaciones remotas es un desafío logístico.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>• Supuestos estratégicos</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Acciones posibles</th>
+                      <th>Supuestos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Infraestructura</strong></td>
+                      <td>
+                        <p><strong>- Alta disponibilidad y seguridad:</strong> Los proveedores de servicios en la nube mantendrán la infraestructura con alta disponibilidad y estándares de seguridad.</p>
+                        <p><strong>- Regulaciones estables:</strong> Las normativas legales relacionadas con las criptomonedas en El Salvador no sufrirán cambios drásticos.</p>
+                        <p><strong>- Acceso a locales físicos estratégicos:</strong> La creación de puntos físicos en ubicaciones clave será viable, apoyada por la infraestructura urbana y rural en El Salvador.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aplicación Móvil</strong></td>
+                      <td>
+                        <p><strong>- Compatibilidad y adopción de smartphones:</strong> La mayoría de la población tendrá acceso a smartphones compatibles.</p>
+                        <p><strong>- Alta conectividad móvil:</strong> La cobertura de red será suficiente para interactuar de forma constante.</p>
+                        <p><strong>- Adopción rápida de criptoactivos:</strong> Los usuarios adoptarán rápidamente la app, impulsados por la Ley Bitcoin.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Plataforma Local</strong></td>
+                      <td>
+                        <p><strong>- Disponibilidad de infraestructura fija:</strong> Será posible en áreas urbanas y comerciales con buena infraestructura de telecomunicaciones.</p>
+                        <p><strong>- Cumplimiento de regulaciones locales:</strong> Las plataformas locales estarán alineadas con normativas de seguridad y protección de datos.</p>
+                        <p><strong>- Soporte y mantenimiento local:</strong> Existirá soporte técnico local con servicios de mantenimiento y reparaciones adecuados.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cajeros Automáticos</strong></td>
+                      <td>
+                        <p><strong>- Normativas de seguridad local:</strong> Los cajeros cumplirán con las normativas locales para instalación y operación.</p>
+                        <p><strong>- Disponibilidad de hardware:</strong> Los proveedores garantizarán la disponibilidad de dispositivos en el mercado local.</p>
+                        <p><strong>- Adopción de tecnología por comercios:</strong> Los comercios adoptarán los cajeros, especialmente tras la Ley Bitcoin.</p>
+                        <p><strong>- Estabilidad eléctrica:</strong> La energía será estable en las ubicaciones de los cajeros, permitiendo su funcionamiento sin interrupciones.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>• Riesgos</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Acciones posibles</th>
+                      <th>Riesgos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Infraestructura</strong></td>
+                      <td>
+                        <p><strong>- Interrupciones en servicios en la nube:</strong> Dependencia de proveedores que podrían sufrir interrupciones, afectando la disponibilidad.</p>
+                        <p><strong>- Regulaciones cambiantes:</strong> Riesgo de cambios inesperados en la normativa que puedan afectar la infraestructura.</p>
+                        <p><strong>- Costos elevados:</strong> Posibles costos imprevistos para la construcción y mantenimiento de locales físicos.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aplicación Móvil</strong></td>
+                      <td>
+                        <p><strong>- Problemas de compatibilidad:</strong> Riesgo de incompatibilidad con ciertos modelos o sistemas operativos.</p>
+                        <p><strong>- Interrupciones de servicio:</strong> Fallas en la conectividad móvil o con proveedores de internet que afecten la experiencia del usuario.</p>
+                        <p><strong>- Vulnerabilidades de seguridad:</strong> Riesgos de ciberataques que comprometan las transacciones realizadas desde la app.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Plataforma Local</strong></td>
+                      <td>
+                        <p><strong>- Fallas en la infraestructura de red local:</strong> Riesgo de caídas en la plataforma debido a fallas en la conectividad.</p>
+                        <p><strong>- Fallas en la sincronización de datos:</strong> Riesgo de inconsistencias o pérdida de información por sincronización incorrecta entre la plataforma local y la nube.</p>
+                        <p><strong>- Incompatibilidad con sistemas heredados:</strong> Riesgo de que la plataforma no se integre correctamente con sistemas existentes.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cajeros Automáticos</strong></td>
+                      <td>
+                        <p><strong>- Fallas técnicas en cajeros:</strong> Posibilidad de fallos técnicos que interrumpan el servicio.</p>
+                        <p><strong>- Dependencia de energía:</strong> Riesgo de interrupciones debido a fallos en el suministro eléctrico.</p>
+                        <p><strong>- Resistencia de comercios:</strong> Posibles dificultades para que los comercios adopten la tecnología de cajeros automáticos.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>• Análisis financiero</p>
+              <p>
+                Para cada una de las opciones del conjunto de opciones presentadas en la sección anterior se presenta el análisis financiero para su desarrollo e implementación.
+              </p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Acciones posibles</th>
+                      <th>Análisis Financiero</th>
+                      <th>Otro</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Infraestructura</strong></td>
+                      <td>
+                        <p>- NVP: $50,000 (estimado) - ROI: 22% - IRR: 18% - PBP: 4 años - BCR: 1.5</p>
+                        <p>- Costos estimados: $50,000 (compra de terreno, construcción, permisos, materiales y mano de obra).</p>
+                        <p>- Ingresos estimados: $60,000 (comisiones por transacciones en locales físicos, eventos o servicios).</p>
+                        <p>- Otras Consideraciones: La infraestructura será clave para generar confianza y mejorar la adopción del sistema.</p>
+                      </td>
+                      <td>
+                        <p>- El valor de la propiedad aumentará a largo plazo.</p>
+                        <p>- Posibilidad de expansión de operaciones al tener espacios propios.</p>
+                        <p>- Los costos de mantenimiento podrían reducirse al depender menos de terceros.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aplicación Móvil</strong></td>
+                      <td>
+                        <p>- NVP: $15,000 (estimado) - ROI: 20% - IRR: 15% - PBP: 3 años - BCR: 1.4</p>
+                        <p>- Costos estimados: $15,000 (desarrollo, licencias, pruebas y mantenimiento de la app).</p>
+                        <p>- Ingresos estimados: $18,000 (comisiones por transacciones y suscripciones).</p>
+                        <p>- Otras Consideraciones: La app será el principal canal de interacción, mejorando la experiencia y facilitando el acceso a los servicios de Flowi.</p>
+                      </td>
+                      <td>
+                        <p>- La app puede monetizarse con suscripciones premium o servicios adicionales.</p>
+                        <p>- Permite integración con otras plataformas de pago y criptomonedas.</p>
+                        <p>- Es crucial para captar usuarios en mercados emergentes.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Plataforma Local</strong></td>
+                      <td>
+                        <p>- NVP: $20,000 (estimado) - ROI: 18% - IRR: 14% - PBP: 5 años - BCR: 1.3</p>
+                        <p>- Costos estimados: $20,000 (desarrollo, implementación, servidores y mantenimiento).</p>
+                        <p>- Ingresos estimados: $23,600 (comisiones por transacciones, tarifas por almacenamiento y consultas).</p>
+                        <p>- Otras Consideraciones: Amplía el alcance de usuarios y ofrece una experiencia fluida y opciones adicionales de acceso.</p>
+                      </td>
+                      <td>
+                        <p>- La plataforma debe escalar y adaptarse al crecimiento.</p>
+                        <p>- A largo plazo, podría generar ingresos pasivos por almacenamiento y consultas de datos.</p>
+                        <p>- Puede incorporar nuevas funcionalidades de pagos o criptoactivos según demanda.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cajeros Automáticos</strong></td>
+                      <td>
+                        <p>- NVP: $30,000 (estimado) - ROI: 25% - IRR: 20% - PBP: 3 años - BCR: 1.6</p>
+                        <p>- Costos estimados: $30,000 (compra, instalación, mantenimiento y licencias de los cajeros).</p>
+                        <p>- Ingresos estimados: $35,000 (comisiones por transacciones, depósitos y retiros).</p>
+                        <p>- Otras Consideraciones: Permitirán transacciones físicas de criptoactivos, incrementando la adopción y la confianza del usuario.</p>
+                      </td>
+                      <td>
+                        <p>- Aseguran la presencia física de la plataforma.</p>
+                        <p>- Permiten captar comisiones por transacción y contribuir a un flujo de ingresos constante.</p>
+                        <p>- Los costos de mantenimiento pueden incrementarse conforme se expandan.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="card border-primary mt-4" style="background-color: #E0F7FA;">
+                <div class="card-body">
+                  <p>
+                    Ahora, la columna "Otro" incluye consideraciones adicionales que pueden impactar de manera significativa en los resultados a largo plazo del proyecto, como la escalabilidad, monetización y potenciales ingresos pasivos.
+                  </p>
+                  <h5 class="card-title mt-3">Evaluación Financiera - Modelos Económicos para la Selección de Proyectos</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background-color: #E0F7FA;">
+                      <strong>Valor Actual Neto (NVP):</strong> Se selecciona el proyecto con mejor NVP.
+                    </li>
+                    <li class="list-group-item" style="background-color: #E0F7FA;">
+                      <strong>Retorno de la Inversión (ROI) / Rentabilidad del proyecto:</strong> ROI = Ingresos / Costos del Proyecto.
+                    </li>
+                    <li class="list-group-item" style="background-color: #E0F7FA;">
+                      <strong>Tasa Interna de Retorno (IRR):</strong> Se selecciona el proyecto con el retorno más alto.
+                    </li>
+                    <li class="list-group-item" style="background-color: #E0F7FA;">
+                      <strong>Plazo de Retorno de la Inversión (PBP) / Período de Reembolso:</strong> Se selecciona el proyecto con un período más corto.
+                    </li>
+                    <li class="list-group-item" style="background-color: #E0F7FA;">
+                      <strong>Relación Costo Beneficio (BCR):</strong> &gt; 1, lo que indica que los beneficios superan los costos.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+<br>
+            <div id="item-4-2">
+              <h5>4.2 Enfoque de Implementación: de la mejor opción</h5>
+            </div>
+            <div id="item-4-2-1">
+              <h6>- Hitos y Dependencias</h6>
+              <p>
+                Para la mejor opción (opción a desarrollar e implementar) se presenta el listado de hitos (entregables con propuesta de tiempo) y las dependencias entre ellos.
+              </p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Hito</th>
+                      <th>Fecha de Entrega</th>
+                      <th>Dependencias</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>H1. Reunión inicial de planificación y definición de alcance</td>
+                      <td>20 - 22 enero 2025</td>
+                      <td>Ninguna</td>
+                    </tr>
+                    <tr>
+                      <td>H2. Entrega de especificaciones funcionales y técnicas</td>
+                      <td>31 enero 2025</td>
+                      <td>H1</td>
+                    </tr>
+                    <tr>
+                      <td>H3. Finalización del diseño UI/UX de la plataforma</td>
+                      <td>10 febrero 2025</td>
+                      <td>H2</td>
+                    </tr>
+                    <tr>
+                      <td>H4. Desarrollo del backend y configuración de base de datos</td>
+                      <td>15 febrero - 31 marzo 2025</td>
+                      <td>H2</td>
+                    </tr>
+                    <tr>
+                      <td>H5. Integración y configuración con backend</td>
+                      <td>1 abril - 15 abril 2025</td>
+                      <td>H4</td>
+                    </tr>
+                    <tr>
+                      <td>H6. Implementación y pruebas de sistemas de seguridad</td>
+                      <td>15 - 30 abril 2025</td>
+                      <td>H5</td>
+                    </tr>
+                    <tr>
+                      <td>H7. Integración y configuración de cajeros automáticos</td>
+                      <td>1 - 30 mayo 2025</td>
+                      <td>H6</td>
+                    </tr>
+                    <tr>
+                      <td>H8. Pruebas de calidad y validación de la plataforma</td>
+                      <td>15 - 30 mayo 2025</td>
+                      <td>H7</td>
+                    </tr>
+                    <tr>
+                      <td>H9. Capacitación a comercios y usuarios finales</td>
+                      <td>1 - 15 junio 2025</td>
+                      <td>H8</td>
+                    </tr>
+                    <tr>
+                      <td>H10. Lanzamiento oficial de la plataforma</td>
+                      <td>15 junio 2025</td>
+                      <td>H9</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="item-4-2-2">
+              <h6>- Roles y Responsabilidades</h6>
+              <p>
+                Para la opción a desarrollar e implementar se presenta el listado de roles requeridos.
+              </p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Rol</th>
+                      <th>Responsabilidades</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Gerente de Proyecto</td>
+                      <td>Supervisar el cumplimiento del cronograma, gestionar recursos y asegurar la calidad del proyecto.</td>
+                    </tr>
+                    <tr>
+                      <td>Coordinador Técnico</td>
+                      <td>Planificar y asignar tareas técnicas, monitorear el avance y resolver problemas técnicos.</td>
+                    </tr>
+                    <tr>
+                      <td>Líder de Seguridad</td>
+                      <td>Definir e implementar protocolos de seguridad, realizar auditorías y pruebas de intrusión.</td>
+                    </tr>
+                    <tr>
+                      <td>Diseñador UI/UX</td>
+                      <td>Diseñar interfaces intuitivas y atractivas, optimizando la experiencia del usuario y creando prototipos.</td>
+                    </tr>
+                    <tr>
+                      <td>Desarrollador Backend</td>
+                      <td>Desarrollar la lógica del servidor, crear y mantener las APIs y gestionar las bases de datos.</td>
+                    </tr>
+                    <tr>
+                      <td>Desarrollador Frontend</td>
+                      <td>Implementar la interfaz web y móvil, conectarla con el backend y asegurar la coherencia de la experiencia de usuario.</td>
+                    </tr>
+                    <tr>
+                      <td>Consultor de Seguridad</td>
+                      <td>Auditar la seguridad de la plataforma y asegurar el cumplimiento de normativas y regulaciones.</td>
+                    </tr>
+                    <tr>
+                      <td>Ingeniero de Redes</td>
+                      <td>Configurar y mantener la infraestructura de red, garantizando la disponibilidad y protección de los datos.</td>
+                    </tr>
+                    <tr>
+                      <td>Equipo de QA (Calidad)</td>
+                      <td>Diseñar y ejecutar planes de pruebas, asegurando la calidad de la plataforma antes de su lanzamiento.</td>
+                    </tr>
+                    <tr>
+                      <td>Capacitador</td>
+                      <td>Formar a usuarios y comercios en el uso de la plataforma y de los cajeros automáticos.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Sección 5: Evaluación -->
+            <div id="item-5" class="mt-4">
+              <h4>5. Evaluación</h4>
+              <p>El beneficio se medirá en términos del logro de los objetivos del proyecto planteados:</p>
+              <div class="table-responsive mt-4">
+                <table class="table table-bordered border-primary" style="background-color: #E0F7FA;">
+                  <thead>
+                    <tr>
+                      <th>Objetivo</th>
+                      <th>Meta</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Ofrecer una solución segura y eficiente para el intercambio de criptomonedas</td>
+                      <td>Implementar autenticación multifactor y cumplimiento KYC/AML desde el lanzamiento</td>
+                    </tr>
+                    <tr>
+                      <td>Proveer a los usuarios herramientas inteligentes para la gestión de sus finanzas</td>
+                      <td>Integrar un asesoramiento financiero automatizado en el primer año</td>
+                    </tr>
+                    <tr>
+                      <td>Incrementar la accesibilidad de servicios financieros para pequeños comercios</td>
+                      <td>Implementar 50 terminales POS en los primeros 6 meses y pagos en Bitcoin</td>
+                    </tr>
+                    <tr>
+                      <td>Diseñar una plataforma web y móvil fácil de usar y disponible en múltiples dispositivos</td>
+                      <td>Lanzar una app operativa en los primeros 6 meses, compatible con Android e iOS</td>
+                    </tr>
+                    <tr>
+                      <td>Crear un sistema de atención automatizado y eficiente</td>
+                      <td>Implementar chatbots con respuestas automáticas en el primer año y con IA en el segundo año</td>
+                    </tr>
+                    <tr>
+                      <td>Aumentar la adopción de la billetera digital</td>
+                      <td>Alcanzar 10,000 usuarios activos en el primer año</td>
+                    </tr>
+                    <tr>
+                      <td>Incrementar el volumen de transacciones en la plataforma</td>
+                      <td>Lograr $5000 USD en transacciones mensuales dentro de los primeros 12 meses</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer id="footer" class="footer dark-background">
-      <div class="container copyright text-center mt-4">
+      <div class="container text-center mt-4">
         <p>
-          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
-          <span>All Rights Reserved</span>
+          © <strong class="px-1 sitename">Flowi</strong> All Rights Reserved
         </p>
         <div class="credits">Designed by Kompilo</div>
       </div>
     </footer>
-    <!-- /Footer -->
 
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-    >
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
       <i class="bi bi-arrow-up-short"></i>
     </a>
     <div id="preloader"></div>
@@ -165,8 +1449,6 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
