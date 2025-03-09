@@ -34,10 +34,10 @@ function updateNavbar() {
         window.location.href = 'index.html';
       });
     } else {
-      loginItem.innerHTML = '<a href="login.html" class="text-danger">Login</a>';
+      loginItem.innerHTML = '<a href="login.html" class="text-danger">Iniciar sesión</a>';
     }
   } else {
-    loginItem.innerHTML = '<a href="login.html" class="text-danger">Login</a>';
+    loginItem.innerHTML = '<a href="login.html" class="text-danger">Iniciar sesión</a>';
   }
 }
 
