@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EDT</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Favicons -->
     <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
     <!-- AOS CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
 
-     <!-- Main CSS -->
-     <link href="assets/css/main.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
     <style>
-        /* Estilos globales */
-        body {
-            font-family: "Poppins", sans-serif;
-            background-color: #ffffff;
-        }
-        /* Menú lateral */
-        .left-nav-col {
-            width: 20%;
-            background-color: #ffffff;
-            border-right: 2px solid #e0f7fa;
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
-            overflow-y: auto;
-        }
-        .left-nav-col a {
-            color: #0d6efd;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 15px;
-        }
-        .left-nav-col a.active {
-            color: #007bff;
-            font-weight: bold;
-        }
-        /* Contenido principal */
-        .main-content {
-            margin-left: 22%;
-            padding: 5px;
-        }
-        /* Estilos para las tablas */
-        .table {
-            border-radius: 8px !important;
-            overflow: hidden;
-            border: 2px solid #e0f7fa !important; 
-            background-color: #e0f7fa;
-        }
-        .table-bordered th,
-        .table-bordered td {
-            border: 2px solid #e0f7fa !important; /* Bordes negros */
-            text-align: justify;
-        }
-        /* Fondo celeste para el campo ID */
-        .id-cell {
-            background-color: #e0f7fa !important; /* Color celeste */
-            font-weight: bold;
-        }
-        .iframe-container {
+      /* Estilos globales */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+      }
+      /* Menú lateral */
+      .left-nav-col {
+        width: 20%;
+        background-color: #ffffff;
+        border-right: 2px solid #e0f7fa;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        overflow-y: auto;
+      }
+      .left-nav-col a {
+        color: #0d6efd;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 15px;
+      }
+      .left-nav-col a.active {
+        color: #007bff;
+        font-weight: bold;
+      }
+      /* Contenido principal */
+      .main-content {
+        margin-left: 22%;
+        padding: 5px;
+      }
+      /* Estilos para las tablas */
+      .table {
+        border-radius: 8px !important;
+        overflow: hidden;
+        border: 2px solid #e0f7fa !important;
+        background-color: #e0f7fa;
+      }
+      .table-bordered th,
+      .table-bordered td {
+        border: 2px solid #e0f7fa !important; /* Bordes negros */
+        text-align: justify;
+      }
+      /* Fondo celeste para el campo ID */
+      .id-cell {
+        background-color: #e0f7fa !important; /* Color celeste */
+        font-weight: bold;
+      }
+      .iframe-container {
         margin-top: 1rem;
       }
       .iframe-container iframe {
@@ -80,558 +92,614 @@
         border-radius: 5px;
       }
     </style>
-</head>
+    <script src="backend/middelwareGuessAdmin.js"></script>
+  </head>
 
-<body>
+  <body>
     <!-- Header / Nav -->
     <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180">
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="portafolio.html">Portafolio</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Asignaciones
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="champfrogs.html">Champfrogs</a></li>
-                            <li><a class="dropdown-item" href="workexpo.html">WorkExpo</a></li>
-                            <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
-                            <li><a class="dropdown-item" href="casoNegocio.html">Caso de negocio</a></li>
-                            <li><a class="dropdown-item" href="parcial1.html" class="active">Parcial 1</a></li>
-                            <li><a class="dropdown-item" href="edt.html">EDT</a></li>
-                            <li><a class="dropdown-item" href="roadmap.html">Roadmap</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li id="loginItem"><a href="login.html">Login</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-        </div>
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Asignaciones
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="champfrogs.html">Champfrogs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="workexpo.html">WorkExpo</a>
+                </li>
+                <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+                <li>
+                  <a class="dropdown-item" href="casoNegocio.html"
+                    >Caso de negocio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcial1.html" class="active"
+                    >Parcial 1</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+                <li>
+                  <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li id="loginItem"><a href="login.html">Login</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
     </header>
 
     <!-- Menú lateral -->
     <div class="left-nav-col">
-        <a href="#edt" class="nav-link">EDT</a>
-        <a href="#plataforma-local" class="nav-link">Diccionario</a>
-        <a href="#plataforma-local" class="nav-link">1.1 Plataforma local</a>
-        <a href="#aplicacion-movil" class="nav-link">1.2 Aplicación móvil</a>
-        <a href="#cajeros-automaticos" class="nav-link">1.3 Cajeros automáticos</a>
-        <a href="#infraestructura" class="nav-link">1.4 Infraestructura</a>
-        
+      <a href="#edt" class="nav-link">EDT</a>
+      <a href="#plataforma-local" class="nav-link">Diccionario</a>
+      <a href="#plataforma-local" class="nav-link">1.1 Plataforma local</a>
+      <a href="#aplicacion-movil" class="nav-link">1.2 Aplicación móvil</a>
+      <a href="#cajeros-automaticos" class="nav-link"
+        >1.3 Cajeros automáticos</a
+      >
+      <a href="#infraestructura" class="nav-link">1.4 Infraestructura</a>
     </div>
 
     <!-- Contenido principal -->
     <div class="main-content">
-        <section id="edt">
-            <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVINSlew0=/?moveToViewport=-2349,-3091,1531,666&embedId=729456546215" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
-        </section>
-        <!-- Sección 1.1 Plataforma local -->
-        <section id="plataforma-local">
-            <h4>Diccionario</h4>
-            <h3>1.1 Plataforma local</h3>
-            <!-- Tabla 1.1.1 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.1.1</td>
-                            <td>Base de datos</td>
-                            <td>La base de datos debe garantizar la integridad y seguridad de la información financiera.</td>
-                            <td>Base de datos desplegada, documentación técnica.</td>
-                            <td>Se cuenta con acceso a servicios en la nube.</td>
-                            <td>Infraestructura en la nube, software de gestión de BD.</td>
-                            <td>18</td>
-                            <td>Implementación del módulo de gestión de transacciones.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.1.2 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.1.2</td>
-                            <td>Software</td>
-                            <td>Desarrollo de la plataforma software para gestión financiera.</td>
-                            <td>Interfaz completa.</td>
-                            <td>Disponibilidad de herramientas de desarrollo.</td>
-                            <td>Frameworks frontend, herramientas de diseño.</td>
-                            <td>34</td>
-                            <td>Pruebas de conectividad exitosas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.1.2.1 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.1.2.1</td>
-                            <td>Incorporación de IA para recomendaciones financieras.</td>
-                            <td>El modelo debe ofrecer predicciones precisas sobre movimientos financieros.</td>
-                            <td>Primera iteración del modelo entrenado.</td>
-                            <td>Acceso a frameworks de IA, capacidad de cómputo.</td>
-                            <td>Frameworks de IA, capacidad de cómputo.</td>
-                            <td>16</td>
-                            <td>Primera iteración del modelo entrenado.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.1.3 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.1.3</td>
-                            <td>Hardware</td>
-                            <td>Todo el hardware debe estar operativo y configurado.</td>
-                            <td>Infraestructura física desplegada.</td>
-                            <td>Disponibilidad de recursos de hardware.</td>
-                            <td>Personal técnico y equipo especializado.</td>
-                            <td>19</td>
-                            <td>Validación de infraestructura completada.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.1.4 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.1.4</td>
-                            <td>Redes</td>
-                            <td>La red debe ser estable y segura.</td>
-                            <td>Red local desplegada y monitoreada.</td>
-                            <td>Disponibilidad de dispositivos de red.</td>
-                            <td>Switches, routers, cableado.</td>
-                            <td>45</td>
-                            <td>Locales listos para operación.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+      <section id="edt">
+        <iframe
+          width="768"
+          height="432"
+          src="https://miro.com/app/live-embed/uXjVINSlew0=/?moveToViewport=-2349,-3091,1531,666&embedId=729456546215"
+          frameborder="0"
+          scrolling="no"
+          allow="fullscreen; clipboard-read; clipboard-write"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <!-- Sección 1.1 Plataforma local -->
+      <section id="plataforma-local">
+        <h4>Diccionario</h4>
+        <h3>1.1 Plataforma local</h3>
+        <!-- Tabla 1.1.1 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.1.1</td>
+                <td>Base de datos</td>
+                <td>
+                  La base de datos debe garantizar la integridad y seguridad de
+                  la información financiera.
+                </td>
+                <td>Base de datos desplegada, documentación técnica.</td>
+                <td>Se cuenta con acceso a servicios en la nube.</td>
+                <td>Infraestructura en la nube, software de gestión de BD.</td>
+                <td>18</td>
+                <td>Implementación del módulo de gestión de transacciones.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.1.2 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.1.2</td>
+                <td>Software</td>
+                <td>
+                  Desarrollo de la plataforma software para gestión financiera.
+                </td>
+                <td>Interfaz completa.</td>
+                <td>Disponibilidad de herramientas de desarrollo.</td>
+                <td>Frameworks frontend, herramientas de diseño.</td>
+                <td>34</td>
+                <td>Pruebas de conectividad exitosas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.1.2.1 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.1.2.1</td>
+                <td>Incorporación de IA para recomendaciones financieras.</td>
+                <td>
+                  El modelo debe ofrecer predicciones precisas sobre movimientos
+                  financieros.
+                </td>
+                <td>Primera iteración del modelo entrenado.</td>
+                <td>Acceso a frameworks de IA, capacidad de cómputo.</td>
+                <td>Frameworks de IA, capacidad de cómputo.</td>
+                <td>16</td>
+                <td>Primera iteración del modelo entrenado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.1.3 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.1.3</td>
+                <td>Hardware</td>
+                <td>Todo el hardware debe estar operativo y configurado.</td>
+                <td>Infraestructura física desplegada.</td>
+                <td>Disponibilidad de recursos de hardware.</td>
+                <td>Personal técnico y equipo especializado.</td>
+                <td>19</td>
+                <td>Validación de infraestructura completada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.1.4 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.1.4</td>
+                <td>Redes</td>
+                <td>La red debe ser estable y segura.</td>
+                <td>Red local desplegada y monitoreada.</td>
+                <td>Disponibilidad de dispositivos de red.</td>
+                <td>Switches, routers, cableado.</td>
+                <td>45</td>
+                <td>Locales listos para operación.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-        <!-- Sección 1.2 Aplicación móvil -->
-        <section id="aplicacion-movil">
-            <h3>1.2 Aplicación móvil</h3>
-            <!-- Tabla 1.2.1 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.2.1</td>
-                            <td>Desarrollo FrontEnd</td>
-                            <td>La aplicación debe ser intuitiva y de fácil navegación.</td>
-                            <td>Interfaz móvil completa.</td>
-                            <td>Disponibilidad de recursos de diseño.</td>
-                            <td>Frameworks frontend, herramientas de diseño.</td>
-                            <td>49</td>
-                            <td>Lanzamiento de la versión beta.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.2.2 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.2.2</td>
-                            <td>Integración con Plataforma Local</td>
-                            <td>Comunicación efectiva entre frontend y backend.</td>
-                            <td>Integración completa.</td>
-                            <td>Servicios API disponibles.</td>
-                            <td>Librerías de comunicación, API.</td>
-                            <td>34</td>
-                            <td>Pruebas de conectividad exitosas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.2.3 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.2.3</td>
-                            <td>Funcionalidades de Transacciones</td>
-                            <td>Transacciones rápidas y seguras.</td>
-                            <td>Módulo de transacciones.</td>
-                            <td>Integración con sistema bancario.</td>
-                            <td>Servicios de pago, APIs.</td>
-                            <td>17</td>
-                            <td>Validación de transacciones completada.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.2.4 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.2.4</td>
-                            <td>Seguridad de la Aplicación</td>
-                            <td>Implementación de medidas de seguridad para la aplicación móvil, incluyendo protección contra ataques y cifrado de datos.</td>
-                            <td>Módulo de seguridad implementado.</td>
-                            <td>Cumplimiento de normativas de protección de datos.</td>
-                            <td>Herramientas de seguridad, servicios de encriptación.</td>
-                            <td>15</td>
-                            <td>Pruebas de vulnerabilidades completadas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+      <!-- Sección 1.2 Aplicación móvil -->
+      <section id="aplicacion-movil">
+        <h3>1.2 Aplicación móvil</h3>
+        <!-- Tabla 1.2.1 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.2.1</td>
+                <td>Desarrollo FrontEnd</td>
+                <td>La aplicación debe ser intuitiva y de fácil navegación.</td>
+                <td>Interfaz móvil completa.</td>
+                <td>Disponibilidad de recursos de diseño.</td>
+                <td>Frameworks frontend, herramientas de diseño.</td>
+                <td>49</td>
+                <td>Lanzamiento de la versión beta.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.2.2 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.2.2</td>
+                <td>Integración con Plataforma Local</td>
+                <td>Comunicación efectiva entre frontend y backend.</td>
+                <td>Integración completa.</td>
+                <td>Servicios API disponibles.</td>
+                <td>Librerías de comunicación, API.</td>
+                <td>34</td>
+                <td>Pruebas de conectividad exitosas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.2.3 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.2.3</td>
+                <td>Funcionalidades de Transacciones</td>
+                <td>Transacciones rápidas y seguras.</td>
+                <td>Módulo de transacciones.</td>
+                <td>Integración con sistema bancario.</td>
+                <td>Servicios de pago, APIs.</td>
+                <td>17</td>
+                <td>Validación de transacciones completada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.2.4 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.2.4</td>
+                <td>Seguridad de la Aplicación</td>
+                <td>
+                  Implementación de medidas de seguridad para la aplicación
+                  móvil, incluyendo protección contra ataques y cifrado de
+                  datos.
+                </td>
+                <td>Módulo de seguridad implementado.</td>
+                <td>Cumplimiento de normativas de protección de datos.</td>
+                <td>Herramientas de seguridad, servicios de encriptación.</td>
+                <td>15</td>
+                <td>Pruebas de vulnerabilidades completadas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-        <!-- Sección 1.3 Cajeros automáticos -->
-        <section id="cajeros-automaticos">
-            <h3>1.3 Cajeros automáticos</h3>
-            <!-- Tabla 1.3.1 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.3.1</td>
-                            <td>Instalación y Configuración</td>
-                            <td>Configuración de cajeros automáticos para operaciones de criptoactivos.</td>
-                            <td>Cajeros operativos.</td>
-                            <td>Acceso a hardware necesario.</td>
-                            <td>Software de gestión financiera.</td>
-                            <td>45</td>
-                            <td>Pruebas de conectividad exitosas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.3.2 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.3.2</td>
-                            <td>Funcionalidades de Transacciones</td>
-                            <td>Transacciones rápidas y seguras.</td>
-                            <td>Módulo de transacciones operando en los cajeros.</td>
-                            <td>Integración con el backend de la plataforma.</td>
-                            <td>Software de gestión financiera.</td>
-                            <td>34</td>
-                            <td>Pruebas de conectividad exitosas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.3.3 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.3.3</td>
-                            <td>Seguridad de los Cajeros</td>
-                            <td>Protección contra fraudes y accesos no autorizados.</td>
-                            <td>Auditoría de seguridad y pruebas de penetración completadas.</td>
-                            <td>Cumplimiento de normativas de seguridad.</td>
-                            <td>Sistemas de monitoreo y protección.</td>
-                            <td>14</td>
-                            <td>Pruebas de vulnerabilidad completadas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.3.4 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.3.4</td>
-                            <td>Experiencia del Usuario</td>
-                            <td>Interfaces amigables y accesibles para el público general.</td>
-                            <td>Diseño gráfico y usabilidad de la interfaz.</td>
-                            <td>Retroalimentación de usuarios previa.</td>
-                            <td>Herramientas de diseño y pruebas de usuario.</td>
-                            <td>9</td>
-                            <td>Prueba de usabilidad completada.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.3.5 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.3.5</td>
-                            <td>Redes</td>
-                            <td>Configuración de la conectividad de red para los cajeros automáticos.</td>
-                            <td>Conectividad estable y segura.</td>
-                            <td>Disponibilidad de permisos y licencias.</td>
-                            <td>Personal de mantenimiento y seguridad.</td>
-                            <td>45</td>
-                            <td>Locales listos para operación.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+      <!-- Sección 1.3 Cajeros automáticos -->
+      <section id="cajeros-automaticos">
+        <h3>1.3 Cajeros automáticos</h3>
+        <!-- Tabla 1.3.1 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.3.1</td>
+                <td>Instalación y Configuración</td>
+                <td>
+                  Configuración de cajeros automáticos para operaciones de
+                  criptoactivos.
+                </td>
+                <td>Cajeros operativos.</td>
+                <td>Acceso a hardware necesario.</td>
+                <td>Software de gestión financiera.</td>
+                <td>45</td>
+                <td>Pruebas de conectividad exitosas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.3.2 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.3.2</td>
+                <td>Funcionalidades de Transacciones</td>
+                <td>Transacciones rápidas y seguras.</td>
+                <td>Módulo de transacciones operando en los cajeros.</td>
+                <td>Integración con el backend de la plataforma.</td>
+                <td>Software de gestión financiera.</td>
+                <td>34</td>
+                <td>Pruebas de conectividad exitosas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.3.3 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.3.3</td>
+                <td>Seguridad de los Cajeros</td>
+                <td>Protección contra fraudes y accesos no autorizados.</td>
+                <td>
+                  Auditoría de seguridad y pruebas de penetración completadas.
+                </td>
+                <td>Cumplimiento de normativas de seguridad.</td>
+                <td>Sistemas de monitoreo y protección.</td>
+                <td>14</td>
+                <td>Pruebas de vulnerabilidad completadas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.3.4 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.3.4</td>
+                <td>Experiencia del Usuario</td>
+                <td>
+                  Interfaces amigables y accesibles para el público general.
+                </td>
+                <td>Diseño gráfico y usabilidad de la interfaz.</td>
+                <td>Retroalimentación de usuarios previa.</td>
+                <td>Herramientas de diseño y pruebas de usuario.</td>
+                <td>9</td>
+                <td>Prueba de usabilidad completada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.3.5 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.3.5</td>
+                <td>Redes</td>
+                <td>
+                  Configuración de la conectividad de red para los cajeros
+                  automáticos.
+                </td>
+                <td>Conectividad estable y segura.</td>
+                <td>Disponibilidad de permisos y licencias.</td>
+                <td>Personal de mantenimiento y seguridad.</td>
+                <td>45</td>
+                <td>Locales listos para operación.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-        <!-- Sección 1.4 Infraestructura -->
-        <section id="infraestructura">
-            <h3>1.4 Infraestructura</h3>
-            <!-- Tabla 1.4.1 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.4.1</td>
-                            <td>Locales Físicos</td>
-                            <td>Locales físicos estratégicamente ubicados.</td>
-                            <td>Locales operativos.</td>
-                            <td>Acceso a locales físicos estratégicos.</td>
-                            <td>Personal de mantenimiento y seguridad.</td>
-                            <td>45</td>
-                            <td>Locales listos para operación.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Tabla 1.4.2 -->
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th class="id-cell">ID</th>
-                            <th>Descripción</th>
-                            <th>Criterio de aceptación</th>
-                            <th>Entregables</th>
-                            <th>Supuestos</th>
-                            <th>Recursos asignados</th>
-                            <th>Duración (Días hábiles)</th>
-                            <th>Hitos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-cell">1.4.2</td>
-                            <td>Integración de Sistemas</td>
-                            <td>Interoperabilidad eficiente entre sistemas internos y externos.</td>
-                            <td>Sistemas integrados.</td>
-                            <td>Compatibilidad entre plataformas.</td>
-                            <td>Herramientas de integración y monitoreo.</td>
-                            <td>54</td>
-                            <td>Prueba de interoperabilidad completada.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+      <!-- Sección 1.4 Infraestructura -->
+      <section id="infraestructura">
+        <h3>1.4 Infraestructura</h3>
+        <!-- Tabla 1.4.1 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.4.1</td>
+                <td>Locales Físicos</td>
+                <td>Locales físicos estratégicamente ubicados.</td>
+                <td>Locales operativos.</td>
+                <td>Acceso a locales físicos estratégicos.</td>
+                <td>Personal de mantenimiento y seguridad.</td>
+                <td>45</td>
+                <td>Locales listos para operación.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Tabla 1.4.2 -->
+        <div class="table-responsive mt-4">
+          <table class="table table-bordered border-primary">
+            <thead>
+              <tr>
+                <th class="id-cell">ID</th>
+                <th>Descripción</th>
+                <th>Criterio de aceptación</th>
+                <th>Entregables</th>
+                <th>Supuestos</th>
+                <th>Recursos asignados</th>
+                <th>Duración (Días hábiles)</th>
+                <th>Hitos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cell">1.4.2</td>
+                <td>Integración de Sistemas</td>
+                <td>
+                  Interoperabilidad eficiente entre sistemas internos y
+                  externos.
+                </td>
+                <td>Sistemas integrados.</td>
+                <td>Compatibilidad entre plataformas.</td>
+                <td>Herramientas de integración y monitoreo.</td>
+                <td>54</td>
+                <td>Prueba de interoperabilidad completada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
     <!-- Footer -->
     <footer id="footer" class="footer dark-background">
-        <div class="container copyright text-center mt-4">
-          <p>
-            © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
-            <span>All Rights Reserved</span>
-          </p>
-          <div class="credits">Designed by Kompilo</div>
-        </div>
-      </footer>
-      <!-- /Footer -->
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
+      </div>
+    </footer>
+    <!-- /Footer -->
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-</body>
+  </body>
 </html>
