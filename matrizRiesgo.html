@@ -147,6 +147,13 @@
         h2, p{
             font-family: "Poppins", sans-serif;
         }
+        /* Contenedor scrollable horizontal para la tabla */
+.table-container {
+    max-width: 100%; /* Ajusta al ancho de la pantalla */
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    margin: 20px 0; /* Espaciado alrededor de la tabla */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor visualización */
+}
           
            
 
@@ -213,7 +220,7 @@
         <p>FECHA DE INICIO: 20 de enero de 2025</p>
         <p>FECHA DE TÉRMINO PROPUESTA: 30 de junio 2025</p>
     </div>
-
+<div class="table-container">
     <!-- Tabla de riesgos -->
     <table id="risk-table">
         <thead>
@@ -515,6 +522,7 @@
             </tr>
         </tbody>
     </table>
+</div>
 
 
     <!-- Footer -->
