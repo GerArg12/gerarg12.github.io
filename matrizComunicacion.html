@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matriz de riesgo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicons -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* Estilos globales */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+      }
+      
+      /* Contenido principal */
+      .main-content {
+        margin-left: 22%;
+        padding: 5px;
+      }
+      /* Estilos para las tablas */
+      .table {
+        border-radius: 8px !important;
+        overflow: hidden;
+        border: 2px solid #e0f7fa !important;
+        background-color: #e0f7fa;
+      }
+      .table-bordered th,
+      .table-bordered td {
+        border: 2px solid #e0f7fa !important; /* Bordes negros */
+        text-align: justify;
+      }
+      /* Fondo celeste para el campo ID */
+      .id-cell {
+        background-color: #e0f7fa !important; /* Color celeste */
+        font-weight: bold;
+      }
+      .iframe-container {
+        margin-top: 1rem;
+      }
+      .iframe-container iframe {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 600px;
+        border-radius: 5px;
+      }
+
+      /* Estilo general de la tabla */
+      #risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Encabezados de la tabla */
+        #risk-table th {
+            background-color: #007bff; /* Azul oscuro */
+            color: white;
+            font-weight: bold;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        /* Celdas de la tabla */
+        #risk-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Resaltado de filas pares */
+        #risk-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover en filas */
+        #risk-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #risk-table thead {
+                display: none;
+            }
+
+            #risk-table tr {
+                margin-bottom: 15px;
+                display: block;
+                border: 2px solid #ddd;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            #risk-table td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            #risk-table td:first-child::before {
+                content: attr(data-label);
+                font-weight: bold;
+                width: 40%;
+                text-align: left;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            #risk-table td:last-child {
+                border-bottom: none;
+            }
+        }
+        h2, p{
+            font-family: "Poppins", sans-serif;
+        }
+        /* Contenedor scrollable horizontal para la tabla */
+.table-container {
+    max-width: 100%; /* Ajusta al ancho de la pantalla */
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    margin: 20px 0; /* Espaciado alrededor de la tabla */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor visualización */
+}
+          
+           
+
+    </style>
+
+    <script src="backend/middelwareGuessAdmin.js"></script>
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Asignaciones
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="champfrogs.html">Champfrogs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="workexpo.html">WorkExpo</a>
+                </li>
+                <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+                <li>
+                  <a class="dropdown-item" href="casoNegocio.html"
+                    >Caso de negocio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcial1.html" class="active"
+                    >Parcial 1</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+                <li>
+                  <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+                <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
+              </ul>
+            </li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li id="loginItem"><a href="login.html">Login</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Información del proyecto -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h2>Matriz de Comunicaciones</h2>
+        <p>Proyecto: Billetera digital de criptoactivos</p>
+        <p>Desarrollado: Kompilo</p>
+    </div>
+<div class="table-container">
+    <table id="risk-table">
+        <thead>
+            <tr>
+                <th>Información</th>
+                <th>Contenido</th>
+                <th>Formato</th>
+                <th>Nivel de Detalle</th>
+                <th>Responsable de comunicar</th>
+                <th>Grupo Receptor</th>
+                <th>Metodología o Tecnología</th>
+                <th>Frecuencia de comunicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.1.1 Base de datos</td>
+                <td>Inicio del proyecto, Ejecución del proyecto, Cierre del proyecto</td>
+                <td>Alto</td>
+                <td>ALEXANDER ROMERO</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>1 vez por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.1.2 Software</td>
+                <td>Ejecución Finalización</td>
+                <td>ALTO</td>
+                <td>JEFFERSON ESPERANZA</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.1.2.1 Inteligencia artificial</td>
+                <td>Finalización</td>
+                <td>MEDIO</td>
+                <td>JEFFERSON ESPERANZA</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Whatsapp</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.1.3 Hardware</td>
+                <td>En Proceso</td>
+                <td>Alto</td>
+                <td>EDWIN ORTIZ</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.1.4 Redes</td>
+                <td>En Proceso</td>
+                <td>Alto</td>
+                <td>EDWIN ORTIZ</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Finalizada</td>
+                <td>1.2.1 Desarrollo FrontEnd</td>
+                <td>Finalizado</td>
+                <td>Alto</td>
+                <td>SOFIA ROMERO</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Monitoreo del Proyecto</td>
+                <td>1.2.2 Integración con Plataforma Local</td>
+                <td>En Proceso</td>
+                <td>Medio</td>
+                <td>GERSON ARGUETA</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Whatsapp</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.2.3 Funcionalidades de Transacciones</td>
+                <td>Ejecución Finalización</td>
+                <td>ALTO</td>
+                <td>JEFFERSON ESPERANZA</td>
+                <td>ANGEL GUEVARA, Flowi, patrocinadores, Bancos</td>
+                <td>Correo electrónico</td>
+                <td>1 vez por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución del Proyecto</td>
+                <td>1.2.4 Seguridad de la Aplicación</td>
+                <td>Iniciado</td>
+                <td>Alto</td>
+                <td>GERSON ARGUETA</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>3 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.3.1 Instalación y Configuración</td>
+                <td>En Proceso</td>
+                <td>Alto</td>
+                <td>EDWIN ORTIZ</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Whatsapp</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.3.2 Funcionalidades de Transacciones</td>
+                <td>Ejecución Finalización</td>
+                <td>Alto</td>
+                <td>JEFFERSON ESPERANZA</td>
+                <td>ANGEL GUEVARA, Flowi, patrocinadores, Bancos</td>
+                <td>Team, Discord y Whatsapp</td>
+                <td>1 vez por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución del Proyecto</td>
+                <td>1.3.3 Seguridad de los Cajeros</td>
+                <td>Inicio</td>
+                <td>Alto</td>
+                <td>GERSON ARGUETA</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>3 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Finalizada</td>
+                <td>1.3.4 Experiencia del usuario</td>
+                <td>Inicio del proyecto</td>
+                <td>Alto</td>
+                <td>SOFIA ROMERO</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores, Clientes</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Planificación</td>
+                <td>1.3.5 Redes</td>
+                <td>En proceso</td>
+                <td>Alto</td>
+                <td>EDWIN ORTIZ</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Ejecución</td>
+                <td>1.4.1 Locales Físicos</td>
+                <td>En Proceso</td>
+                <td>Medio</td>
+                <td>EDWIN ORTIZ</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Whatsapp</td>
+                <td>2 veces por semana</td>
+            </tr>
+            <tr>
+                <td>Monitoreo del Proyecto</td>
+                <td>1.4.2 Integración de Sistemas</td>
+                <td>En Proceso</td>
+                <td>Alto</td>
+                <td>GERSON ARGUETA</td>
+                <td>ANGEL GUEVARA, Universidad Gerardo Barrios, Flowi, patrocinadores</td>
+                <td>Correo electrónico</td>
+                <td>2 veces por semana</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Scripts -->
+    <script src="backend/sessionManager.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
