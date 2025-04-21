@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matriz de riesgo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicons -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* Estilos globales */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+      }
+      
+      /* Contenido principal */
+      .main-content {
+        margin-left: 22%;
+        padding: 5px;
+      }
+      /* Estilos para las tablas */
+      .table {
+        border-radius: 8px !important;
+        overflow: hidden;
+        border: 2px solid #e0f7fa !important;
+        background-color: #e0f7fa;
+      }
+      .table-bordered th,
+      .table-bordered td {
+        border: 2px solid #e0f7fa !important; /* Bordes negros */
+        text-align: justify;
+      }
+      /* Fondo celeste para el campo ID */
+      .id-cell {
+        background-color: #e0f7fa !important; /* Color celeste */
+        font-weight: bold;
+      }
+      .iframe-container {
+        margin-top: 1rem;
+      }
+      .iframe-container iframe {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 600px;
+        border-radius: 5px;
+      }
+
+      /* Estilo general de la tabla */
+      #risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Encabezados de la tabla */
+        #risk-table th {
+            background-color: #007bff; /* Azul oscuro */
+            color: white;
+            font-weight: bold;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        /* Celdas de la tabla */
+        #risk-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Resaltado de filas pares */
+        #risk-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover en filas */
+        #risk-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        h1, h2, h3 {
+      color: #004080;
+      margin-top: 1.5em;
+    }
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 1.5em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+    h3 {
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+    ul, ol {
+      margin: 0.5em 0 0.5em 1.2em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #risk-table thead {
+                display: none;
+            }
+
+            #risk-table tr {
+                margin-bottom: 15px;
+                display: block;
+                border: 2px solid #ddd;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            #risk-table td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            #risk-table td:first-child::before {
+                content: attr(data-label);
+                font-weight: bold;
+                width: 40%;
+                text-align: left;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            #risk-table td:last-child {
+                border-bottom: none;
+            }
+        }
+        h2, p{
+            font-family: "Poppins", sans-serif;
+        }
+        /* Contenedor scrollable horizontal para la tabla */
+.table-container {
+    max-width: 100%; /* Ajusta al ancho de la pantalla */
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    margin: 20px 0; /* Espaciado alrededor de la tabla */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor visualización */
+}
+          
+           
+
+    </style>
+
+    <script src="backend/middelwareGuessAdmin.js"></script>
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Asignaciones
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="champfrogs.html">Champfrogs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="workexpo.html">WorkExpo</a>
+                </li>
+                <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+                <li>
+                  <a class="dropdown-item" href="casoNegocio.html"
+                    >Caso de negocio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcial1.html" class="active"
+                    >Parcial 1</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+                <li>
+                  <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+                <li><a class="dropdown-item" href="matrizComunicacion.html">Matriz de comunicación</a></li>
+                <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
+              </ul>
+            </li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li id="loginItem"><a href="login.html">Login</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+
+    <div class="container">
+        <h1>OFERTA TÉCNICA PARA EL DESARROLLO DE UN PROYECTO INFORMÁTICO INNOVADOR</h1>
+    
+        <h2>1.0 Introducción</h2>
+        <p>El presente documento tiene como objetivo exponer la oferta técnica para el desarrollo de un proyecto informático innovador que integra tecnologías de vanguardia como inteligencia artificial, domótica, robótica, software, hardware, bases de datos, programación, redes y comunicación. Este proyecto está diseñado para ofrecer soluciones eficientes, escalables y flexibles en la automatización de procesos, la conectividad entre sistemas y la mejora de la experiencia del usuario en diversas aplicaciones.</p>
+    
+        <h2>2.0 Objetivos del proyecto</h2>
+        <ul>
+          <li><strong>Plataforma local:</strong> Desarrollar e implementar una plataforma local segura y escalable para la gestión de operaciones financieras y criptoactivos, que incluya una base de datos confiable, módulos de transacciones y un sistema de recomendaciones basado en inteligencia artificial, garantizando la integridad de la información y la estabilidad de la red.</li>
+          <li><strong>Aplicación móvil:</strong> Diseñar y desplegar una aplicación móvil intuitiva que permita realizar transacciones financieras de forma rápida y segura, con integración completa a la plataforma local, implementación de mecanismos de autenticación y cifrado, y una interfaz centrada en la experiencia del usuario.</li>
+          <li><strong>Cajeros automáticos:</strong> Instalar y configurar cajeros automáticos habilitados para operaciones con criptoactivos, asegurando conectividad estable, medidas de seguridad física y digital, y una interfaz accesible para el público.</li>
+          <li><strong>Infraestructura:</strong> Adecuar los espacios físicos y tecnológicos requeridos para la operación del sistema, incluyendo la preparación de locales, integración de sistemas internos y externos, y la provisión de conectividad y equipamiento necesario.</li>
+        </ul>
+    
+        <h2>3. Alcance del proyecto</h2>
+        <ol>
+          <li><strong>Fase de Análisis y Requisitos:</strong> Definición de los requerimientos técnicos y funcionales, considerando las necesidades específicas del cliente y los objetivos del sistema.</li>
+          <li><strong>Fase de Diseño:</strong>
+            <ul>
+              <li>Creación del diseño arquitectónico general del sistema.</li>
+              <li>Diseño de la infraestructura física y lógica, incluyendo redes, servidores y locales.</li>
+              <li>Diseño de interfaces de usuario (UI/UX) para la aplicación móvil.</li>
+              <li>Especificación de algoritmos de inteligencia artificial y funcionalidades robóticas.</li>
+            </ul>
+          </li>
+          <li><strong>Fase de Desarrollo e Implementación:</strong>
+            <ul>
+              <li>Desarrollo e implementación de módulos de gestión financiera, transacciones y motores de recomendación con IA.</li>
+              <li>Implementación de funciones de seguridad, conectividad y comunicación en la aplicación móvil.</li>
+              <li>Instalación y configuración de cajeros automáticos habilitados para criptoactivos.</li>
+              <li>Integración de sistemas de domótica y robótica según el alcance del proyecto.</li>
+            </ul>
+          </li>
+          <li><strong>Fase de Integración y Pruebas:</strong> Unificación de todos los componentes y ejecución de pruebas funcionales, de seguridad y rendimiento.</li>
+          <li><strong>Fase de Despliegue y Mantenimiento:</strong> Instalación en producción, entrega de documentación, manuales, auditorías y mantenimiento durante el período acordado.</li>
+        </ol>
+    
+        <h2>4. Metodología de Trabajo</h2>
+        <ul>
+          <li><strong>Design Thinking:</strong> Aplicado durante las fases iniciales para comprender necesidades, idear soluciones y diseñar prototipos centrados en el usuario.</li>
+          <li><strong>Scrum:</strong> Metodología ágil con sprints iterativos que facilitan la entrega continua de valor y la adaptación a cambios.</li>
+        </ul>
+        <p>Se realizarán reuniones periódicas con el cliente, desarrollo iterativo, validación continua y evaluación de calidad en cada sprint.</p>
+    
+        <h2>5. Componentes Tecnológicos</h2>
+        <h3>5.1 Inteligencia Artificial (IA)</h3>
+        <ul>
+          <li><strong>Tecnologías utilizadas:</strong>
+            <ul>
+              <li>Machine Learning (ML)</li>
+              <li>Procesamiento de Lenguaje Natural (PLN)</li>
+              <li>Visión Artificial</li>
+            </ul>
+          </li>
+          <li><strong>Plataformas y Herramientas:</strong>
+            <ul>
+              <li>TensorFlow, PyTorch, Scikit-Learn</li>
+              <li>Google Cloud AI, Azure Cognitive Services, IBM Watson</li>
+            </ul>
+          </li>
+        </ul>
+    
+        <h3>5.2 Domótica</h3>
+        <ul>
+          <li><strong>Protocolos de Comunicación:</strong> Zigbee, Z-Wave, Wi-Fi, Bluetooth</li>
+          <li><strong>Control de Dispositivos:</strong> Alexa, Google Home, Home Assistant</li>
+          <li><strong>Sensores y Actuadores:</strong> Temperatura, humedad, movimiento, cámaras IP</li>
+        </ul>
+    
+        <h3>5.3 Robótica</h3>
+        <ul>
+          <li><strong>Sistemas Autónomos:</strong> Robots móviles, brazos robóticos</li>
+          <li><strong>Control de Movimiento:</strong> SLAM, navegación autónoma</li>
+          <li><strong>Interacción Humano-Robot:</strong> Interfaces táctiles y visuales</li>
+        </ul>
+    
+        <h3>5.4 Software y Programación</h3>
+        <ul>
+          <li>Lenguajes: Python, JavaScript (Node.js), Java, C/C++</li>
+          <li>Frameworks: Express.js, React, Angular, Flask</li>
+          <li>Herramientas: Git, Docker, VS Code</li>
+        </ul>
+    
+        <h3>5.5 Hardware</h3>
+        <ul>
+          <li>Microcontroladores: Raspberry Pi, Arduino</li>
+          <li>Servidores, cajeros automáticos inteligentes, módulos de control</li>
+        </ul>
+    
+        <h3>5.6 Redes y Comunicación</h3>
+        <ul>
+          <li>Infraestructura: LAN/WAN, switches, routers, cableado estructurado, Wi-Fi</li>
+          <li>Protocolos: TCP/IP, VPN, VLAN, SSH</li>
+        </ul>
+    
+        <h3>5.7 Base de Datos</h3>
+        <ul>
+          <li>SGBD: MongoDB, PostgreSQL, MySQL</li>
+          <li>Servicios en la nube: MongoDB Atlas, Amazon RDS</li>
+          <li>Modelado relacional y no relacional</li>
+        </ul>
+    
+        <h2>6. Cronograma de Ejecución</h2>
+        <p>Kompilo se compromete a desarrollar el proyecto entre el 20 de enero y el 15 de junio de 2025 (120 días hábiles).</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Fase</th>
+              <th>Duración</th>
+              <th>Componentes implicados</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Análisis y Planificación</td>
+              <td>15 días</td>
+              <td>Software, Hardware, Redes, Comunicación, BD</td>
+              <td>Recolección de requisitos, análisis de sistemas y diseño preliminar.</td>
+            </tr>
+            <tr>
+              <td>Diseño del Sistema</td>
+              <td>45 días</td>
+              <td>Software, BD, IA, Comunicación, Programación</td>
+              <td>Diseño arquitectónico, UI/UX, estructura de datos y algoritmos IA.</td>
+            </tr>
+            <tr>
+              <td>Desarrollo IA y Robótica</td>
+              <td>25 días</td>
+              <td>IA, Robótica, Software, Programación, Hardware</td>
+              <td>Desarrollo de modelos IA y sistemas robóticos.</td>
+            </tr>
+            <tr>
+              <td>Desarrollo Domótica</td>
+              <td>20 días</td>
+              <td>Domótica, Hardware, Redes, Software, Comunicación</td>
+              <td>Integración de sensores, actuadores y desarrollo de interfaces.</td>
+            </tr>
+            <tr>
+              <td>Pruebas y Ajustes Finales</td>
+              <td>15 días</td>
+              <td>Todos los componentes</td>
+              <td>Pruebas funcionales, integración, rendimiento y ajustes finales.</td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <h2>7. Beneficios del Proyecto</h2>
+        <ul>
+          <li>Mejora de eficiencia operativa</li>
+          <li>Optimización del servicio al usuario</li>
+          <li>Automatización de entornos físicos</li>
+          <li>Mayor seguridad</li>
+          <li>Escalabilidad y modularidad</li>
+          <li>Reducción de costos a largo plazo</li>
+          <li>Interacción natural e intuitiva</li>
+          <li>Adaptabilidad a múltiples contextos</li>
+          <li>Innovación y diferenciación competitiva</li>
+          <li>Trazabilidad y análisis de datos</li>
+        </ul>
+    
+        <h2>8. Cumplimiento de los Requisitos de los Licitantes</h2>
+        <ol type="a">
+          <li><strong>Experiencia comprobada:</strong>
+            <ul>
+              <li>Proyectos con IA, Robótica, Domótica</li>
+              <li>Soluciones integrales en múltiples industrias</li>
+            </ul>
+          </li>
+          <li><strong>Equipo calificado:</strong>
+            <ul>
+              <li>Certificaciones PMP, Scrum Master, CISSP, CEH</li>
+              <li>Experiencia en automatización y desarrollo</li>
+            </ul>
+          </li>
+          <li><strong>Certificaciones y licencias:</strong>
+            <ul>
+              <li>PMP, CISSP, CEH, Fortinet NSE 4</li>
+              <li>Licencia empresarial y cumplimiento normativo</li>
+            </ul>
+          </li>
+          <li><strong>Propuesta económica clara:</strong>
+            <ul>
+              <li>Desglose detallado de costos por fase</li>
+              <li>Transparencia y relación coste-beneficio</li>
+            </ul>
+          </li>
+          <li><strong>Garantía post-implementación:</strong>
+            <ul>
+              <li>6 meses de soporte y mantenimiento</li>
+              <li>Seguimiento continuo y parches mensuales</li>
+            </ul>
+          </li>
+        </ol>
+    
+        <h2>9. Confidencialidad</h2>
+        <ul>
+          <li>Alcance de la confidencialidad: toda la información del proyecto</li>
+          <li>Uso exclusivo para el desarrollo del proyecto</li>
+          <li>Acceso limitado al personal autorizado</li>
+          <li>Protocolos de seguridad y cifrado</li>
+          <li>Vigencia: durante el proyecto y 5 años después</li>
+        </ul>
+    
+        <h2>10. Garantía</h2>
+        <p>Kompilo proporcionará una garantía de 6 meses para el funcionamiento del sistema, cubriendo fallos o problemas técnicos sin costo adicional.</p>
+        <h3>10.1 Soporte Técnico Continuo</h3>
+        <ul>
+          <li>Soporte telefónico y por correo</li>
+          <li>Sistema de tickets</li>
+          <li>Actualizaciones y mantenimiento preventivo</li>
+        </ul>
+        <h3>10.2 Procedimiento de Resolución de Problemas</h3>
+        <ul>
+          <li>Notificación de problema por parte del cliente</li>
+          <li>Diagnóstico inicial</li>
+          <li>Corrección y solución en ≤48 horas</li>
+          <li>Pruebas de validación post-corrección</li>
+        </ul>
+        <h3>10.3 Compromiso de Aumento de Ingresos</h3>
+        <ul>
+          <li>Mejora de eficiencia operativa</li>
+          <li>Optimización de servicios al cliente</li>
+          <li>Monitoreo trimestral de KPIs</li>
+          <li>Ajustes y mejoras continuas</li>
+        </ul>
+        <h3>10.4 Evaluación de Resultados</h3>
+        <ul>
+          <li>Análisis de KPIs</li>
+          <li>Informe trimestral de resultados</li>
+          <li>Ajustes finales sin costo</li>
+        </ul>
+    
+        <h2>Conclusión</h2>
+        <p>El presente proyecto representa una propuesta integral y alineada con las exigencias tecnológicas del futuro, integrando IA, robótica y domótica de forma estratégica. Posicionará al cliente como referente en innovación y transformación digital.</p>
+        <p style="margin-top:2em;"><em>Atentamente,</em><br>
+        Ángel Josué Guevara Portillo<br>
+        Representante Legal<br>
+        77453806<br>
+        Angel-Guevara@kompilo.com</p>
+      </div>
+    </body>
+    
+
+    <!-- Footer -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Scripts -->
+    <script src="backend/sessionManager.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
