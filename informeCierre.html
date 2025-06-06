@@ -285,6 +285,44 @@ a {
     max-height: 300px; /* ajusta el valor según lo que necesites */
     overflow-y: auto;
   }
+
+  .sow {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+      th, td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: #004080;
+    }
+    .sow.claro table th {
+      background-color: #C8102E;
+      color: #fff;
+    }
+    .sow.aws table th {
+      background-color: #000;
+      color: #fff;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    .sow.claro h1, .sow.claro h2 { color: #C8102E; }
+    .sow.aws h1, .sow.aws h2 { color: #000000; }
+    .sow.diebold h1, .sow.diebold h2 { color: #004080; }
 </style>
 
 
@@ -841,98 +879,300 @@ a {
     El Statement of Work (SOW) es un documento formal que define el alcance, responsabilidades, entregables y condiciones de servicio entre el proyecto Flowi y sus proveedores estratégicos. Su propósito es dejar constancia clara y verificable de qué se espera entregar, bajo qué condiciones, y cómo se evaluará el cumplimiento. Cada proveedor involucrado en el proyecto cuenta con un SOW específico que respalda técnica y contractualmente su participación.
   </p>
 
-  <h4>Claro</h4>
-  <p><strong>Fecha:</strong> 22/01/2025</p>
-  <p><strong>Servicios realizados por:</strong> Claro El Salvador</p>
-  <p><strong>Servicios realizados para:</strong> Flowi</p>
-  <p>Claro proporcionará servicios de red, conectividad y soporte técnico, incluyendo:</p>
-  <ul>
-    <li>Infraestructura de red dedicada para transacciones financieras y criptoactivos.</li>
-    <li>Servidores redundantes con disponibilidad del 99.9%.</li>
-    <li>Soporte técnico 24/7.</li>
-  </ul>
+  <section class="sow claro">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div>
+      <h1>Claro El Salvador</h1>
+      <p style="margin: 0; color: #333;">5ª Avenida Sur y Calle Rubén Darío, Edif. Ex - Telégrafo</p>
+    </div>
+    <img src="assets/img/logo-claro.png" alt="Logo Claro" style="height: 60px;">
+  </div>
+    <p><strong>Fecha:</strong> 22 de enero de 2025</p>
+    <p><strong>Servicios realizados por:</strong> Claro El Salvador</p>
+    <p><strong>Servicios realizados para:</strong> Flowi</p>
+    <h2>Plazo de ejecución</h2>
+    <p>Del 20 de enero de 2025 al 30 de junio de 2025</p>
+    <h2>Recursos de negociación</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre del Recurso</th><th>Rol</th><th>Información Clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Carlos Mendoza</td><td>Ingeniero de Redes Senior</td><td>Experto en infraestructuras de alta velocidad.</td></tr>
+        <tr><td>Laura Torres</td><td>Técnico de Soporte Técnico</td><td>Especialista en resolución de incidentes.</td></tr>
+        <tr><td>Diego Ramírez</td><td>Gerente de Proyecto</td><td>Responsable de la coordinación general.</td></tr>
+      </tbody>
+    </table>
+    <h2>Ámbito de trabajo</h2>
+    <ul>
+      <li>Implementación de infraestructura de red dedicada para transacciones financieras y criptoactivos.</li>
+      <li>Configuración de servidores redundantes con 99.9% de disponibilidad.</li>
+      <li>Soporte técnico 24/7.</li>
+    </ul>
+    <h2>Materiales de entrega</h2>
+    <ul>
+      <li>Documentación técnica.</li>
+      <li>Informe mensual de rendimiento.</li>
+    </ul>
+    <h2>Responsabilidades del contratista</h2>
+    <ul>
+      <li>Proveer equipos y software necesarios.</li>
+      <li>Garantizar estándares de seguridad.</li>
+      <li>Capacitar al equipo Flowi.</li>
+    </ul>
+    <h2>Responsabilidades del cliente</h2>
+    <ul>
+      <li>Facilitar acceso e información técnica.</li>
+      <li>Aprobar informes a tiempo.</li>
+    </ul>
+    <h2>Comisiones</h2>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Recursos</th><th>Pago por hora</th><th>Horas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ingeniero Redes</td><td>2</td><td>$50</td><td>200</td></tr>
+        <tr><td>Técnico Soporte</td><td>1</td><td>$30</td><td>100</td></tr>
+      </tbody>
+    </table>
+    <h2>Facturación y gastos</h2>
+    <ul>
+      <li>Mensual, incluyendo viajes.</li>
+      <li>Reembolsos hasta 15% del valor.</li>
+    </ul>
+    <h2>Supuestos</h2>
+    <ul>
+      <li>Sin cambios en requisitos.</li>
+      <li>Condiciones de mercado estables.</li>
+    </ul>
+    <h2>Control de cambios</h2>
+    <ol>
+      <li>PCR emitida y evaluada.</li>
+      <li>Aprobación y firma de Autorización de Cambio.</li>
+    </ol>
+    <h2>Finalización</h2>
+    <ul>
+      <li>Entrega de materiales.</li>
+      <li>Aceptación tácita en 2 días hábiles.</li>
+    </ul>
+    <h2>Firmas</h2>
+    <table>
+      <thead><tr><th>FLOWI</th><th>Claro El Salvador</th></tr></thead>
+      <tbody><tr><td>Edwin Villalta<br/>Lead de redes</td><td>Maria López<br/>Gerente de proyectos</td></tr></tbody>
+    </table>
+  </section>
 
-  <p><strong>Recursos de negociación:</strong></p>
-  <ul>
-    <li><strong>Carlos Mendoza</strong> – Ingeniero de Redes Senior</li>
-    <li><strong>Laura Torres</strong> – Técnico de Soporte</li>
-    <li><strong>Diego Ramírez</strong> – Gerente de Proyecto</li>
-  </ul>
 
-  <p><strong>Comisiones:</strong> Tiempo y Materiales. Hasta $50,000 USD</p>
-  <table>
-    <thead>
-      <tr><th>Recurso</th><th>Cantidad</th><th>Pago/hora</th><th>Horas</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Ingeniero de redes senior</td><td>2</td><td>$50</td><td>200</td></tr>
-      <tr><td>Técnico de soporte técnico</td><td>1</td><td>$30</td><td>100</td></tr>
-    </tbody>
-  </table>
+   <section class="sow aws">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div>
+      <h1>Amazon Web Services (AWS)</h1>
+      <p style="margin: 0; color: #333;">Calle Principal, Edificio 3, Parque Tecnológico de AWS</p>
+    </div>
+    <img src="assets/img/logo-aws.png" alt="Logo AWS" style="height: 60px;">
+  </div>
+    <h1>SOW 001 - Amazon Web Services (AWS) & Flowi</h1>
+    <p><strong>Fecha:</strong> 22 de enero de 2025</p>
+    <p><strong>Servicios realizados por:</strong> Amazon Web Services (AWS)</p>
+    <p><strong>Servicios realizados para:</strong> Flowi</p>
+    <h2>Plazo de ejecución</h2>
+    <p>Del 20 de enero de 2025 al 30 de junio de 2025</p>
+    <h2>Recursos de negociación</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre del Recurso</th><th>Rol</th><th>Información Clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Antony Lazo</td><td>Arquitecto Cloud (AWS)</td><td>Especialista en diseño e implementación de arquitecturas escalables y seguras.</td></tr>
+        <tr><td>Mario Benites</td><td>Ingeniero de Seguridad</td><td>Responsable de protección de infraestructuras, detección de amenazas y gestión de riesgos.</td></tr>
+        <tr><td>Oswaldo Valladares</td><td>DevOps Engineer</td><td>Encargado de automatización, integración y despliegue continuo en entornos de desarrollo y producción.</td></tr>
+      </tbody>
+    </table>
+    <h2>Ámbito de trabajo</h2>
+    <ul>
+      <li>Provisión de infraestructura en la nube escalable, segura y de alto rendimiento para Flowi.</li>
+      <li>Servicios de cómputo, almacenamiento y bases de datos.</li>
+      <li>Seguridad avanzada con cifrado, monitoreo y cumplimiento normativo.</li>
+      <li>Automatización y gestión de infraestructura para optimizar operaciones.</li>
+      <li>Integración con servicios de análisis, IA y machine learning.</li>
+    </ul>
+    <h2>Materiales de entrega</h2>
+    <ul>
+      <li>Instancias EC2, RDS, S3 y balanceadores configurados.</li>
+      <li>Guías de configuración IAM, KMS y políticas de acceso.</li>
+      <li>Dashboards y alertas implementadas.</li>
+      <li>Sesiones formativas para el equipo de Flowi.</li>
+    </ul>
+    <h2>Responsabilidades del contratista</h2>
+    <ul>
+      <li>Diseñar e implementar la arquitectura según mejores prácticas de AWS.</li>
+      <li>Garantizar 99.9% de disponibilidad.</li>
+      <li>Auditorías de seguridad mensuales y parches críticos.</li>
+      <li>Capacitación sobre AWS Management Console y monitoreo.</li>
+    </ul>
+    <h2>Responsabilidades del cliente</h2>
+    <ul>
+      <li>Proporcionar acceso a la cuenta AWS y credenciales necesarias.</li>
+      <li>Aprobar diseños de arquitectura y políticas de seguridad.</li>
+      <li>Cubrir costos mensuales de AWS.</li>
+    </ul>
+    <h2>Programación de comisiones</h2>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Recursos</th><th>Pago por Hora</th><th>Horas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Arquitecto Cloud</td><td>1</td><td>$45</td><td>100</td></tr>
+        <tr><td>Ingeniero de Seguridad</td><td>1</td><td>$40</td><td>80</td></tr>
+        <tr><td>DevOps Engineer</td><td>1</td><td>$35</td><td>120</td></tr>
+      </tbody>
+    </table>
+    <h2>Facturación y gastos menores</h2>
+    <ul>
+      <li>Facturación mensual por servicios y gastos de viaje y ocio.</li>
+      <li>Gastos reembolsables hasta el 15% del total, sujetos a aprobación.</li>
+      <li>Facturas deben incluir hojas de horas, recibos y justificaciones.</li>
+      <li>Penalización del 5% mensual por retrasos mayores a 30 días.</li>
+    </ul>
+    <h2>Supuestos</h2>
+    <ul>
+      <li>Flowi aprobará configuraciones críticas en máximo 3 días hábiles.</li>
+      <li>AWS mantendrá disponibilidad del 99.9% durante el proyecto.</li>
+      <li>No habrá cambios regulatorios que afecten los servicios en El Salvador.</li>
+    </ul>
+    <h2>Proceso de control de cambios</h2>
+    <ol>
+      <li>Se emite una Solicitud de Cambio de Proyecto (PCR).</li>
+      <li>El jefe de proyecto evaluará si procede enviar a la otra parte.</li>
+      <li>Ambos jefes decidirán si investigar más o rechazarla.</li>
+      <li>Si se acepta, se firma la Autorización de Cambio por ambas partes.</li>
+    </ol>
+    <h2>Criterios de finalización</h2>
+    <ul>
+      <li>Entrega completa de los materiales.</li>
+      <li>Aceptación formal tras pruebas de estrés y seguridad.</li>
+      <li>Cumplimiento del cronograma de hitos.</li>
+      <li>Capacitación completada al 100% del equipo técnico de Flowi.</li>
+    </ul>
+    <h2>Firmas</h2>
+    <table>
+      <thead><tr><th>FLOWI</th><th>Amazon Web Services (AWS)</th></tr></thead>
+      <tbody><tr><td>Edwin Villalta<br/><em>Servicios Web</em></td><td>Jose Gonzales<br/><em>Gerente de Proyectos</em></td></tr></tbody>
+    </table>
+  </section>
 
-  <p><strong>Facturación:</strong> mensual, gastos menores incluidos, con límite de reembolso del 15% de las tarifas.</p>
 
-  <h4>AWS</h4>
-  <p><strong>Fecha:</strong> 22/01/2025</p>
-  <p><strong>Servicios realizados por:</strong> Amazon Web Services</p>
-  <p><strong>Servicios realizados para:</strong> Flowi</p>
-  <ul>
-    <li>Infraestructura en la nube escalable y segura (EC2, RDS, S3, IAM).</li>
-    <li>Herramientas de IA, monitoreo y automatización.</li>
-    <li>Capacitación para gestión en consola de AWS.</li>
-  </ul>
+  <section class="sow diebold">
 
-  <p><strong>Recursos de negociación:</strong></p>
-  <ul>
-    <li><strong>Antony Lazo</strong> – Arquitecto Cloud</li>
-    <li><strong>Mario Benites</strong> – Ingeniero de Seguridad</li>
-    <li><strong>Oswaldo Valladares</strong> – DevOps Engineer</li>
-  </ul>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div>
+      <h1>Diebold Nixdorf</h1>
+      <p style="margin: 0; color: #333;">Oficinas Centrales, Zona Industrial, San Salvador</p>
+    </div>
+    <img src="assets/img/logo-diebold.png" alt="Logo Diebold" style="height: 60px;">
+  </div>
+    <h1>SOW 005 - Diebold Nixdorf & Flowi</h1>
+    <p><strong>Fecha:</strong> 22 de enero de 2025</p>
+    <p><strong>Servicios realizados por:</strong> Diebold Nixdorf</p>
+    <p><strong>Servicios realizados para:</strong> Flowi</p>
 
-  <table>
-    <thead>
-      <tr><th>Recurso</th><th>Cantidad</th><th>Pago/hora</th><th>Horas</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Arquitecto Cloud</td><td>1</td><td>$45</td><td>100</td></tr>
-      <tr><td>Ingeniero de Seguridad</td><td>1</td><td>$40</td><td>80</td></tr>
-      <tr><td>DevOps Engineer</td><td>1</td><td>$35</td><td>120</td></tr>
-    </tbody>
-  </table>
+    <h2>Plazo de ejecución</h2>
+    <p>Del 22 de enero de 2025 al 30 de junio de 2025</p>
 
-  <p><strong>Facturación:</strong> mensual. Límite de reembolso de gastos menores: 15% del total.</p>
+    <h2>Recursos de negociación</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre del Recurso</th><th>Rol</th><th>Información Clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>René Parada</td><td>Ingeniero de Hardware</td><td>Especialista en diseño, desarrollo y mantenimiento de sistemas electrónicos.</td></tr>
+        <tr><td>Julion Álvarez</td><td>Especialista en Seguridad</td><td>Responsable de la ciberseguridad y gestión de riesgos.</td></tr>
+        <tr><td>Pedro Gonzales</td><td>Capacitador Técnico</td><td>Encargado de diseñar e impartir entrenamientos técnicos.</td></tr>
+      </tbody>
+    </table>
 
-  <h4>Cajeros Diebold Nixdorf</h4>
-  <p><strong>Fecha:</strong> 22/01/2025</p>
-  <p><strong>Servicios realizados por:</strong> Diebold Nixdorf</p>
-  <p><strong>Servicios realizados para:</strong> Flowi</p>
-  <ul>
-    <li>Instalación y configuración de 5 cajeros para conversión BTC → USD.</li>
-    <li>Integración con plataformas y bancos.</li>
-    <li>Capacitación a 50 comercios afiliados.</li>
-    <li>Seguridad física y digital (AES-256, autenticación multifactor).</li>
-  </ul>
+    <h2>Ámbito de trabajo</h2>
+    <ul>
+      <li>Instalación y configuración de 5 cajeros para conversión de Bitcoin a moneda local.</li>
+      <li>Integración con plataformas Flowi y sistemas de seguridad (AES-256, MFA).</li>
+      <li>Conexión con AWS y bancos locales.</li>
+      <li>Pruebas de funcionalidad, seguridad y estrés.</li>
+      <li>Capacitación a comercios afiliados.</li>
+    </ul>
 
-  <p><strong>Recursos:</strong></p>
-  <ul>
-    <li><strong>René Parada</strong> – Ingeniero de Hardware</li>
-    <li><strong>Julion Álvarez</strong> – Especialista en Seguridad</li>
-    <li><strong>Pedro Gonzales</strong> – Capacitador Técnico</li>
-  </ul>
+    <h2>Materiales de entrega</h2>
+    <ul>
+      <li>Cajeros configurados con interfaz bilingüe.</li>
+      <li>Conexión API para transacciones en tiempo real.</li>
+      <li>Manuales de operación y protocolos de seguridad.</li>
+      <li>Sesiones presenciales y virtuales para 50 comercios.</li>
+    </ul>
 
-  <table>
-    <thead>
-      <tr><th>Recurso</th><th>Cantidad</th><th>Pago/hora</th><th>Horas</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Ingeniero de Hardware</td><td>2</td><td>$40</td><td>300</td></tr>
-      <tr><td>Especialista en Seguridad</td><td>1</td><td>$45</td><td>100</td></tr>
-      <tr><td>Capacitador Técnico</td><td>1</td><td>$30</td><td>50</td></tr>
-    </tbody>
-  </table>
+    <h2>Responsabilidades del contratista</h2>
+    <ul>
+      <li>Adquirir y configurar los cajeros automáticos.</li>
+      <li>Garantizar seguridad física y digital (cumplimiento KYC/AML).</li>
+      <li>Realizar auditorías mensuales.</li>
+      <li>Coordinar con proveedores de hardware y bancos.</li>
+      <li>Capacitar al personal de Flowi y comercios.</li>
+    </ul>
 
-  <p><strong>Facturación:</strong> mensual. Reembolsos permitidos hasta 15% del total acordado.</p>
-</section>
+    <h2>Responsabilidades del cliente</h2>
+    <ul>
+      <li>Facilitar permisos legales para instalaciones.</li>
+      <li>Aprobar diseños técnicos y protocolos.</li>
+      <li>Proporcionar acceso a APIs bancarias.</li>
+      <li>Participar en pruebas y capacitaciones.</li>
+    </ul>
+
+    <h2>Programación de comisiones</h2>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Recursos</th><th>Pago por Hora</th><th>Horas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ingeniero de Hardware</td><td>2</td><td>$40</td><td>300</td></tr>
+        <tr><td>Especialista en Seguridad</td><td>1</td><td>$45</td><td>100</td></tr>
+        <tr><td>Capacitador Técnico</td><td>1</td><td>$30</td><td>50</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Facturación y gastos</h2>
+    <ul>
+      <li>Facturación mensual por servicios y gastos de viaje.</li>
+      <li>Reembolso de gastos menores (hasta 15%).</li>
+      <li>Entrega de hojas de horas, recibos y justificantes.</li>
+      <li>Multa del 5% por pagos después de 30 días.</li>
+    </ul>
+
+    <h2>Supuestos</h2>
+    <ul>
+      <li>Flowi aprobará configuraciones en 3 días hábiles.</li>
+      <li>No habrá cambios regulatorios relevantes.</li>
+    </ul>
+
+    <h2>Proceso de control de cambios</h2>
+    <ol>
+      <li>Se emite una PCR con justificación y efectos.</li>
+      <li>Evaluación y decisión por jefes de proyecto.</li>
+      <li>Si se aprueba, se ejecuta Autorización de Cambio.</li>
+    </ol>
+
+    <h2>Criterios de finalización</h2>
+    <ul>
+      <li>Entrega y aceptación de materiales.</li>
+      <li>Pruebas de infraestructura superadas.</li>
+      <li>Capacitación completada al 100%.</li>
+    </ul>
+
+    <h2>Firmas</h2>
+    <table>
+      <thead><tr><th>FLOWI</th><th>Diebold Nixdorf</th></tr></thead>
+      <tbody><tr><td>Edwin Villalta<br/><em>Servicio de cajeros automáticos</em></td><td>Maria Zetino<br/><em>Gerente de Proyectos</em></td></tr></tbody>
+    </table>
+  </section>
+
+
 
 <section id="facturas">
   <h2 style="text-align:center;">Facturas</h2>
