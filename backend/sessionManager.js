@@ -22,22 +22,12 @@ function parseJwt(token) {
 }
 
 function updateNavbar() {
-  const token = getCookie('token');
   const loginItem = document.getElementById('loginItem');
-
-  if (token) {
-    const decodedToken = parseJwt(token);
-    if (decodedToken) {
-      loginItem.innerHTML = '<a href="#" id="logoutButton" class="text-danger">Cerrar sesión</a>';
-      document.getElementById('logoutButton').addEventListener('click', function () {
-        eraseCookie('token');
-        window.location.href = 'index.html';
-      });
-    } else {
-      loginItem.innerHTML = '<a href="login.html" class="text-danger">Iniciar sesión</a>';
-    }
-  } else {
-    loginItem.innerHTML = '<a href="login.html" class="text-danger">Iniciar sesión</a>';
+  if (loginItem) {
+    // Oculta el elemento de login
+    loginItem.style.display = 'none';
+    // O si prefieres deshabilitar el enlace:
+    // loginItem.innerHTML = '<a href="#" class="text-danger disabled" tabindex="-1" aria-disabled="true">Iniciar sesión</a>';
   }
 }
 
