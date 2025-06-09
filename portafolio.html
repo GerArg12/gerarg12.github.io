@@ -56,10 +56,12 @@
       body {
         font-family: Arial, sans-serif;
       }
+
       .section-title {
         text-align: center;
         margin-bottom: 40px;
       }
+
       .portfolio-card {
         border: 1px solid #ddd;
         border-radius: 10px;
@@ -68,9 +70,11 @@
         transition: transform 0.2s ease;
         height: 100%;
       }
+
       .portfolio-card:hover {
         transform: translateY(-5px);
       }
+
       .portfolio-card img {
         border-radius: 10px;
         width: 100%;
@@ -78,19 +82,28 @@
         object-fit: cover;
         margin-bottom: 1rem;
       }
+
       .portfolio-card h4 {
         font-weight: 600;
       }
+
       .portfolio-card p {
         margin-bottom: 1rem;
       }
+
       .navmenu a.active {
-        color: #007bff; /* Texto en negro */
-        font-weight: bold; /* Negrita */
+        color: #007bff;
+        /* Texto en negro */
+        font-weight: bold;
+        /* Negrita */
+      }
+      .dropdown-menu {
+        max-height: 300px; /* ajusta el valor según lo que necesites */
+        overflow-y: auto;
       }
     </style>
 
-    <!-- <script src="backend/middlewareAdmin.js"></script> -->
+    <script src="backend/middlewareAdmin.js"></script>
   </head>
 
   <body class="portfolio-page">
@@ -132,6 +145,49 @@
                 <li><a class="dropdown-item" href="edt.html">EDT</a></li>
                 <li>
                   <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizComunicacion.html"
+                    >Matriz de comunicación</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizRiesgo.html"
+                    >Matriz de riesgo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaEconomica.html"
+                    >Oferta economica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaTecnica.html"
+                    >Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="evaluandoOferta.html"
+                    >Evaluando Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="actaRecepcion.html"
+                    >Acta de recepción</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="solicitudCambios.html"
+                    >Solicitud de cambios</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="informeCierre.html"
+                    >Informe cierre de proyecto</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcialTres.html">Parcial 3</a>
                 </li>
               </ul>
             </li>
@@ -223,8 +279,8 @@
             <div class="col-lg-4 col-md-6">
               <div class="portfolio-card">
                 <img
-                  src="https://marcago.com/wp-content/uploads/2022/03/portafolio-creativo-768x467-1.jpg"
-                  alt="OKRS"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd4uyCJE6dqRYIiQft5TEpN11CmRbEmchi0A&s"
+                  alt="parcial"
                 />
                 <h4>Parcial 1</h4>
                 <p>
@@ -258,6 +314,153 @@
                 <h4>Roadmap</h4>
                 <p>Cronograma de actividades</p>
                 <a href="roadmap.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+
+            <!-- Card 8: Sow -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://www.projectmanager.com/wp-content/uploads/2020/09/Statement-of-Work-Template.png"
+                  alt="Roadmap"
+                />
+                <h4>Sow</h4>
+                <p>Declaraciónes de trabajo para Flowi</p>
+                <a href="sow.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+            <!-- Card 9: Matriz de riesgo -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc1gsaoIqHOFNAhQj7FwTzny2AQb1qewwP8g&s"
+                  alt="Matriz de riesgo"
+                />
+                <h4>Matriz de riesgo</h4>
+                <p>Evaluar la probabilidad y gravedad de riesgos</p>
+                <a href="matrizRiesgo.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+            <!-- Card 10: Matriz de comunicación -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://mccomunicaciones.com.ec/wp-content/uploads/2022/12/Tendencias-de-Comunicacion.jpeg"
+                  alt="Matriz de comunicación"
+                />
+                <h4>Matriz de comunicación</h4>
+                <p>Planifica y organiza un proyecto</p>
+                <a href="matrizComunicacion.html" class="btn btn-primary"
+                  >Ver más</a
+                >
+              </div>
+            </div>
+            <!-- Card 11: Oferta Técnica -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://licitacom.com.mx/wp-content/uploads/2020/09/Que%CC%81-es-una-Licitacio%CC%81n-Que%CC%81-beneficios-tienen.jpg"
+                  alt="Oferta Técnica"
+                />
+                <h4>Oferta Técnica</h4>
+                <p>Descripción detallada de la solución técnica propuesta.</p>
+                <a href="ofertaTecnica.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+
+            <!-- Card 12: Oferta Económica -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://negociosyempresa.com/wp-content/uploads/2022/04/licitacion-negocios.jpg"
+                  alt="Oferta Económica"
+                />
+                <h4>Oferta Económica</h4>
+                <p>Información sobre costos y presupuesto de la propuesta.</p>
+                <a href="ofertaEconomica.html" class="btn btn-primary"
+                  >Ver más</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 13: Evaluando Oferta Económica -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://st5.depositphotos.com/82255640/69667/i/450/depositphotos_696672172-stock-photo-people-characters-filling-test-customer.jpg"
+                  alt="Oferta Económica"
+                />
+                <h4>Evaluando la Oferta Económica</h4>
+                <p>
+                  Valoración de costos propuestos frente a los requerimientos
+                  del proyecto.
+                </p>
+                <a href="evaluandoOferta.html" class="btn btn-primary"
+                  >Ver más</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 14: Acta de recepción -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://img.freepik.com/vector-gratis/concepto-evaluacion-credito-dibujado-mano-documentos_23-2149154259.jpg?semt=ais_items_boosted&w=740"
+                  alt="Oferta Económica"
+                />
+                <h4>Acta de recepción</h4>
+                <p>
+                  Validación y registro formal de entregas y servicios al
+                  proyecto.
+                </p>
+                <a href="actaRecepcion.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+
+            <!-- Card 15: Solicitud de cambios -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://media.istockphoto.com/id/1388173119/es/vector/documento-aprobado-aprobaci%C3%B3n-de-papeleo-comercial-con-sello-de-goma-y-firma-de-firma.jpg?s=612x612&w=0&k=20&c=Y7Pn_099atCMHvzBPzcgmLq5U0TLJXg3ndPc7yO2pBY="
+                  alt="Oferta Económica"
+                />
+                <h4>Solicitud de cambios</h4>
+                <p>
+                  Gestión de modificaciones al alcance, costo o cronograma del
+                  proyecto.
+                </p>
+                <a href="solicitudCambios.html" class="btn btn-primary"
+                  >Ver más</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 16: Informe de cierre del proyecto -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://img.freepik.com/vector-premium/concepto-cierre-proyecto_118813-485.jpg"
+                  alt="Oferta Económica"
+                />
+                <h4>Informe de cierre del proyecto</h4>
+                <p>
+                  Resumen final del proyecto con resultados, costos y lecciones
+                  aprendidas.
+                </p>
+                <a href="informeCierre.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+
+            <!-- Card 17: Parcial 3 Render -->
+            <div class="col-lg-4 col-md-6">
+              <div class="portfolio-card">
+                <img
+                  src="https://blogs.deusto.es/wp-content/uploads/sites/7/2021/02/video-1606945_1280.png"
+                  alt="Oferta Económica"
+                />
+                <h4>Parcial 3</h4>
+                <p>Visualización de vídeo render.</p>
+                <a href="parcialTres.html" class="btn btn-primary">Ver más</a>
               </div>
             </div>
           </div>

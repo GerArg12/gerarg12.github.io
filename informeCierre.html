@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Informe de cierre</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Favicon -->
+  <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+ <style>
+  /* ==== GLOBAL ==== */
+  body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #000;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* ==== SIDEBAR / ÍNDICE ==== */
+  .sidebar {
+    flex: 1 1 250px;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    align-self: flex-start;
+  }
+
+  .sidebar h3 {
+    color: #088;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 8px;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .sidebar a:hover {
+    text-decoration: none;
+  }
+
+  /* ==== CONTENIDO PRINCIPAL ==== */
+  .content {
+    flex: 3 1 700px;
+    padding: 40px;
+    background: #fff;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+ /* ==== FACTURAS ==== */
+.factura {
+  background-color: #ffffff; /* fondo blanco total */
+  border: 1px solid #ccc; /* borde gris claro */
+  border-radius: 6px;
+  box-shadow: none; /* sin sombra para mantener estilo hoja */
+  padding: 40px;
+  max-width: 850px;
+  margin: 60px auto;
+}
+
+.header-factura {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* fondo blanco visible */
+  padding: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0077b6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 0;
+  background-color: #ffffff; /* blanco para igualar a toda la factura */
+  border-bottom: 2px solid #0077b6;
+}
+
+.header-text {
+  line-height: 1.4;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.datos {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #0077b6;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.datos div {
+  width: 32%;
+}
+
+.titulo-instrucciones {
+  color: #0077b6;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background: #0077b6;
+  color: white;
+}
+
+.resumen {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  float: right;
+  padding-bottom: 15px;
+}
+
+.resumen table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resumen td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.resumen td:last-child {
+  text-align: right;
+}
+
+.footer {
+  clear: both;
+  margin-top: 40px;
+  border-top: 2px solid #0077b6;
+  padding-top: 10px;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer span {
+  margin-right: 20px;
+}
+
+a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+  /* ==== FOOTER GENERAL ==== */
+  .footer-site {
+  background-color: #103fa5;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-site .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-site .copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-site a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-site p {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar a.active {
+  color: #0077b6;
+  font-weight: bold;
+}
+
+.sidebar ul ul {
+  padding-left: 15px;
+  margin-top: 2px;
+}
+
+.sidebar ul ul li a {
+  font-size: 0.95rem;
+}
+
+
+
+  /* ==== BOTÓN SCROLL ==== */
+  .scroll-top {
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+  /* ==== RESPONSIVE ==== */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+      top: 0;
+    }
+
+    .content {
+      padding: 20px;
+    }
+  }
+     .dropdown-menu {
+    max-height: 300px; /* ajusta el valor según lo que necesites */
+    overflow-y: auto;
+  }
+
+  .sow {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+      th, td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: #004080;
+    }
+    .sow.claro table th {
+      background-color: #C8102E;
+      color: #fff;
+    }
+    .sow.aws table th {
+      background-color: #000;
+      color: #fff;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    .sow.claro h1, .sow.claro h2 { color: #C8102E; }
+    .sow.aws h1, .sow.aws h2 { color: #000000; }
+    .sow.diebold h1, .sow.diebold h2 { color: #004080; }
+
+
+    /* Cambiar toda la fuente a Poppins */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, td, th, a, table, input, button {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Ajustar tamaños de títulos */
+h1 {
+  font-size: 1.8rem;  /* Antes podía estar > 2rem */
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Tamaños de párrafos y tablas */
+p, li, td, th {
+  font-size: 0.95rem;
+}
+
+/* Ajustes específicos para la tabla en facturas */
+.factura table th, .factura table td {
+  font-size: 0.95rem;
+}
+
+</style>
+
+
+  <script src="backend/middlewareAdmin.js"></script>
+</head>
+
+<body class="portfolio-page">
+  <!-- Header / Nav -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="portafolio.html" class="active">Portafolio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Asignaciones
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="champfrogs.html">Champfrogs</a></li>
+              <li><a class="dropdown-item" href="workexpo.html">WorkExpo</a></li>
+              <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+              <li><a class="dropdown-item" href="casoNegocio.html">Caso de negocio</a></li>
+              <li><a class="dropdown-item" href="parcial1.html">Parcial 1</a></li>
+              <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+              <li><a class="dropdown-item" href="roadmap.html">Roadmap</a></li>
+              <li><a class="dropdown-item" href="matrizComunicacion.html">Matriz de comunicación</a></li>
+              <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
+              <li><a class="dropdown-item" href="ofertaEconomica.html">Oferta economica</a></li>
+              <li><a class="dropdown-item" href="ofertaTecnica.html">Oferta tecnica</a></li>
+              <li><a class="dropdown-item" href="evaluandoOferta.html">Evaluando Oferta tecnica</a></li>
+              <li><a class="dropdown-item" href="actaRecepcion.html">Acta de recepción</a></li>
+              <li><a class="dropdown-item" href="solicitudCambios.html">Solicitud de cambios</a></li>
+              <li><a class="dropdown-item" href="informeCierre.html">Informe cierre de proyecto</a></li>
+              <li><a class="dropdown-item" href="parcialTres.html">Parcial 3</a></li>
+            </ul>
+          </li>
+          <li><a href="equipo.html">Equipo</a></li>
+          <li id="loginItem"><a href="login.html">login</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section py-5">
+
+    <div class="container">
+    <aside class="sidebar">
+  <h3><strong>Contenido</strong></h3>
+  <ul>
+    <li><a href="#balance">Informe de Balance de Ingresos y Gastos del Proyecto Flowi</a></li>
+    <li><a href="#situaciones-finales">Informe de Situaciones Finales</a></li>
+    <ul>
+      <li><a href="#plataforma-local">Plataforma Local</a></li>
+      <li><a href="#aplicacion-movil">Aplicación Móvil</a></li>
+      <li><a href="#cajeros-automaticos">Cajeros Automáticos</a></li>
+      <li><a href="#infraestructura">Infraestructura</a></li>
+    </ul>
+    <li><a href="#documentacion-generada">Lista de Documentación Generada</a></li>
+    <li><a href="#productos-generados">Lista de Productos Generados</a></li>
+    <li><a href="#otros-anexos">Otros, Anexos</a></li>
+    <li><a href="#facturas">Facturas</a>
+      <ul>
+        <li><a href="#angel">Ángel Guevara</a></li>
+        <li><a href="#jefferson">Jefferson Esperanza</a></li>
+        <li><a href="#cesar">César Romero</a></li>
+        <li><a href="#sofia">Sofía Romero</a></li>
+        <li><a href="#gerson">Gerson Argueta</a></li>
+        <li><a href="#edwin">Edwin Villalta</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+
+
+    <main class="content">
+      <section id="balance">
+        <h2>INFORME DE BALANCE DE INGRESOS Y GASTOS DEL PROYECTO FLOWI</h2>
+        <p>
+          El presente informe tiene como objetivo detallar el <strong>balance financiero final del proyecto Flowi</strong>,
+          considerando tanto los <strong>gastos ejecutados</strong> como los <strong>gastos planificados</strong>.
+          Este balance permite visualizar de forma clara y transparente cómo se distribuyó el presupuesto total aprobado
+          de <strong>$100,000.00</strong>, dividiéndolo entre los principales componentes del proyecto: Aplicación móvil,
+          Plataforma local, Cajeros automáticos e Infraestructura.
+        </p>
+
+        <h3>Clasificación contable</h3>
+        <table>
+          <thead>
+            <tr><th>Tipo de Cuenta</th><th>Naturaleza Contable</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gasto operativo</td><td>Gasto</td></tr>
+            <tr><td>Cuenta por pagar</td><td>Pasivo</td></tr>
+          </tbody>
+        </table>
+        <p>Esto significa que:</p>
+        <ul>
+          <li><strong>Gastos operativos</strong>: ya fueron pagados o están planificados para pago.</li>
+          <li><strong>Cuentas por pagar (pasivos)</strong>: deudas contraídas aún no canceladas completamente.</li>
+        </ul>
+
+        <h3>Balance general</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th><th>Concepto</th><th>Debe</th><th>Haber</th><th>Diferencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>801</td><td>Aplicación móvil - Planilla</td><td>$21,455.39</td><td>$12,873.23</td><td>$8,582.16</td></tr>
+            <tr><td>802</td><td>Aplicación móvil - Proveedores</td><td>$0.00</td><td>$8,582.16</td><td>-$8,582.16</td></tr>
+            <tr><td>803</td><td>Plataforma local - Planilla</td><td>$27,148.62</td><td>$16,289.17</td><td>$10,859.45</td></tr>
+            <tr><td>804</td><td>Plataforma local - Proveedores</td><td>$0.00</td><td>$10,859.45</td><td>-$10,859.45</td></tr>
+            <tr><td>805</td><td>Cajeros automáticos - Planilla</td><td>$24,789.96</td><td>$14,873.98</td><td>$9,915.98</td></tr>
+            <tr><td>806</td><td>Cajeros automáticos - Proveedores</td><td>$0.00</td><td>$9,915.98</td><td>-$9,915.98</td></tr>
+            <tr><td>807</td><td>Infraestructura - Planilla</td><td>$26,606.03</td><td>$15,963.62</td><td>$10,642.41</td></tr>
+            <tr><td>808</td><td>Infraestructura - Proveedores</td><td>$0.00</td><td>$10,642.41</td><td>-$10,642.41</td></tr>
+            <tr><td>999</td><td><strong>TOTAL GENERAL</strong></td><td><strong>$100,000.00</strong></td><td><strong>$100,000.00</strong></td><td><strong>$0.00</strong></td></tr>
+          </tbody>
+        </table>
+
+        <p>El análisis distingue dos tipos de ejecución:</p>
+        <ul>
+          <li><strong>Planilla</strong>: servicios técnicos y coordinación humana (60%).</li>
+          <li><strong>Proveedores</strong>: infraestructura, licencias, servicios externos (40%).</li>
+        </ul>
+
+        <h3>Resumen por tipo de gasto</h3>
+        <h4>Planilla</h4>
+        <table>
+          <thead>
+            <tr><th>Cuenta</th><th>Monto</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Aplicación móvil - Planilla</td><td>$21,455.39</td></tr>
+            <tr><td>Plataforma local - Planilla</td><td>$27,148.62</td></tr>
+            <tr><td>Cajeros automáticos - Planilla</td><td>$24,789.96</td></tr>
+            <tr><td>Infraestructura - Planilla</td><td>$26,606.03</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>$100,000.00</strong></td></tr>
+          </tbody>
+        </table>
+
+        <h4>Proveedores</h4>
+        <table>
+          <thead>
+            <tr><th>Cuenta</th><th>Monto</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Aplicación móvil - Proveedores</td><td>$8,582.16</td></tr>
+            <tr><td>Plataforma local - Proveedores</td><td>$10,859.45</td></tr>
+            <tr><td>Cajeros automáticos - Proveedores</td><td>$9,915.98</td></tr>
+            <tr><td>Infraestructura - Proveedores</td><td>$10,642.41</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>$40,000.00</strong></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Balance final resumido</h3>
+        <table>
+          <thead>
+            <tr><th>Rubro</th><th>Monto</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Activos</td><td>$0.00</td></tr>
+            <tr><td>Pasivos</td><td>$40,000.00</td></tr>
+            <tr><td>Gastos ejecutados</td><td>$100,000.00</td></tr>
+            <tr><td>Financiamiento recibido</td><td>$100,000.00</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          Este informe muestra que:
+          <ul>
+            <li>Se utilizó correctamente el <strong>100% del presupuesto</strong>.</li>
+            <li>El <strong>60%</strong> fue destinado a <strong>planilla</strong>.</li>
+            <li>El <strong>40%</strong> fue para <strong>proveedores externos</strong>.</li>
+            <li>El balance contable está <strong>cuadrado y documentado</strong>.</li>
+          </ul>
+        </p>
+      </section>
+      <section id="situaciones-finales">
+  <h2>INFORME DE SITUACIONES FINALES</h2>
+
+  <h3 id="plataforma-local">Plataforma local</h3>
+  <article>
+    <h4>Informe de Jefferson Josué Esperanza Ortiz</h4>
+    <p><strong>Nombre del proyecto:</strong> Implementación de billetera digital de criptoActivos para Flowi</p>
+    <p><strong>Responsable:</strong> Jefferson Josué Esperanza Ortiz</p>
+    <p><strong>Fecha:</strong> 20/01/2025 - 31/05/2025</p>
+
+    <h5>Trabajo realizado. Alteraciones al alcance previsto</h5>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Base de datos</td><td>Finalizado</td></tr>
+        <tr><td>Software</td><td>Finalizado</td></tr>
+        <tr><td>Inteligencia Artificial</td><td>Finalizado</td></tr>
+        <tr><td>Hardware</td><td>Finalizado</td></tr>
+        <tr><td>Redes</td><td>Finalizado</td></tr>
+        <tr><td>Seguridad</td><td>En Proceso</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Dificultades encontradas</h5>
+    <p>Se identificó una vulnerabilidad en la plataforma local, lo que requirió la implementación de un módulo de seguridad adicional.</p>
+
+    <h5>Relaciones con terceros</h5>
+    <table>
+      <thead>
+        <tr><th>Empresa</th><th>Rol</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tigo El Salvador</td><td>Servicios de internet</td></tr>
+        <tr><td>Amazon Web Services</td><td>Proveedor de servicios en la nube</td></tr>
+        <tr><td>Microsoft</td><td>Proveedor de software y plataforma</td></tr>
+        <tr><td>Veeam Software</td><td>Proveedor de backup y recuperación</td></tr>
+        <tr><td>Bancos</td><td>Servicios bancarios</td></tr>
+        <tr><td>Dell Technologies</td><td>Proveedor de hardware</td></tr>
+        <tr><td>Fortinet</td><td>Proveedor de seguridad de red</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Acciones futuras</h5>
+    <p>Se espera realizar pruebas de calidad sobre los entregables para identificar oportunidades de mejora y asegurar el cumplimiento de los estándares.</p>
+
+    <h5>Otros comentarios</h5>
+    <p>El módulo de seguridad se integró tras finalizar el desarrollo del componente principal, por lo que se reanudaron las actividades hasta el 31 de mayo.</p>
+
+    <h5>Resumen del estado</h5>
+    <table>
+      <thead>
+        <tr><th>Ítem</th><th>SÍ</th><th>NO</th><th>Observación</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Modificaciones al alcance</td><td>✓</td><td></td><td>Se incorporó un módulo de seguridad no contemplado inicialmente.</td></tr>
+        <tr><td>Retrasos</td><td>✓</td><td></td><td>Se añadieron dos semanas por el desarrollo del módulo de seguridad.</td></tr>
+        <tr><td>Incremento de riesgo</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Sobrecoste</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Insatisfacción del cliente</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Ampliaciones al contrato</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Carencias de recursos</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Conflictos personales</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Falta de formación y/o experiencia</td><td>✓</td><td></td><td>No se anticipó la necesidad de seguridad, evidenciando falta de previsión.</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article>
+    <h4>Informe de César Alexander Romero Vásquez</h4>
+    <p><strong>Nombre del proyecto:</strong> Implementación de billetera digital de criptoActivos para Flowi</p>
+    <p><strong>Responsable:</strong> César Alexander Romero Vásquez</p>
+    <p><strong>Fecha:</strong> 20/01/2025 - 31/05/2025</p>
+
+    <h5>Trabajo realizado. Alteraciones al alcance previsto</h5>
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Base de datos</td><td>Finalizado</td></tr>
+        <tr><td>Software</td><td>Finalizado</td></tr>
+        <tr><td>Inteligencia Artificial</td><td>Finalizado</td></tr>
+        <tr><td>Hardware</td><td>Finalizado</td></tr>
+        <tr><td>Redes</td><td>Finalizado</td></tr>
+        <tr><td>Seguridad</td><td>Proceso</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Dificultades encontradas</h5>
+    <p>Se detectó una falta de seguridad dentro de la plataforma local, por lo que se implementó un módulo de seguridad.</p>
+
+    <h5>Relaciones con terceros</h5>
+    <ul>
+      <li>Tigo El Salvador</li>
+      <li>Amazon Web Services</li>
+      <li>Microsoft</li>
+      <li>Veeam Software</li>
+      <li>Universidad Gerardo Barrios</li>
+      <li>Bancos</li>
+    </ul>
+
+    <h5>Acciones futuras</h5>
+    <p>Se espera realizar pruebas de calidad para asegurar el cumplimiento de estándares y mejoras.</p>
+
+    <h5>Otros comentarios</h5>
+    <p>El módulo de seguridad se agregó tras la finalización del componente, reanudando actividades hasta el 31 de mayo.</p>
+
+    <h5>Resumen del estado</h5>
+    <table>
+      <thead>
+        <tr><th>Ítem</th><th>SÍ</th><th>NO</th><th>Observación</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Modificaciones al alcance</td><td>✓</td><td></td><td>Módulo de seguridad añadido sin afectar el cronograma.</td></tr>
+        <tr><td>Retrasos</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Incremento de riesgo</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Sobrecoste</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Insatisfacción del cliente</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Ampliaciones al contrato</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Carencias de recursos</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Conflictos personales</td><td></td><td>✓</td><td></td></tr>
+        <tr><td>Falta de formación y/o experiencia</td><td>✓</td><td></td><td>No se tuvo en cuenta adecuadamente la necesidad de seguridad.</td></tr>
+      </tbody>
+    </table>
+  </article>
+</section>
+<article id="aplicacion-movil">
+  <h3 id="aplicacion-movil">Aplicación móvil</h3>
+  <p><strong>Responsable:</strong> Sofía Margarita Romero Rodríguez</p>
+  <p><strong>Fecha:</strong> 12/02/2025 - 11/06/2025</p>
+
+  <h5>Trabajo realizado. Alteraciones al alcance previsto</h5>
+  <table>
+    <thead>
+      <tr><th>Elemento</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Desarrollo FrontEnd</td><td>Finalizado</td></tr>
+      <tr><td>Integración con plataforma local</td><td>Finalizado</td></tr>
+      <tr><td>Funcionalidad de transacciones</td><td>Finalizado</td></tr>
+      <tr><td>Seguridad de la aplicación</td><td>Proceso</td></tr>
+      <tr><td>Implementación de chatbot</td><td>Proceso</td></tr>
+    </tbody>
+  </table>
+
+  <h5>Dificultades encontradas</h5>
+  <p>Se identificó una dificultad en la optimización del sistema para responder consultas. Se implementó un chatbot para mejorar la experiencia del usuario.</p>
+
+  <h5>Relaciones con terceros</h5>
+  <ul>
+    <li>Tigo El Salvador – Servicios de internet</li>
+    <li>Amazon Web Services – Servicios en la nube</li>
+    <li>Microsoft – Plataforma y software</li>
+    <li>Universidad Gerardo Barrios – Patrocinador</li>
+    <li>Bancos – Servicios bancarios</li>
+  </ul>
+
+  <h5>Acciones futuras</h5>
+  <p>Se contempla mejorar la interfaz gráfica, automatizar pruebas, agregar métodos de pago, notificaciones inteligentes y escalar el chatbot con IA.</p>
+
+  <h5>Resumen del estado</h5>
+  <table>
+    <thead>
+      <tr><th>Ítem</th><th>SÍ</th><th>NO</th><th>Observación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Modificaciones al alcance</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Retrasos</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Incremento de riesgo</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Sobrecoste</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Insatisfacción del cliente</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Ampliaciones al contrato</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Carencias de recursos</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Conflictos personales</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Falta de formación y/o experiencia</td><td>✓</td><td></td><td>Faltó prueba con usuarios reales antes del chatbot.</td></tr>
+    </tbody>
+  </table>
+</article>
+
+<article id="cajeros-automaticos">
+  <h3>Cajeros automáticos</h3>
+  <p><strong>Responsable:</strong> Gerson Nahún Argueta Hernández</p>
+  <p><strong>Fecha:</strong> 15/04/2025 - 14/06/2025</p>
+
+  <h5>Trabajo realizado</h5>
+  <table>
+    <thead>
+      <tr><th>Elemento</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Instalación y Configuración</td><td>Finalizada</td></tr>
+      <tr><td>Funcionalidad de Transacciones</td><td>En Proceso</td></tr>
+      <tr><td>Seguridad de los cajeros</td><td>En Proceso</td></tr>
+      <tr><td>Experiencia del Usuario</td><td>En Proceso</td></tr>
+      <tr><td>Redes</td><td>En Proceso</td></tr>
+    </tbody>
+  </table>
+
+  <h5>Dificultades encontradas</h5>
+  <p>Se identificó un área a mejorar en la autenticación de los usuarios en los cajeros automáticos.</p>
+
+  <h5>Relaciones con terceros</h5>
+  <ul>
+    <li>Fortinet – Seguridad de red</li>
+    <li>Bancos – Servicios bancarios</li>
+    <li>Diebold Nixdorf – Servicio de cajeros automáticos</li>
+  </ul>
+
+  <h5>Acciones futuras</h5>
+  <p>Se implementará autenticación biométrica con huella digital o rasgos faciales en los ATM.</p>
+
+  <h5>Resumen del estado</h5>
+  <table>
+    <thead>
+      <tr><th>Aspecto</th><th>SÍ</th><th>NO</th><th>Observaciones</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Modificaciones al alcance</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Retrasos</td><td>✓</td><td></td><td>Habrá un día de retraso por la mejora en autenticación.</td></tr>
+      <tr><td>Incremento de riesgo</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Sobrecoste</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Insatisfacción del cliente</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Ampliaciones al contrato</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Carencias de recursos</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Conflictos interpersonales</td><td>✓</td><td></td><td></td></tr>
+      <tr><td>Falta de formación y/o experiencia</td><td>✓</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</article>
+
+<article id="infraestructura">
+  <h3 id="infraestructura">Infraestructura</h3>
+  <p><strong>Responsable:</strong> Edwin Alexander Villalta Ortiz</p>
+  <p><strong>Fecha:</strong> 20/01/2025 - 14/06/2025</p>
+
+  <h5>Trabajo realizado</h5>
+  <table>
+    <thead>
+      <tr><th>Componente</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Locales físicos</td><td>Finalizado</td></tr>
+      <tr><td>Integración de sistemas</td><td>En proceso</td></tr>
+    </tbody>
+  </table>
+
+  <h5>Dificultades encontradas</h5>
+  <p>Se identificó una vulnerabilidad respecto a la seguridad de los locales físicos en la infraestructura.</p>
+
+  <h5>Relaciones con terceros</h5>
+  <ul>
+    <li>AWS – Infraestructura en la nube</li>
+    <li>Microsoft – Software</li>
+    <li>Fortinet – Ciberseguridad</li>
+    <li>Bancos – Validación de transacciones</li>
+    <li>Dell Technologies – Hardware</li>
+    <li>Infura/Alchemy – Blockchain</li>
+    <li>Kaspersky – Auditoría y asesoría</li>
+    <li>Visa/Mastercard – Integración de pagos</li>
+    <li>Google Cloud – Escalabilidad</li>
+    <li>Chainalysis – Cumplimiento y análisis</li>
+    <li>Telefónica – Conectividad</li>
+    <li>Oracle – Bases de datos</li>
+    <li>Symantec – Backup</li>
+    <li>PwC o Deloitte – Cumplimiento regulatorio</li>
+  </ul>
+
+  <h5>Resumen del estado</h5>
+  <table>
+    <thead>
+      <tr><th>Ítem</th><th>SÍ</th><th>NO</th><th>Observación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Modificaciones al alcance</td><td>✓</td><td></td><td>Se incorporó un módulo de seguridad para los locales físicos.</td></tr>
+      <tr><td>Incremento de riesgo</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Sobrecoste</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Insatisfacción del cliente</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Ampliaciones al contrato</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Carencias de recursos</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Conflictos personales</td><td></td><td>✓</td><td></td></tr>
+      <tr><td>Falta de formación y/o experiencia</td><td>✓</td><td></td><td>No se planificó adecuadamente la seguridad del componente.</td></tr>
+    </tbody>
+  </table>
+</article>
+<section id="documentacion-generada">
+  <h2>LISTA DE DOCUMENTACIÓN GENERADA</h2>
+  <p>
+    La correcta gestión de la documentación generada en los proyectos es un pilar fundamental para la mejora continua, la trazabilidad del conocimiento y la protección de la información estratégica. En el marco del proyecto Flowi, se ha puesto especial atención en conservar, clasificar y custodiar todos los documentos producidos durante su ejecución, tanto internos como aquellos obtenidos de fuentes externas.
+  </p>
+  <p>
+    Esta documentación no solo da cuenta del cumplimiento de objetivos, sino que también puede ser reutilizada como referencia para futuros proyectos de naturaleza similar.
+  </p>
+  <p>
+    Además de garantizar la organización y acceso a los documentos, se ha establecido un control sobre la información confidencial, evitando su difusión no autorizada y posibles filtraciones a la competencia. La documentación del proyecto Flowi se encuentra digitalizada, debidamente resguardada y disponible para los miembros autorizados del equipo.
+  </p>
+  <p>A continuación, se presenta una relación de los principales archivos y materiales que conforman el expediente documental del proyecto:</p>
+  <ul>
+    <li><strong>Champfrogs:</strong> Registro de los motivadores intrínsecos del equipo según la metodología de Management 3.0.</li>
+    <li><strong>WorkExpo:</strong> Análisis de dinámicas de colaboración entre los integrantes del proyecto.</li>
+    <li><strong>OKRs:</strong> Metodología utilizada para establecer los objetivos clave y resultados esperados.</li>
+    <li><strong>Caso de negocio:</strong> Acuerdo legal que establece las obligaciones y derechos entre las partes involucradas.</li>
+    <li><strong>EDT (Estructura Desglosada del Trabajo):</strong> Descomposición jerárquica de las actividades del proyecto.</li>
+    <li><strong>Roadmap:</strong> Cronograma general de actividades y entregables.</li>
+    <li><strong>SOW (Statement of Work):</strong> Declaraciones formales de los trabajos definidos para el proyecto Flowi.</li>
+    <li><strong>Matriz de riesgo:</strong> Evaluación de probabilidad e impacto de los principales riesgos identificados.</li>
+    <li><strong>Matriz de comunicación:</strong> Estructura de flujos de comunicación interna y externa del equipo.</li>
+    <li><strong>Oferta técnica:</strong> Descripción detallada de la solución propuesta.</li>
+    <li><strong>Oferta económica:</strong> Detalle financiero de los costos y presupuesto del proyecto.</li>
+  </ul>
+</section>
+
+<section id="productos-generados">
+  <h2>LISTA DE PRODUCTOS GENERADOS</h2>
+  <p>
+    Como resultado del proyecto Flowi, se han desarrollado y entregado cuatro componentes principales, cada uno integrando diferentes tecnologías, módulos y subsistemas orientados a cumplir los objetivos definidos. Estos productos fueron diseñados de forma modular, escalable y segura, alineados a las necesidades del cliente y validados en su respectiva fase de pruebas.
+  </p>
+
+  <h4>1. Aplicación Móvil</h4>
+  <p>
+    Aplicación desarrollada con enfoque multiplataforma, orientada a ofrecer una experiencia intuitiva y segura para el usuario final. Incluye:
+  </p>
+  <ul>
+    <li>Interfaces UI/UX diseñadas para accesibilidad y fluidez.</li>
+    <li>Funcionalidades de autenticación y cifrado de datos.</li>
+    <li>Integración completa con la plataforma local mediante servicios API.</li>
+    <li>Conectividad a servicios de transacciones, gestión de usuarios y seguridad.</li>
+  </ul>
+
+  <h4>2. Plataforma Local</h4>
+  <p>
+    Sistema central que permite la gestión de operaciones financieras y de criptoactivos. Comprende:
+  </p>
+  <ul>
+    <li>Módulo de base de datos estructurada para integridad y trazabilidad.</li>
+    <li>Motor de inteligencia artificial para recomendaciones financieras.</li>
+    <li>Backend robusto desarrollado con enfoque escalable y seguro.</li>
+    <li>Control de transacciones, validaciones y auditoría interna.</li>
+  </ul>
+
+  <h4>3. Cajeros Automáticos</h4>
+  <p>
+    Dispositivos físicos instalados y configurados para permitir operaciones con criptoactivos. Se incluye:
+  </p>
+  <ul>
+    <li>Interfaz gráfica de usuario accesible desde el hardware del cajero.</li>
+    <li>Sistemas de seguridad física y digital.</li>
+    <li>Módulo de transacciones vinculado a la plataforma local.</li>
+    <li>Pruebas de funcionalidad, conectividad y estabilidad de red.</li>
+  </ul>
+
+  <h4>4. Infraestructura</h4>
+  <p>
+    Infraestructura tecnológica y física habilitada para el funcionamiento integral del sistema. Incluye:
+  </p>
+  <ul>
+    <li>Acondicionamiento de espacios físicos (locales).</li>
+    <li>Conectividad interna mediante routers, switches y cableado estructurado.</li>
+    <li>Integración de sistemas internos y externos.</li>
+    <li>Componentes de domótica, redes y robótica cuando aplican.</li>
+  </ul>
+</section>
+
+<section id="otros-anexos">
+  <h2>OTROS, ANEXOS</h2>
+
+  <h3>SOW</h3>
+  <p>
+    El Statement of Work (SOW) es un documento formal que define el alcance, responsabilidades, entregables y condiciones de servicio entre el proyecto Flowi y sus proveedores estratégicos. Su propósito es dejar constancia clara y verificable de qué se espera entregar, bajo qué condiciones, y cómo se evaluará el cumplimiento. Cada proveedor involucrado en el proyecto cuenta con un SOW específico que respalda técnica y contractualmente su participación.
+  </p>
+
+  <section class="sow claro">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div>
+      <h1>Claro El Salvador</h1>
+      <p style="margin: 0; color: #333;">5ª Avenida Sur y Calle Rubén Darío, Edif. Ex - Telégrafo</p>
+    </div>
+    <img src="assets/img/logo-claro.png" alt="Logo Claro" style="height: 60px;">
+  </div>
+    <p><strong>Fecha:</strong> 22 de enero de 2025</p>
+    <p><strong>Servicios realizados por:</strong> Claro El Salvador</p>
+    <p><strong>Servicios realizados para:</strong> Flowi</p>
+    <h2>Plazo de ejecución</h2>
+    <p>Del 20 de enero de 2025 al 30 de junio de 2025</p>
+    <h2>Recursos de negociación</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre del Recurso</th><th>Rol</th><th>Información Clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Carlos Mendoza</td><td>Ingeniero de Redes Senior</td><td>Experto en infraestructuras de alta velocidad.</td></tr>
+        <tr><td>Laura Torres</td><td>Técnico de Soporte Técnico</td><td>Especialista en resolución de incidentes.</td></tr>
+        <tr><td>Diego Ramírez</td><td>Gerente de Proyecto</td><td>Responsable de la coordinación general.</td></tr>
+      </tbody>
+    </table>
+    <h2>Ámbito de trabajo</h2>
+    <ul>
+      <li>Implementación de infraestructura de red dedicada para transacciones financieras y criptoactivos.</li>
+      <li>Configuración de servidores redundantes con 99.9% de disponibilidad.</li>
+      <li>Soporte técnico 24/7.</li>
+    </ul>
+    <h2>Materiales de entrega</h2>
+    <ul>
+      <li>Documentación técnica.</li>
+      <li>Informe mensual de rendimiento.</li>
+    </ul>
+    <h2>Responsabilidades del contratista</h2>
+    <ul>
+      <li>Proveer equipos y software necesarios.</li>
+      <li>Garantizar estándares de seguridad.</li>
+      <li>Capacitar al equipo Flowi.</li>
+    </ul>
+    <h2>Responsabilidades del cliente</h2>
+    <ul>
+      <li>Facilitar acceso e información técnica.</li>
+      <li>Aprobar informes a tiempo.</li>
+    </ul>
+    <h2>Comisiones</h2>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Recursos</th><th>Pago por hora</th><th>Horas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ingeniero Redes</td><td>2</td><td>$50</td><td>200</td></tr>
+        <tr><td>Técnico Soporte</td><td>1</td><td>$30</td><td>100</td></tr>
+      </tbody>
+    </table>
+    <h2>Facturación y gastos</h2>
+    <ul>
+      <li>Mensual, incluyendo viajes.</li>
+      <li>Reembolsos hasta 15% del valor.</li>
+    </ul>
+    <h2>Supuestos</h2>
+    <ul>
+      <li>Sin cambios en requisitos.</li>
+      <li>Condiciones de mercado estables.</li>
+    </ul>
+    <h2>Control de cambios</h2>
+    <ol>
+      <li>PCR emitida y evaluada.</li>
+      <li>Aprobación y firma de Autorización de Cambio.</li>
+    </ol>
+    <h2>Finalización</h2>
+    <ul>
+      <li>Entrega de materiales.</li>
+      <li>Aceptación tácita en 2 días hábiles.</li>
+    </ul>
+    <h2>Firmas</h2>
+    <table>
+      <thead><tr><th>FLOWI</th><th>Claro El Salvador</th></tr></thead>
+      <tbody><tr><td>Edwin Villalta<br/>Lead de redes</td><td>Maria López<br/>Gerente de proyectos</td></tr></tbody>
+    </table>
+  </section>
+
+
+   <section class="sow aws">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div>
+      <h1>Amazon Web Services (AWS)</h1>
+      <p style="margin: 0; color: #333;">Calle Principal, Edificio 3, Parque Tecnológico de AWS</p>
+    </div>
+    <img src="assets/img/logo-aws.png" alt="Logo AWS" style="height: 60px;">
+  </div>
+    <h1>SOW 001 - Amazon Web Services (AWS) & Flowi</h1>
+    <p><strong>Fecha:</strong> 22 de enero de 2025</p>
+    <p><strong>Servicios realizados por:</strong> Amazon Web Services (AWS)</p>
+    <p><strong>Servicios realizados para:</strong> Flowi</p>
+    <h2>Plazo de ejecución</h2>
+    <p>Del 20 de enero de 2025 al 30 de junio de 2025</p>
+    <h2>Recursos de negociación</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre del Recurso</th><th>Rol</th><th>Información Clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Antony Lazo</td><td>Arquitecto Cloud (AWS)</td><td>Especialista en diseño e implementación de arquitecturas escalables y seguras.</td></tr>
+        <tr><td>Mario Benites</td><td>Ingeniero de Seguridad</td><td>Responsable de protección de infraestructuras, detección de amenazas y gestión de riesgos.</td></tr>
+        <tr><td>Oswaldo Valladares</td><td>DevOps Engineer</td><td>Encargado de automatización, integración y despliegue continuo en entornos de desarrollo y producción.</td></tr>
+      </tbody>
+    </table>
+    <h2>Ámbito de trabajo</h2>
+    <ul>
+      <li>Provisión de infraestructura en la nube escalable, segura y de alto rendimiento para Flowi.</li>
+      <li>Servicios de cómputo, almacenamiento y bases de datos.</li>
+      <li>Seguridad avanzada con cifrado, monitoreo y cumplimiento normativo.</li>
+      <li>Automatización y gestión de infraestructura para optimizar operaciones.</li>
+      <li>Integración con servicios de análisis, IA y machine learning.</li>
+    </ul>
+    <h2>Materiales de entrega</h2>
+    <ul>
+      <li>Instancias EC2, RDS, S3 y balanceadores configurados.</li>
+      <li>Guías de configuración IAM, KMS y políticas de acceso.</li>
+      <li>Dashboards y alertas implementadas.</li>
+      <li>Sesiones formativas para el equipo de Flowi.</li>
+    </ul>
+    <h2>Responsabilidades del contratista</h2>
+    <ul>
+      <li>Diseñar e implementar la arquitectura según mejores prácticas de AWS.</li>
+      <li>Garantizar 99.9% de disponibilidad.</li>
+      <li>Auditorías de seguridad mensuales y parches críticos.</li>
+      <li>Capacitación sobre AWS Management Console y monitoreo.</li>
+    </ul>
+    <h2>Responsabilidades del cliente</h2>
+    <ul>
+      <li>Proporcionar acceso a la cuenta AWS y credenciales necesarias.</li>
+      <li>Aprobar diseños de arquitectura y políticas de seguridad.</li>
+      <li>Cubrir costos mensuales de AWS.</li>
+    </ul>
+    <h2>Programación de comisiones</h2>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Recursos</th><th>Pago por Hora</th><th>Horas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Arquitecto Cloud</td><td>1</td><td>$45</td><td>100</td></tr>
+        <tr><td>Ingeniero de Seguridad</td><td>1</td><td>$40</td><td>80</td></tr>
+        <tr><td>DevOps Engineer</td><td>1</td><td>$35</td><td>120</td></tr>
+      </tbody>
+    </table>
+    <h2>Facturación y gastos menores</h2>
+    <ul>
+      <li>Facturación mensual por servicios y gastos de viaje y ocio.</li>
+      <li>Gastos reembolsables hasta el 15% del total, sujetos a aprobación.</li>
+      <li>Facturas deben incluir hojas de horas, recibos y justificaciones.</li>
+      <li>Penalización del 5% mensual por retrasos mayores a 30 días.</li>
+    </ul>
+    <h2>Supuestos</h2>
+    <ul>
+      <li>Flowi aprobará configuraciones críticas en máximo 3 días hábiles.</li>
+      <li>AWS mantendrá disponibilidad del 99.9% durante el proyecto.</li>
+      <li>No habrá cambios regulatorios que afecten los servicios en El Salvador.</li>
+    </ul>
+    <h2>Proceso de control de cambios</h2>
+    <ol>
+      <li>Se emite una Solicitud de Cambio de Proyecto (PCR).</li>
+      <li>El jefe de proyecto evaluará si procede enviar a la otra parte.</li>
+      <li>Ambos jefes decidirán si investigar más o rechazarla.</li>
+      <li>Si se acepta, se firma la Autorización de Cambio por ambas partes.</li>
+    </ol>
+    <h2>Criterios de finalización</h2>
+    <ul>
+      <li>Entrega completa de los materiales.</li>
+      <li>Aceptación formal tras pruebas de estrés y seguridad.</li>
+      <li>Cumplimiento del cronograma de hitos.</li>
+      <li>Capacitación completada al 100% del equipo técnico de Flowi.</li>
+    </ul>
+    <h2>Firmas</h2>
+    <table>
+      <thead><tr><th>FLOWI</th><th>Amazon Web Services (AWS)</th></tr></thead>
+      <tbody><tr><td>Edwin Villalta<br/><em>Servicios Web</em></td><td>Jose Gonzales<br/><em>Gerente de Proyectos</em></td></tr></tbody>
+    </table>
+  </section>
+
+
+  <section class="sow diebold">
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div>
+      <h1>Diebold Nixdorf</h1>
+      <p style="margin: 0; color: #333;">Oficinas Centrales, Zona Industrial, San Salvador</p>
+    </div>
+    <img src="assets/img/logo-diebold.png" alt="Logo Diebold" style="height: 60px;">
+  </div>
+    <h1>SOW 005 - Diebold Nixdorf & Flowi</h1>
+    <p><strong>Fecha:</strong> 22 de enero de 2025</p>
+    <p><strong>Servicios realizados por:</strong> Diebold Nixdorf</p>
+    <p><strong>Servicios realizados para:</strong> Flowi</p>
+
+    <h2>Plazo de ejecución</h2>
+    <p>Del 22 de enero de 2025 al 30 de junio de 2025</p>
+
+    <h2>Recursos de negociación</h2>
+    <table>
+      <thead>
+        <tr><th>Nombre del Recurso</th><th>Rol</th><th>Información Clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>René Parada</td><td>Ingeniero de Hardware</td><td>Especialista en diseño, desarrollo y mantenimiento de sistemas electrónicos.</td></tr>
+        <tr><td>Julion Álvarez</td><td>Especialista en Seguridad</td><td>Responsable de la ciberseguridad y gestión de riesgos.</td></tr>
+        <tr><td>Pedro Gonzales</td><td>Capacitador Técnico</td><td>Encargado de diseñar e impartir entrenamientos técnicos.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Ámbito de trabajo</h2>
+    <ul>
+      <li>Instalación y configuración de 5 cajeros para conversión de Bitcoin a moneda local.</li>
+      <li>Integración con plataformas Flowi y sistemas de seguridad (AES-256, MFA).</li>
+      <li>Conexión con AWS y bancos locales.</li>
+      <li>Pruebas de funcionalidad, seguridad y estrés.</li>
+      <li>Capacitación a comercios afiliados.</li>
+    </ul>
+
+    <h2>Materiales de entrega</h2>
+    <ul>
+      <li>Cajeros configurados con interfaz bilingüe.</li>
+      <li>Conexión API para transacciones en tiempo real.</li>
+      <li>Manuales de operación y protocolos de seguridad.</li>
+      <li>Sesiones presenciales y virtuales para 50 comercios.</li>
+    </ul>
+
+    <h2>Responsabilidades del contratista</h2>
+    <ul>
+      <li>Adquirir y configurar los cajeros automáticos.</li>
+      <li>Garantizar seguridad física y digital (cumplimiento KYC/AML).</li>
+      <li>Realizar auditorías mensuales.</li>
+      <li>Coordinar con proveedores de hardware y bancos.</li>
+      <li>Capacitar al personal de Flowi y comercios.</li>
+    </ul>
+
+    <h2>Responsabilidades del cliente</h2>
+    <ul>
+      <li>Facilitar permisos legales para instalaciones.</li>
+      <li>Aprobar diseños técnicos y protocolos.</li>
+      <li>Proporcionar acceso a APIs bancarias.</li>
+      <li>Participar en pruebas y capacitaciones.</li>
+    </ul>
+
+    <h2>Programación de comisiones</h2>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Recursos</th><th>Pago por Hora</th><th>Horas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ingeniero de Hardware</td><td>2</td><td>$40</td><td>300</td></tr>
+        <tr><td>Especialista en Seguridad</td><td>1</td><td>$45</td><td>100</td></tr>
+        <tr><td>Capacitador Técnico</td><td>1</td><td>$30</td><td>50</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Facturación y gastos</h2>
+    <ul>
+      <li>Facturación mensual por servicios y gastos de viaje.</li>
+      <li>Reembolso de gastos menores (hasta 15%).</li>
+      <li>Entrega de hojas de horas, recibos y justificantes.</li>
+      <li>Multa del 5% por pagos después de 30 días.</li>
+    </ul>
+
+    <h2>Supuestos</h2>
+    <ul>
+      <li>Flowi aprobará configuraciones en 3 días hábiles.</li>
+      <li>No habrá cambios regulatorios relevantes.</li>
+    </ul>
+
+    <h2>Proceso de control de cambios</h2>
+    <ol>
+      <li>Se emite una PCR con justificación y efectos.</li>
+      <li>Evaluación y decisión por jefes de proyecto.</li>
+      <li>Si se aprueba, se ejecuta Autorización de Cambio.</li>
+    </ol>
+
+    <h2>Criterios de finalización</h2>
+    <ul>
+      <li>Entrega y aceptación de materiales.</li>
+      <li>Pruebas de infraestructura superadas.</li>
+      <li>Capacitación completada al 100%.</li>
+    </ul>
+
+    <h2>Firmas</h2>
+    <table>
+      <thead><tr><th>FLOWI</th><th>Diebold Nixdorf</th></tr></thead>
+      <tbody><tr><td>Edwin Villalta<br/><em>Servicio de cajeros automáticos</em></td><td>Maria Zetino<br/><em>Gerente de Proyectos</em></td></tr></tbody>
+    </table>
+  </section>
+
+
+
+<section id="facturas">
+  <h2 style="text-align:center;">Facturas</h2>
+
+
+<!-- INICIO FACTURAS DE ÁNGEL JOSUÉ GUEVARA -->
+<div id="angel">
+<!-- FACTURA 0001 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 001</h2>
+      <p style="margin: 4px 0 0;">Fecha: 01/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Ángel Josué Guevara<br />
+      Dirección del receptor<br />
+      Teléfono del receptor
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Servicios de desarrollo<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Servicio de desarrollo Frontend</td>
+        <td>1</td>
+        <td>$500.00</td>
+        <td>$500.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$500.00</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$65.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$565.00</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0002 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 002</h2>
+      <p style="margin: 4px 0 0;">Fecha: 05/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Ángel Josué Guevara<br />
+      Dirección del receptor<br />
+      Teléfono del receptor
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Coordinación de actividades<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Supervisión de entregables técnicos</td>
+        <td>2</td>
+        <td>$320.00</td>
+        <td>$640.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$640.00</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$83.20</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$723.20</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0003 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 003</h2>
+      <p style="margin: 4px 0 0;">Fecha: 10/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Ángel Josué Guevara<br />
+      Dirección del receptor<br />
+      Teléfono del receptor
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Asesoría técnica<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Consultoría sobre arquitectura del sistema</td>
+        <td>1</td>
+        <td>$450.00</td>
+        <td>$450.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$450.00</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$58.50</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$508.50</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+</div>
+<!-- FIN FACTURAS DE ÁNGEL JOSUÉ GUEVARA -->
+
+<!-- INICIO FACTURAS DE JEFFERSON JOSUÉ ESPERANZA ORTIZ -->
+<div id="jefferson">
+<!-- FACTURA 0004 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 004</h2>
+      <p style="margin: 4px 0 0;">Fecha: 12/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Jefferson Josué Esperanza Ortiz<br />
+      Dirección del receptor<br />
+      Teléfono del receptor
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Desarrollo de Backend<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>API REST y servicios de autenticación</td>
+        <td>1</td>
+        <td>$620.00</td>
+        <td>$620.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$620.00</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$80.60</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$700.60</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0005 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 005</h2>
+      <p style="margin: 4px 0 0;">Fecha: 14/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Jefferson Josué Esperanza Ortiz<br />
+      Dirección del receptor<br />
+      Teléfono del receptor
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Configuración de servidores<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Despliegue en ambiente de producción</td>
+        <td>1</td>
+        <td>$550.00</td>
+        <td>$550.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$550.00</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$71.50</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$621.50</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0006 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 006</h2>
+      <p style="margin: 4px 0 0;">Fecha: 18/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Jefferson Josué Esperanza Ortiz<br />
+      Dirección del receptor<br />
+      Teléfono del receptor
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Integración de sistemas<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Integración con API de terceros</td>
+        <td>2</td>
+        <td>$300.00</td>
+        <td>$600.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$600.00</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$78.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$678.00</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+</div>
+<!-- FIN FACTURAS DE JEFFERSON JOSUÉ ESPERANZA ORTIZ -->
+
+<!-- INICIO FACTURAS DE CÉSAR ALEXANDER ROMERO VÁSQUEZ -->
+<div id="cesar">
+<!-- FACTURA 0003 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 003</h2>
+      <p style="margin: 4px 0 0;">Fecha: 20/01/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      César Alexander Romero Vásquez<br />
+      Col. Chacom, Santa Rosa de Lima<br />
+      La Unión
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Desarrollo de base de datos<br />
+      Plataforma local
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Implementación y configuración inicial de base de datos relacional</td>
+        <td>7</td>
+        <td>$349.21</td>
+        <td>$2,444.46</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$2,444.46</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$2,444.46</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: consulturakompilo@gmail.com</span>
+    <span>Teléfono: 2121-2828</span>
+    <span>Web: Kompolo.com</span>
+  </div>
+</div>
+
+<!-- FACTURA 0004 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 004</h2>
+      <p style="margin: 4px 0 0;">Fecha: 20/03/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      César Alexander Romero Vásquez<br />
+      Col. Chacom, Santa Rosa de Lima<br />
+      La Unión
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Finalización módulo de seguridad<br />
+      Plataforma local
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr><th>Descripción</th><th>Cantidad</th><th>Precio Unitario</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Finalización del módulo de seguridad</td>
+        <td>14</td>
+        <td>$349.21</td>
+        <td>$4,888.92</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$4,888.92</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$4,888.92</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: consulturakompilo@gmail.com</span>
+    <span>Teléfono: 2121-2828</span>
+    <span>Web: Kompolo.com</span>
+  </div>
+</div>
+
+<!-- FACTURA 0005 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 005</h2>
+      <p style="margin: 4px 0 0;">Fecha: 15/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      César Alexander Romero Vásquez<br />
+      Col. Chacom, Santa Rosa de Lima<br />
+      La Unión
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Finalización módulo de seguridad<br />
+      Plataforma local
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr><th>Descripción</th><th>Cantidad</th><th>Precio Unitario</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Finalización del módulo de seguridad</td>
+        <td>14</td>
+        <td>$349.21</td>
+        <td>$4,888.92</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$4,888.92</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$4,888.92</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: consulturakompilo@gmail.com</span>
+    <span>Teléfono: 2121-2828</span>
+    <span>Web: Kompolo.com</span>
+  </div>
+</div>
+</div>
+<!-- FIN FACTURAS DE CÉSAR ALEXANDER ROMERO VÁSQUEZ -->
+
+
+<!-- INICIO FACTURAS DE SOFÍA MARGARITA ROMERO RODRÍGUEZ -->
+<div id="sofia">
+<!-- FACTURA 0006 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 006</h2>
+      <p style="margin: 4px 0 0;">Fecha: 01/03/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Sofía Margarita Romero Rodríguez<br />
+      Col. Chacom, Santa Rosa de Lima<br />
+      La Unión
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Diseño e interfaz UX/UI<br />
+      Aplicación móvil
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Diseño de interfaces y prototipado UX/UI</td>
+        <td>5</td>
+        <td>$379.15</td>
+        <td>$1,895.75</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,895.75</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,895.75</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0007 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 007</h2>
+      <p style="margin: 4px 0 0;">Fecha: 08/04/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Sofía Margarita Romero Rodríguez<br />
+      Col. Chacom, Santa Rosa de Lima<br />
+      La Unión
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Correcciones de interfaz<br />
+      Aplicación móvil
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mejoras y correcciones visuales</td>
+        <td>3</td>
+        <td>$379.15</td>
+        <td>$1,137.45</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,137.45</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,137.45</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0008 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 008</h2>
+      <p style="margin: 4px 0 0;">Fecha: 03/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Sofía Margarita Romero Rodríguez<br />
+      Col. Chacom, Santa Rosa de Lima<br />
+      La Unión
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Entrega final<br />
+      Aplicación móvil
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Entrega final con documentos, pruebas y ajustes</td>
+        <td>5</td>
+        <td>$379.15</td>
+        <td>$1,895.75</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,895.75</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,895.75</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+</div>
+<!-- FIN FACTURAS DE SOFÍA MARGARITA ROMERO RODRÍGUEZ -->
+
+<!-- INICIO FACTURAS DE GERSON NAHÚN ARGUETA HERNÁNDEZ -->
+<div id="gerson">
+<!-- FACTURA 0009 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 009</h2>
+      <p style="margin: 4px 0 0;">Fecha: 04/03/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Gerson Nahún Argueta Hernández<br />
+      Col. San Rafael, Chinameca<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Backend API y base de datos<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Desarrollo de lógica y API REST</td>
+        <td>3</td>
+        <td>$379.15</td>
+        <td>$1,137.45</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,137.45</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,137.45</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0010 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 010</h2>
+      <p style="margin: 4px 0 0;">Fecha: 10/04/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Gerson Nahún Argueta Hernández<br />
+      Col. San Rafael, Chinameca<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Interconexión y pruebas<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Integración backend y frontend, pruebas funcionales</td>
+        <td>2</td>
+        <td>$379.15</td>
+        <td>$758.30</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$758.30</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$758.30</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0011 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 011</h2>
+      <p style="margin: 4px 0 0;">Fecha: 06/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Gerson Nahún Argueta Hernández<br />
+      Col. San Rafael, Chinameca<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Entrega y documentación<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Entrega técnica y documentación de sistema</td>
+        <td>3</td>
+        <td>$379.15</td>
+        <td>$1,137.45</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,137.45</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,137.45</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+</div>
+<!-- FIN FACTURAS DE GERSON NAHÚN ARGUETA HERNÁNDEZ -->
+
+<!-- INICIO FACTURAS DE EDWIN ALEXANDER VILLALTA ORTIZ -->
+<div id="edwin">
+<!-- FACTURA 0012 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 012</h2>
+      <p style="margin: 4px 0 0;">Fecha: 04/03/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Edwin Alexander Villalta Ortiz<br />
+      Colonia San Carlos, San Miguel<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Módulo de Seguridad<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Desarrollo e implementación de seguridad RBAC</td>
+        <td>3</td>
+        <td>$379.15</td>
+        <td>$1,137.45</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,137.45</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,137.45</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0013 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 013</h2>
+      <p style="margin: 4px 0 0;">Fecha: 10/04/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Edwin Alexander Villalta Ortiz<br />
+      Colonia San Carlos, San Miguel<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Pruebas de seguridad y validación<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OWASP pruebas, cifrado y validaciones</td>
+        <td>2</td>
+        <td>$379.15</td>
+        <td>$758.30</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$758.30</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$758.30</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+
+<!-- FACTURA 0014 -->
+<div class="factura">
+  <div class="header header-factura">
+    <div>
+      <h2 style="margin: 0; font-weight: 600;">Factura No. 014</h2>
+      <p style="margin: 4px 0 0;">Fecha: 06/06/2025</p>
+    </div>
+    <img src="assets/img/Flowi-Logo.png" alt="Logo Flowi" style="height: 50px;">
+  </div>
+
+  <div class="datos">
+    <div>
+      <strong>Emisor:</strong><br />
+      Kompilo S.A. de C.V.<br />
+      4° Calle Oriente, Barrio La Maravilla<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Receptor:</strong><br />
+      Edwin Alexander Villalta Ortiz<br />
+      Colonia San Carlos, San Miguel<br />
+      San Miguel
+    </div>
+    <div>
+      <strong>Factura de:</strong><br />
+      Soporte final y documentación<br />
+      Proyecto Flowi
+    </div>
+  </div>
+
+  <h3 class="titulo-instrucciones">Detalle de la factura</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Asistencia y entrega técnica al equipo</td>
+        <td>3</td>
+        <td>$379.15</td>
+        <td>$1,137.45</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="resumen">
+    <table>
+      <tr><td><strong>Subtotal</strong></td><td>$1,137.45</td></tr>
+      <tr><td><strong>IVA (13%)</strong></td><td>$0.00</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>$1,137.45</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>Correo: konsulturakompilo@gmail.com</span>
+    <span>Teléfono: 2667-3534</span>
+    <span>Celular: 7434-1221</span>
+  </div>
+</div>
+</div>
+<!-- FIN FACTURAS DE EDWIN ALEXANDER VILLALTA ORTIZ -->
+
+
+
+
+</section>
+
+
+
+
+    </main>
+  </div>
+      <!-- container -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer-site dark-background">
+    <div class="container copyright text-center mt-4">
+      <p>
+        © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+        <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">Designed by Kompilo</div>
+    </div>
+  </footer>
+  <!-- /Footer -->
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+  <div id="preloader"></div>
+
+  <script src="backend/sessionManager.js"></script>
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+<script>
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".sidebar a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>

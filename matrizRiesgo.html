@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matriz de riesgo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicons -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* Estilos globales */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+      }
+      
+      /* Contenido principal */
+      .main-content {
+        margin-left: 22%;
+        padding: 5px;
+      }
+      /* Estilos para las tablas */
+      .table {
+        border-radius: 8px !important;
+        overflow: hidden;
+        border: 2px solid #e0f7fa !important;
+        background-color: #e0f7fa;
+      }
+      .table-bordered th,
+      .table-bordered td {
+        border: 2px solid #e0f7fa !important; /* Bordes negros */
+        text-align: justify;
+      }
+      /* Fondo celeste para el campo ID */
+      .id-cell {
+        background-color: #e0f7fa !important; /* Color celeste */
+        font-weight: bold;
+      }
+      .iframe-container {
+        margin-top: 1rem;
+      }
+      .iframe-container iframe {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 600px;
+        border-radius: 5px;
+      }
+
+      /* Estilo general de la tabla */
+      #risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Encabezados de la tabla */
+        #risk-table th {
+            background-color: #007bff; /* Azul oscuro */
+            color: white;
+            font-weight: bold;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        /* Celdas de la tabla */
+        #risk-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Resaltado de filas pares */
+        #risk-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover en filas */
+        #risk-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #risk-table thead {
+                display: none;
+            }
+
+            #risk-table tr {
+                margin-bottom: 15px;
+                display: block;
+                border: 2px solid #ddd;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            #risk-table td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            #risk-table td:first-child::before {
+                content: attr(data-label);
+                font-weight: bold;
+                width: 40%;
+                text-align: left;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            #risk-table td:last-child {
+                border-bottom: none;
+            }
+        }
+        h2, p{
+            font-family: "Poppins", sans-serif;
+        }
+        /* Contenedor scrollable horizontal para la tabla */
+.table-container {
+    max-width: 100%; /* Ajusta al ancho de la pantalla */
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    margin: 20px 0; /* Espaciado alrededor de la tabla */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor visualización */
+}
+          
+              .dropdown-menu {
+    max-height: 300px; /* ajusta el valor según lo que necesites */
+    overflow-y: auto;
+  }
+
+    </style>
+
+    <script src="backend/middelwareGuessAdmin.js"></script>
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Asignaciones
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="champfrogs.html">Champfrogs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="workexpo.html">WorkExpo</a>
+                </li>
+                <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+                <li>
+                  <a class="dropdown-item" href="casoNegocio.html"
+                    >Caso de negocio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcial1.html" class="active"
+                    >Parcial 1</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+                <li>
+                  <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+                <li><a class="dropdown-item" href="matrizComunicacion.html">Matriz de comunicación</a></li>
+                <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
+                <li><a class="dropdown-item" href="ofertaEconomica.html">Oferta economica</a></li>
+                <li><a class="dropdown-item" href="ofertaTecnica.html">Oferta tecnica</a></li>
+                              <li><a class="dropdown-item" href="evaluandoOferta.html">Evaluando Oferta tecnica</a></li>
+              <li><a class="dropdown-item" href="actaRecepcion.html">Acta de recepción</a></li>
+              <li><a class="dropdown-item" href="solicitudCambios.html">Solicitud de cambios</a></li>
+              <li><a class="dropdown-item" href="informeCierre.html">Informe cierre de proyecto</a></li>
+              <li><a class="dropdown-item" href="parcialTres.html">Parcial 3</a></li>
+              </ul>
+            </li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li id="loginItem"><a href="login.html">Login</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Información del proyecto -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h2>ID PROYECTO: Billetera digital de criptoactivos</h2>
+        <p>FECHA DE INICIO: 20 de enero de 2025</p>
+        <p>FECHA DE TÉRMINO PROPUESTA: 30 de junio 2025</p>
+    </div>
+<div class="table-container">
+    <!-- Tabla de riesgos -->
+    <table id="risk-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Proceso</th>
+                <th>Tipo de Riesgo</th>
+                <th>Riesgo</th>
+                <th>Possible Resultado (entonces)</th>
+                <th>Síntoma</th>
+                <th>Probabilidad</th>
+                <th>Impacto</th>
+                <th>Nivel de Prioridad</th>
+                <th colspan="2">EVALUACIÓN</th>
+                <th>Estrategia</th>
+                <th>Respuesta</th>
+                <th>Responsable de la acción de respuesta</th>
+            </tr>
+            <tr>
+                <!-- Subencabezados -->
+                <td colspan="9"></td>
+                <td>Valor</td>
+                <td>Nivel</td>
+                <td colspan="3"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Fila 1 -->
+            <tr>
+                <td data-label="#">1</td>
+                <td data-label="Proceso">1.1.1 Base de datos</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Falla en el diseño de la base de datos</td>
+                <td data-label="Possible Resultado (entonces)">Deterioro en el rendimiento del sistema o pérdida de datos críticos</td>
+                <td data-label="Síntoma">Lenta respuesta de consultas o errores frecuentes durante pruebas iniciales.</td>
+                <td data-label="Probabilidad">1</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">3</td>
+                <td data-label="Evaluación (Valor)">Medio</td>
+                <td data-label="Evaluación (Nivel)">Bajo</td>
+                <td data-label="Estrategia">Implementar pruebas exhaustivas de carga y optimización continua.</td>
+                <td data-label="Respuesta">Revisión detallada del diseño con expertos en bases de datos.</td>
+                <td data-label="Responsable de la acción de respuesta">Cesar Romero</td>
+            </tr>
+            <!-- Fila 2 -->
+            <tr>
+                <td data-label="#">2</td>
+                <td data-label="Proceso">1.1.2 Software</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Bugs críticos en el código</td>
+                <td data-label="Possible Resultado (entonces)">Fallos en funciones clave del sistema</td>
+                <td data-label="Síntoma">Errores frecuentes en operaciones</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Aumentar la cobertura de pruebas automatizadas y revisión de código.</td>
+                <td data-label="Respuesta">Pruebas continuas y revisiones de código</td>
+                <td data-label="Responsable de la acción de respuesta">Jefferson Esperanza</td>
+            </tr>
+            <!-- Fila 3 -->
+            <tr>
+                <td data-label="#">3</td>
+                <td data-label="Proceso">1.1.2.1 Inteligencia Artificial</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Algoritmo de IA da resultados incorrectos</td>
+                <td data-label="Possible Resultado (entonces)">Decisiones erróneas en el procesamiento de datos</td>
+                <td data-label="Síntoma">Respuestas incoherentes de la IA</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">2</td>
+                <td data-label="Nivel de Prioridad">4</td>
+                <td data-label="Evaluación (Valor)">Medio</td>
+                <td data-label="Evaluación (Nivel)">Medio</td>
+                <td data-label="Estrategia">Incorporar expertos en IA para supervisar el desarrollo.</td>
+                <td data-label="Respuesta">Ajustar hiperparámetros y mejorar dataset</td>
+                <td data-label="Responsable de la acción de respuesta">Jefferson Esperanza</td>
+            </tr>
+            <!-- Fila 4 -->
+            <tr>
+                <td data-label="#">4</td>
+                <td data-label="Proceso">1.1.3 Hardware</td>
+                <td data-label="Tipo de Riesgo">Operacional</td>
+                <td data-label="Riesgo">Fallo en servidores</td>
+                <td data-label="Possible Resultado (entonces)">Caída del sistema o pérdida de datos</td>
+                <td data-label="Síntoma">Tiempo de inactividad inesperado</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Implementar monitoreo proactivo de hardware y planes de mantenimiento preventivo.</td>
+                <td data-label="Respuesta">Configurar redundancia y monitoreo</td>
+                <td data-label="Responsable de la acción de respuesta">Edwin Villata</td>
+            </tr>
+            <!-- Fila 5 -->
+            <tr>
+                <td data-label="#">5</td>
+                <td data-label="Proceso">1.1.4 Redes</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Interrupción de conectividad</td>
+                <td data-label="Possible Resultado (entonces)">Pérdida de comunicación entre sistemas</td>
+                <td data-label="Síntoma">Fallos intermitentes en transacciones</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Implementar redundancia en la infraestructura de red y planes de contingencia.</td>
+                <td data-label="Respuesta">Implementar balanceo de carga y redundancia</td>
+                <td data-label="Responsable de la acción de respuesta">Edwin Villata</td>
+            </tr>
+            <!-- Fila 6 -->
+            <tr>
+                <td data-label="#">6</td>
+                <td data-label="Proceso">1.2.1 Desarrollo FrontEnd</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Errores en la interfaz</td>
+                <td data-label="Possible Resultado (entonces)">Mala experiencia de usuario</td>
+                <td data-label="Síntoma">Interfaz con bugs o mal diseño responsivo</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">2</td>
+                <td data-label="Nivel de Prioridad">4</td>
+                <td data-label="Evaluación (Valor)">Medio</td>
+                <td data-label="Evaluación (Nivel)">Medio</td>
+                <td data-label="Estrategia">Incorporar sesiones regulares de prueba de usabilidad y feedback del usuario.</td>
+                <td data-label="Respuesta">Pruebas de usabilidad y refactorización</td>
+                <td data-label="Responsable de la acción de respuesta">Sofía Romero</td>
+            </tr>
+            <!-- Fila 7 -->
+            <tr>
+                <td data-label="#">7</td>
+                <td data-label="Proceso">1.2.2 Integración con Plataforma Local</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Incompatibilidad con API externa</td>
+                <td data-label="Possible Resultado (entonces)">Integración fallida</td>
+                <td data-label="Síntoma">Datos no sincronizados o errores en conexión</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Realizar pruebas de integración continua y documentar interfaces API.</td>
+                <td data-label="Respuesta">Pruebas de integración y fallback</td>
+                <td data-label="Responsable de la acción de respuesta">Gerson Argueta</td>
+            </tr>
+            <!-- Fila 8 -->
+            <tr>
+                <td data-label="#">8</td>
+                <td data-label="Proceso">1.2.3 Funcionalidades de Transacciones</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Errores en procesamiento de pagos</td>
+                <td data-label="Possible Resultado (entonces)">Fallos en transferencias</td>
+                <td data-label="Síntoma">Transacciones fallidas o duplicadas</td>
+                <td data-label="Probabilidad">3</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">9</td>
+                <td data-label="Evaluación (Valor)">Crítico</td>
+                <td data-label="Evaluación (Nivel)">Crítico</td>
+                <td data-label="Estrategia">Implementar controles de validación y auditoría de transacciones.</td>
+                <td data-label="Respuesta">Implementar validaciones y logs de auditoría</td>
+                <td data-label="Responsable de la acción de respuesta">Jefferson Esperanza</td>
+            </tr>
+            <!-- Fila 9 -->
+            <tr>
+                <td data-label="#">9</td>
+                <td data-label="Proceso">1.2.4 Seguridad de la Aplicación</td>
+                <td data-label="Tipo de Riesgo">Seguridad</td>
+                <td data-label="Riesgo">Vulnerabilidades en la seguridad</td>
+                <td data-label="Possible Resultado (entonces)">Exposición de datos sensibles</td>
+                <td data-label="Síntoma">Posibles ataques o accesos no autorizados</td>
+                <td data-label="Probabilidad">3</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">9</td>
+                <td data-label="Evaluación (Valor)">Crítico</td>
+                <td data-label="Evaluación (Nivel)">Crítico</td>
+                <td data-label="Estrategia">Realizar pruebas de penetración regulares y aplicar parches de seguridad.</td>
+                <td data-label="Respuesta">Aplicar OWASP y auditoría de seguridad</td>
+                <td data-label="Responsable de la acción de respuesta">Gerson Argueta</td>
+            </tr>
+            <!-- Fila 10 -->
+            <tr>
+                <td data-label="#">10</td>
+                <td data-label="Proceso">1.3.1 Instalación y Configuración</td>
+                <td data-label="Tipo de Riesgo">Operacional</td>
+                <td data-label="Riesgo">Errores en instalación</td>
+                <td data-label="Possible Resultado (entonces)">Mal funcionamiento del sistema</td>
+                <td data-label="Síntoma">Configuración incorrecta o incompatibilidades</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">2</td>
+                <td data-label="Nivel de Prioridad">4</td>
+                <td data-label="Evaluación (Valor)">Medio</td>
+                <td data-label="Evaluación (Nivel)">Medio</td>
+                <td data-label="Estrategia">Crear guías detalladas de instalación y configuración.</td>
+                <td data-label="Respuesta">Procedimientos estándar y pruebas</td>
+                <td data-label="Responsable de la acción de respuesta">Edwin Villata</td>
+            </tr>
+            <!-- Fila 11 -->
+            <tr>
+                <td data-label="#">11</td>
+                <td data-label="Proceso">1.3.2 Funcionalidades de Transacciones</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Fallos en el core transaccional</td>
+                <td data-label="Possible Resultado (entonces)">Pérdidas económicas y de confianza</td>
+                <td data-label="Síntoma">Transacciones no reflejadas en tiempo real</td>
+                <td data-label="Probabilidad">3</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">9</td>
+                <td data-label="Evaluación (Valor)">Crítico</td>
+                <td data-label="Evaluación (Nivel)">Crítico</td>
+                <td data-label="Estrategia">Implementar pruebas exhaustivas de pago y validación de flujos.</td>
+                <td data-label="Respuesta">Doble validación y sistema de recuperación</td>
+                <td data-label="Responsable de la acción de respuesta">Jefferson Esperanza</td>
+            </tr>
+            <!-- Fila 12 -->
+            <tr>
+                <td data-label="#">12</td>
+                <td data-label="Proceso">1.3.3 Seguridad de los Cajeros</td>
+                <td data-label="Tipo de Riesgo">Seguridad</td>
+                <td data-label="Riesgo">Vulnerabilidad en el hardware</td>
+                <td data-label="Possible Resultado (entonces)">Posibles fraudes o acceso no autorizado</td>
+                <td data-label="Síntoma">Cajeros comprometidos</td>
+                <td data-label="Probabilidad">3</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">9</td>
+                <td data-label="Evaluación (Valor)">Crítico</td>
+                <td data-label="Evaluación (Nivel)">Crítico</td>
+                <td data-label="Estrategia">Implementar sistemas de autenticación avanzados y monitoreo en tiempo real.</td>
+                <td data-label="Respuesta">Cifrado de datos y monitoreo físico</td>
+                <td data-label="Responsable de la acción de respuesta">Gerson Argueta</td>
+            </tr>
+            <!-- Fila 13 -->
+            <tr>
+                <td data-label="#">13</td>
+                <td data-label="Proceso">1.3.4 Experiencia del Usuario</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Mala usabilidad</td>
+                <td data-label="Possible Resultado (entonces)">Disminución de retención de usuarios</td>
+                <td data-label="Síntoma">Quejas frecuentes de los usuarios</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">2</td>
+                <td data-label="Nivel de Prioridad">4</td>
+                <td data-label="Evaluación (Valor)">Medio</td>
+                <td data-label="Evaluación (Nivel)">Medio</td>
+                <td data-label="Estrategia">Incorporar iteraciones de diseño centradas en el usuario.</td>
+                <td data-label="Respuesta">Mejorar UX/UI y realizar encuestas</td>
+                <td data-label="Responsable de la acción de respuesta">Sofía Romero</td>
+            </tr>
+            <!-- Fila 14 -->
+            <tr>
+                <td data-label="#">14</td>
+                <td data-label="Proceso">1.3.5 Redes</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Congestión en la red</td>
+                <td data-label="Possible Resultado (entonces)">Lentitud en transacciones</td>
+                <td data-label="Síntoma">Pérdida de paquetes o alta latencia</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Implementar redundancia en la infraestructura de red y planes de contingencia.</td>
+                <td data-label="Respuesta">Optimización y escalabilidad de red</td>
+                <td data-label="Responsable de la acción de respuesta">Edwin Villata</td>
+            </tr>
+            <!-- Fila 15 -->
+            <tr>
+                <td data-label="#">15</td>
+                <td data-label="Proceso">1.4.1 Locales Físicos</td>
+                <td data-label="Tipo de Riesgo">Operacional</td>
+                <td data-label="Riesgo">Fallas en seguridad física</td>
+                <td data-label="Possible Resultado (entonces)">Riesgo de robo o vandalismo</td>
+                <td data-label="Síntoma">Accesos no autorizados detectados</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Evaluar cuidadosamente las ubicaciones y obtener permisos anticipadamente.</td>
+                <td data-label="Respuesta">Control de acceso y vigilancia</td>
+                <td data-label="Responsable de la acción de respuesta">Edwin Villata</td>
+            </tr>
+            <!-- Fila 16 -->
+            <tr>
+                <td data-label="#">16</td>
+                <td data-label="Proceso">1.4.2 Integración de Sistemas</td>
+                <td data-label="Tipo de Riesgo">Técnico</td>
+                <td data-label="Riesgo">Fallas en interoperabilidad</td>
+                <td data-label="Possible Resultado (entonces)">Datos inconsistentes entre sistemas</td>
+                <td data-label="Síntoma">Errores en sincronización o pérdida de datos</td>
+                <td data-label="Probabilidad">2</td>
+                <td data-label="Impacto">3</td>
+                <td data-label="Nivel de Prioridad">6</td>
+                <td data-label="Evaluación (Valor)">Alto</td>
+                <td data-label="Evaluación (Nivel)">Alto</td>
+                <td data-label="Estrategia">Realizar pruebas de integración continua y documentar interfaces API.</td>
+                <td data-label="Respuesta">Protocolos de comunicación robustos</td>
+                <td data-label="Responsable de la acción de respuesta">Gerson Argueta</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Scripts -->
+    <script src="backend/sessionManager.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
