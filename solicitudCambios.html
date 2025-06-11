@@ -1,694 +1,1069 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Solicitud de cambios</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Solicitud de cambios</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Favicon -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <!-- Favicon -->
-  <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-    rel="stylesheet" />
+    <!-- Vendor CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- Vendor CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-  <!-- Main CSS -->
-  <link href="assets/css/main.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+      .portfolio-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        height: 100%;
+      }
 
-    .portfolio-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-      height: 100%;
-    }
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+      }
 
-    .portfolio-card:hover {
-      transform: translateY(-5px);
-    }
+      .portfolio-card img {
+        border-radius: 10px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
 
-    .portfolio-card img {
-      border-radius: 10px;
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
+      .portfolio-card h4 {
+        font-weight: 600;
+      }
 
-    .portfolio-card h4 {
-      font-weight: 600;
-    }
+      .portfolio-card p {
+        margin-bottom: 1rem;
+      }
 
-    .portfolio-card p {
-      margin-bottom: 1rem;
-    }
-
-    .navmenu a.active {
-      color: #007bff;
-      /* Texto en negro */
-      font-weight: bold;
-      /* Negrita */
-    }
-
-
-    h1, h2, h3 {
-      color: #02457a;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    th, td {
-      border: 1px solid #999;
-      padding: 10px;
-      text-align: left;
-    }
-    ul {
-      margin: 10px 0;
-      padding-left: 20px;
-    }
-    section {
-      margin-bottom: 20px;
-    }
-    a{
+      .navmenu a.active {
+        color: #007bff;
+        /* Texto en negro */
         font-weight: bold;
-    }
+        /* Negrita */
+      }
 
-     h2, h3 {
-    font-weight: bold;
-  }
+      h1,
+      h2,
+      h3 {
+        color: #02457a;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 10px;
+        text-align: left;
+      }
+      ul {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      a {
+        font-weight: bold;
+      }
 
-  p, li {
-    text-align: justify;
-  }
+      h2,
+      h3 {
+        font-weight: bold;
+      }
 
-  ul {
-    padding-left: 20px;
-  }
-    /* ==== FOOTER GENERAL ==== */
-  .footer-site {
-  background-color: #103fa5;
-  color: white;
-  padding: 30px 0;
-  text-align: center;
-}
+      p,
+      li {
+        text-align: justify;
+      }
 
-.footer-site .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+      ul {
+        padding-left: 20px;
+      }
+      /* ==== FOOTER GENERAL ==== */
+      .footer-site {
+        background-color: #103fa5;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
 
-.footer-site .copyright {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+      .footer-site .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-.footer-site a {
-  color: white;
-  text-decoration: none;
-}
+      .footer-site .copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-.footer-site p {
-  margin: 0;
-  padding: 0;
-}
-   .dropdown-menu {
-    max-height: 300px; /* ajusta el valor según lo que necesites */
-    overflow-y: auto;
-  }
-  </style>
+      .footer-site a {
+        color: white;
+        text-decoration: none;
+      }
 
-  <script src="backend/middlewareAdmin.js"></script>
-</head>
+      .footer-site p {
+        margin: 0;
+        padding: 0;
+      }
+      .dropdown-menu {
+        max-height: 300px; /* ajusta el valor según lo que necesites */
+        overflow-y: auto;
+      }
+    </style>
 
-<body class="portfolio-page">
-  <!-- Header / Nav -->
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="portafolio.html" class="active">Portafolio</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Asignaciones
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="champfrogs.html">Champfrogs</a></li>
-              <li><a class="dropdown-item" href="workexpo.html">WorkExpo</a></li>
-              <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
-              <li><a class="dropdown-item" href="casoNegocio.html">Caso de negocio</a></li>
-              <li><a class="dropdown-item" href="parcial1.html">Parcial 1</a></li>
-              <li><a class="dropdown-item" href="edt.html">EDT</a></li>
-              <li><a class="dropdown-item" href="roadmap.html">Roadmap</a></li>
-              <li><a class="dropdown-item" href="matrizComunicacion.html">Matriz de comunicación</a></li>
-              <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
-              <li><a class="dropdown-item" href="ofertaEconomica.html">Oferta economica</a></li>
-              <li><a class="dropdown-item" href="ofertaTecnica.html">Oferta tecnica</a></li>
-                <li><a class="dropdown-item" href="evaluandoOferta.html">Evaluando Oferta tecnica</a></li>
-              <li><a class="dropdown-item" href="actaRecepcion.html">Acta de recepción</a></li>
-              <li><a class="dropdown-item" href="solicitudCambios.html">Solicitud de cambios</a></li>
-              <li><a class="dropdown-item" href="informeCierre.html">Informe cierre de proyecto</a></li>
-              <li><a class="dropdown-item" href="parcialTres.html">Parcial 3</a></li>
-            </ul>
-          </li>
-          <li><a href="equipo.html">Equipo</a></li>
-          <li id="loginItem"><a href="login.html">login</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <!-- <script src="backend/middlewareAdmin.js"></script> -->
+  </head>
 
-    </div>
-  </header>
+  <body class="portfolio-page">
+    <!-- Header / Nav -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html" class="active">Portafolio</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Asignaciones
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="champfrogs.html">Champfrogs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="workexpo.html">WorkExpo</a>
+                </li>
+                <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+                <li>
+                  <a class="dropdown-item" href="casoNegocio.html"
+                    >Caso de negocio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcial1.html">Parcial 1</a>
+                </li>
+                <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+                <li>
+                  <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizComunicacion.html"
+                    >Matriz de comunicación</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizRiesgo.html"
+                    >Matriz de riesgo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaEconomica.html"
+                    >Oferta economica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaTecnica.html"
+                    >Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="evaluandoOferta.html"
+                    >Evaluando Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="actaRecepcion.html"
+                    >Acta de recepción</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="solicitudCambios.html"
+                    >Solicitud de cambios</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="informeCierre.html"
+                    >Informe cierre de proyecto</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcialTres.html">Parcial 3</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li id="loginItem"><a href="login.html">login</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
 
-  <main id="main">
-    <section class="section py-5">
-      <div class="container">
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-          
-
-
-        <nav class="mb-4 text-center">
-  <h3 class="mb-3">Ir a propuesta de:</h3>
-  <div class="d-flex justify-content-center flex-wrap gap-2">
-    <a href="#propuesta-jefferson" >Jefferson</a> |
-    <a href="#propuesta-cesar">César</a> |
-    <a href="#propuesta-sofia">Sofía</a> |
-    <a href="#propuesta-gerson">Gerson</a> |
-    <a href="#propuesta-edwin">Edwin</a>
-  </div>
-</nav>
+    <main id="main">
+      <section class="section py-5">
+        <div class="container">
+          <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+            <nav class="mb-4 text-center">
+              <h3 class="mb-3">Ir a propuesta de:</h3>
+              <div class="d-flex justify-content-center flex-wrap gap-2">
+                <a href="#propuesta-jefferson">Jefferson</a> |
+                <a href="#propuesta-cesar">César</a> |
+                <a href="#propuesta-sofia">Sofía</a> |
+                <a href="#propuesta-gerson">Gerson</a> |
+                <a href="#propuesta-edwin">Edwin</a>
+              </div>
+            </nav>
 
             <section id="propuesta-jefferson">
-      <h3>Propuesta: Jefferson Josué Esperanza Ortiz</h3>
-      <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
-      <p><strong>Proyecto:</strong> Billetera Digital</p>
-      <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
-      <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
-
-      <h3>1. Descripción del Cambio</h3>
-      <p>Submódulo de Seguridad para Plataforma Local, con alertas automáticas, RBAC, cifrado de datos, headers, registros y auditoría básica.</p>
-
-      <h3>2. Justificación / Sustento Legal</h3>
-      <p>Ausencia de módulo de seguridad en la planificación actual. Se sigue normativa OWASP y protección de datos.</p>
-
-      <h3>3. Categoría del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Alcance</td>
-    <td>☑ Cronograma</td>
-    <td>☐ Costos</td>
-    <td>☑ Calidad</td>
-    <td>☑ Recursos</td>
-    <td>☑ Procedimientos</td>
-    <td>☐ Documentación</td>
-    <td>☐ Otro</td>
-  </tr>
-</table>
-<p><strong>Marcar todas las que apliquen</strong></p>
-
-<h3>4. Causa del Origen del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Solicitud de cliente</td>
-    <td>☐ Reparación de defecto</td>
-    <td>☐ Acción correctiva</td>
-    <td>☑ Acción preventiva</td>
-    <td>☑ Actualización / Modificación de documento</td>
-    <td>☑ Otros</td>
-  </tr>
-</table>
-<p><strong>Descripción:</strong> Protección de contenedor, evitando posibles fallas en su funcionamiento</p>
-
-
-      <h3>5. Nuevos Entregables / Productos</h3>
-      <table>
-        <tr><th>Producto</th><th>Nuevo</th><th>Criterio de Aceptación</th><th>Revisor</th><th>Fecha</th></tr>
-        <tr><td>Plataforma Local</td><td>Submódulo de Seguridad</td><td>Alertas, control de accesos, auditoría, cifrado activo</td><td>Jefferson Josué Esperanza Ortiz</td><td>19 de mayo</td></tr>
-      </table>
-
-      <h3>6. Afectaciones Relacionadas</h3>
-      <ul>
-        <li><strong>RBAC:</strong> Requiere permisos en backend</li>
-        <li><strong>Logs:</strong> Implica ajustes en base de datos</li>
-        <li><strong>Alertas:</strong> Validación de tráfico en red</li>
-      </ul>
-
-      <h3>7. Presupuesto</h3>
-      <p><strong>Original:</strong> $21,455.39</p>
-      <p><strong>Modificado:</strong> Sin cambios (uso de herramientas internas)</p>
-
-      <h3>8. Cronograma</h3>
-      <table>
-        <tr><th>Actividad</th><th>Inicio</th><th>Fin</th></tr>
-        <tr><td>Seguridad</td><td>20 de enero</td><td>31 de mayo</td></tr>
-      </table>
-
-      <h3>9. Riesgos</h3>
-      <ul>
-        <li>Capacitación en prácticas de seguridad</li>
-        <li>Tiempo adicional de pruebas</li>
-        <li>Dependencia del backend</li>
-      </ul>
-
-      <h3>10. Firmas</h3>
-      <table>
-        <tr><th>Nombre</th><th>Cargo</th><th>Rol</th><th>Fecha</th><th>Firma</th></tr>
-        <tr><td>Jefferson Josué Esperanza Ortiz</td><td>Coordinador Técnico</td><td>Creador</td><td>17-05-2025</td><td><img src="assets/img/jeff.jpg" width="100" height="100"></td></tr>
-        <tr><td>Ángel Josué Guevara Portillo</td><td>Líder del Proyecto</td><td>Aprobador</td><td>18-05-2025</td><td><img src="assets/img/ang.jpg" width="100" height="100"></td></tr>
-      </table>
-    </section>
-
-        <section id="propuesta-cesar">
-      <h2>Propuesta: César Alexander Romero Vázquez</h2>
-      <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
-      <p><strong>Proyecto:</strong> Billetera Digital</p>
-      <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
-      <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
-
-      <h3>1. Descripción del Cambio</h3>
-      <p>Integración de un sistema de Reconocimiento Inteligente de Direcciones para clasificar contactos como frecuentes, sospechosos, duplicados o bloqueados. Alerta sobre riesgos potenciales y patrones de estafa en transacciones.</p>
-
-      <h3>2. Justificación / Sustento Legal</h3>
-      <p>Mejora de la seguridad al prevenir fraudes y errores humanos. Cumplimiento de normativas AML y KYC, aprovechando infraestructura local para mayor control y privacidad.</p>
-
-      <h3>3. Categoría del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Alcance</td>
-    <td>☑ Cronograma</td>
-    <td>☐ Costos</td>
-    <td>☑ Calidad</td>
-    <td>☑ Recursos</td>
-    <td>☑ Procedimientos</td>
-    <td>☐ Documentación</td>
-    <td>☐ Otro</td>
-  </tr>
-</table>
-<p><strong>Marcar todas las que apliquen</strong></p>
-
-<h3>4. Causa del Origen del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Solicitud de cliente</td>
-    <td>☐ Reparación de defecto</td>
-    <td>☐ Acción correctiva</td>
-    <td>☑ Acción preventiva</td>
-    <td>☑ Actualización / Modificación de documento</td>
-    <td>☑ Otros</td>
-  </tr>
-</table>
-<p><strong>Descripción:</strong> Protección de contenedor, evitando posibles fallas en su funcionamiento</p>
-
-
-      <h3>5. Nuevos Entregables / Productos</h3>
-      <table>
-        <tr><th>Producto</th><th>Nuevo</th><th>Criterio de Aceptación</th><th>Revisor</th><th>Fecha</th></tr>
-        <tr>
-          <td>Plataforma Local</td>
-          <td>Módulo de Reconocimiento Inteligente de Direcciones</td>
-          <td>Clasificación, alertas y reputación histórica</td>
-          <td>César Alexander Romero Vázquez</td>
-          <td>19 de mayo</td>
-        </tr>
-      </table>
-
-      <h3>6. Afectaciones Relacionadas</h3>
-      <ul>
-        <li><strong>Historial:</strong> Nuevas tablas en base de datos</li>
-        <li><strong>Evaluación:</strong> Lógica de negocio para detección</li>
-        <li><strong>Integración:</strong> Posible con IA existente</li>
-      </ul>
-
-      <h3>7. Presupuesto</h3>
-      <p><strong>Original:</strong> $21,455.39</p>
-      <p><strong>Modificado:</strong> Sin cambios (uso de recursos internos)</p>
-
-      <h3>8. Cronograma</h3>
-      <table>
-        <tr><th>Actividad</th><th>Inicio</th><th>Fin</th></tr>
-        <tr><td>Seguridad</td><td>20 de enero</td><td>31 de mayo</td></tr>
-      </table>
-
-      <h3>9. Riesgos</h3>
-      <ul>
-        <li>Clasificación errónea por falta de datos iniciales</li>
-        <li>Alta carga en base de datos</li>
-        <li>Pruebas exhaustivas necesarias para evitar falsos positivos</li>
-      </ul>
-
-      <h3>10. Firmas</h3>
-      <table>
-        <tr><th>Nombre</th><th>Cargo</th><th>Rol</th><th>Fecha</th><th>Firma</th></tr>
-        <tr><td>César Alexander Romero Vázquez</td><td>Coordinador Técnico</td><td>Creador</td><td>17-05-2025</td><td><img src="assets/img/ces.jpg" width="100" height="100"></td></tr>
-        <tr><td>Ángel Josué Guevara Portillo</td><td>Líder del Proyecto</td><td>Aprobador</td><td>18-05-2025</td><td><img src="assets/img/ang.jpg" width="100" height="100"></td></tr>
-      </table>
-    </section>
-
-
-        <section id="propuesta-sofia">
-      <h2>Propuesta: Sofía Margarita Romero Rodríguez</h2>
-      <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
-      <p><strong>Proyecto:</strong> Billetera Digital</p>
-      <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
-      <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
-
-      <h3>1. Descripción del Cambio</h3>
-      <p>Incorporación de un Asistente Virtual Inteligente (Chatbot con IA) en la aplicación móvil. Brindará soporte en tiempo real, resolverá dudas, errores comunes y facilitará el aprendizaje del uso de la billetera digital.</p>
-
-      <h3>2. Justificación / Sustento Legal</h3>
-      <p>Mejora de experiencia del usuario, reducción de carga operativa y aumento de accesibilidad. Refuerza los principios de usabilidad y eficiencia, alineándose con la inclusión digital y buenas prácticas de desarrollo.</p>
-
-      <h3>3. Categoría del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Alcance</td>
-    <td>☑ Cronograma</td>
-    <td>☐ Costos</td>
-    <td>☑ Calidad</td>
-    <td>☑ Recursos</td>
-    <td>☑ Procedimientos</td>
-    <td>☐ Documentación</td>
-    <td>☐ Otro</td>
-  </tr>
-</table>
-<p><strong>Marcar todas las que apliquen</strong></p>
-
-<h3>4. Causa del Origen del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Solicitud de cliente</td>
-    <td>☐ Reparación de defecto</td>
-    <td>☐ Acción correctiva</td>
-    <td>☑ Acción preventiva</td>
-    <td>☑ Actualización / Modificación de documento</td>
-    <td>☑ Otros</td>
-  </tr>
-</table>
-<p><strong>Descripción:</strong> Protección de contenedor, evitando posibles fallas en su funcionamiento</p>
-
-
-      <h3>5. Nuevos Entregables / Productos</h3>
-      <table>
-        <tr><th>Producto</th><th>Nuevo</th><th>Criterio de Aceptación</th><th>Revisor</th><th>Fecha</th></tr>
-        <tr>
-          <td>Aplicación móvil</td>
-          <td>Aplicación móvil con Asistente Virtual Inteligente</td>
-          <td>Respuestas automatizadas y funcionalidad dentro de la app</td>
-          <td>Sofía Margarita Romero Rodríguez</td>
-          <td>11 de junio</td>
-        </tr>
-      </table>
-
-      <h3>6. Afectaciones Relacionadas</h3>
-      <ul>
-        <li><strong>Integración técnica:</strong> Coordinación con backend</li>
-        <li><strong>Consultas internas:</strong> Aumento de tráfico</li>
-        <li><strong>Interacción con cajeros:</strong> Mejora en orientación al usuario</li>
-        <li><strong>Uso de infraestructura existente:</strong> Optimización sin adquisiciones nuevas</li>
-      </ul>
-
-      <h3>7. Presupuesto</h3>
-      <p><strong>Original:</strong> $27,148.62</p>
-      <p><strong>Modificado:</strong> $0.00 (usa infraestructura existente)</p>
-
-      <h3>8. Cronograma</h3>
-      <table>
-        <tr><th>Actividad</th><th>Inicio</th><th>Fin</th></tr>
-        <tr><td>Integración del Asistente</td><td>19 de mayo</td><td>31 de mayo</td></tr>
-      </table>
-
-      <h3>9. Riesgos</h3>
-      <ul>
-        <li>Respuestas imprecisas por entrenamiento insuficiente</li>
-        <li>Dependencia del equipo backend</li>
-        <li>Tiempo adicional para pruebas funcionales</li>
-        <li>Resistencia de usuarios a sistemas automatizados</li>
-      </ul>
-
-      <h3>10. Firmas</h3>
-      <table>
-        <tr><th>Nombre</th><th>Cargo</th><th>Rol</th><th>Fecha</th><th>Firma</th></tr>
-        <tr><td>Sofía Margarita Romero Rodríguez</td><td>Equipo desarrollador</td><td>Creador</td><td>15-05-2025</td><td><img src="assets/img/sof.jpg" width="100" height="100"></td></tr>
-        <tr><td>Ángel Josué Guevara Portillo</td><td>Líder del Proyecto</td><td>Aprobador</td><td>15-05-2025</td><td><img src="assets/img/ang.jpg" width="100" height="100"></td></tr>
-      </table>
-    </section>
-
-
-        <section id="propuesta-gerson">
-      <h2>Propuesta: Gerson Nahún Argueta Hernández</h2>
-      <p><strong>Fecha:</strong> 17 de mayo del 2025</p>
-      <p><strong>Proyecto:</strong> Implementación de billetera digital de cripto-activos para Flowi</p>
-      <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
-      <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
-
-      <h3>1. Descripción del Cambio</h3>
-      <p>Implementación de un sistema de reconocimiento biométrico (huella dactilar o facial) en los cajeros automáticos (ATM) para autenticar la identidad del usuario sin necesidad de tarjeta física, aumentando seguridad y reduciendo suplantaciones.</p>
-
-      <h3>2. Justificación / Sustento Legal</h3>
-      <p>Fortalece la seguridad en puntos de retiro físicos, mejora la experiencia del usuario y cumple con estándares internacionales de protección de datos y acceso seguro. Aplica buenas prácticas en soluciones fintech.</p>
-
-     <h3>3. Categoría del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Alcance</td>
-    <td>☑ Cronograma</td>
-    <td>☐ Costos</td>
-    <td>☑ Calidad</td>
-    <td>☑ Recursos</td>
-    <td>☑ Procedimientos</td>
-    <td>☐ Documentación</td>
-    <td>☐ Otro</td>
-  </tr>
-</table>
-<p><strong>Marcar todas las que apliquen</strong></p>
-
-<h3>4. Causa del Origen del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Solicitud de cliente</td>
-    <td>☐ Reparación de defecto</td>
-    <td>☐ Acción correctiva</td>
-    <td>☑ Acción preventiva</td>
-    <td>☑ Actualización / Modificación de documento</td>
-    <td>☑ Otros</td>
-  </tr>
-</table>
-<p><strong>Descripción:</strong> Protección de contenedor, evitando posibles fallas en su funcionamiento</p>
-
-
-      <h3>5. Nuevos Entregables / Productos</h3>
-      <table>
-        <tr><th>Producto</th><th>Nuevo</th><th>Criterio de Aceptación</th><th>Revisor</th><th>Fecha</th></tr>
-        <tr>
-          <td>Cajeros Automáticos</td>
-          <td>ATM con reconocimiento biométrico integrado</td>
-          <td>Capacidad de autenticar usuarios mediante huella o rostro</td>
-          <td>Gerson Nahún Argueta Hernández</td>
-          <td>19 al 26 de mayo</td>
-        </tr>
-      </table>
-
-      <h3>6. Afectaciones Relacionadas</h3>
-      <ul>
-        <li><strong>Sensores:</strong> Rediseño parcial de hardware/software del cajero</li>
-        <li><strong>Base de datos:</strong> Necesidad de cifrado y validación de datos biométricos</li>
-        <li><strong>Interoperabilidad:</strong> Pruebas cruzadas entre app y cajero</li>
-      </ul>
-
-      <h3>7. Presupuesto</h3>
-      <p><strong>Original:</strong> $24,789.96</p>
-      <p><strong>Modificado:</strong> $0.00 (uso de sensores existentes)</p>
-
-      <h3>8. Cronograma</h3>
-      <table>
-        <tr><th>Actividad</th><th>Inicio</th><th>Fin</th></tr>
-        <tr><td>Adquisición de sensores e integración</td><td>19 de mayo</td><td>25 de mayo</td></tr>
-        <tr><td>Pruebas del sistema biométrico</td><td>25 de mayo</td><td>26 de mayo</td></tr>
-      </table>
-
-      <h3>9. Riesgos</h3>
-      <ul>
-        <li>Fallos de lectura por condiciones ambientales</li>
-        <li>Resistencia por privacidad</li>
-        <li>Capacitación técnica del personal de soporte</li>
-        <li>Validación de compatibilidad con infraestructura actual</li>
-      </ul>
-
-      <h3>10. Firmas</h3>
-      <table>
-        <tr><th>Nombre</th><th>Cargo</th><th>Rol</th><th>Fecha</th><th>Firma</th></tr>
-        <tr><td>Gerson Nahún Argueta Hernández</td><td>Equipo desarrollador</td><td>Creador</td><td>17-05-2025</td><td><img src="assets/img/ger.jpg" width="100" height="100"></td></tr>
-        <tr><td>Ángel Josué Guevara Portillo</td><td>Líder del Proyecto</td><td>Aprobador</td><td>15-05-2025</td><td><img src="assets/img/ang.jpg" width="100" height="100"></td></tr>
-      </table>
-    </section>
-
-
-        <section id="propuesta-edwin">
-      <h2>Propuesta: Edwin Alexander Villalta Ortiz</h2>
-      <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
-      <p><strong>Proyecto:</strong> Billetera Digital</p>
-      <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
-      <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
-
-      <h3>1. Descripción del Cambio</h3>
-      <p>Incorporación del componente “Seguridad” en el EDT del proyecto, con la instalación de cámaras de reconocimiento facial en todos los locales físicos. Permitirá identificación automática, registro de acceso en tiempo real, detección de accesos no autorizados e integración con el sistema central.</p>
-
-      <h3>2. Justificación / Sustento Legal</h3>
-      <p>Mejora la seguridad física del proyecto, permite trazabilidad de accesos, reduce la dependencia de controles manuales y cumple con normas de seguridad, gestión de riesgos y protección de datos. Aporta control automatizado y mejora operativa.</p>
-
-      <h3>3. Categoría del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Alcance</td>
-    <td>☑ Cronograma</td>
-    <td>☐ Costos</td>
-    <td>☑ Calidad</td>
-    <td>☑ Recursos</td>
-    <td>☑ Procedimientos</td>
-    <td>☐ Documentación</td>
-    <td>☐ Otro</td>
-  </tr>
-</table>
-<p><strong>Marcar todas las que apliquen</strong></p>
-
-<h3>4. Causa del Origen del Cambio</h3>
-<table>
-  <tr>
-    <td>☐ Solicitud de cliente</td>
-    <td>☐ Reparación de defecto</td>
-    <td>☐ Acción correctiva</td>
-    <td>☑ Acción preventiva</td>
-    <td>☑ Actualización / Modificación de documento</td>
-    <td>☑ Otros</td>
-  </tr>
-</table>
-<p><strong>Descripción:</strong> Protección de contenedor, evitando posibles fallas en su funcionamiento</p>
-
-
-      <h3>5. Nuevos Entregables / Productos</h3>
-      <table>
-        <tr><th>Producto</th><th>Nuevo</th><th>Criterio de Aceptación</th><th>Revisor</th><th>Fecha</th></tr>
-        <tr>
-          <td>Infraestructura Física</td>
-          <td>Sistema de cámaras de reconocimiento facial</td>
-          <td>Instalación y funcionamiento completo en todos los locales</td>
-          <td>Edwin Alexander Villalta Ortiz</td>
-          <td>19 de mayo</td>
-        </tr>
-      </table>
-
-      <h3>6. Afectaciones Relacionadas</h3>
-      <ul>
-        <li><strong>Infraestructura:</strong> Nuevas especificaciones técnicas</li>
-        <li><strong>Base de datos:</strong> Requiere almacenamiento en la nube</li>
-        <li><strong>Control de acceso:</strong> Integra reconocimiento facial</li>
-      </ul>
-
-      <h3>7. Presupuesto</h3>
-      <p><strong>Original:</strong> $10,502.38</p>
-      <p><strong>Modificado:</strong> $0.00 (se implementa dentro del rubro aprobado)</p>
-
-      <h3>8. Cronograma</h3>
-      <table>
-        <tr><th>Actividad</th><th>Inicio</th><th>Fin</th></tr>
-        <tr><td>Infraestructura y Seguridad</td><td>20 de enero</td><td>14 de junio</td></tr>
-      </table>
-
-      <h3>9. Riesgos</h3>
-      <ul>
-        <li>Capacitación técnica para instalación y configuración</li>
-        <li>Requiere hardware especializado (cámaras)</li>
-        <li>Conectividad estable para almacenamiento en la nube</li>
-        <li>Políticas de privacidad y protección de datos personales</li>
-      </ul>
-
-      <h3>10. Firmas</h3>
-      <table>
-        <tr><th>Nombre</th><th>Cargo</th><th>Rol</th><th>Fecha</th><th>Firma</th></tr>
-        <tr><td>Edwin Alexander Villalta Ortiz</td><td>Miembro del proyecto</td><td>Creador</td><td>18/05/2025</td><td><img src="assets/img/edw.jpg" width="100" height="100"></td></tr>
-        <tr><td>Ángel Josué Guevara Portillo</td><td>Líder del Proyecto</td><td>Aprobador</td><td>18/05/2025</td><td><img src="assets/img/ang.jpg" width="100" height="100"></td></tr>
-      </table>
-    </section>
-
-
+              <h3>Propuesta: Jefferson Josué Esperanza Ortiz</h3>
+              <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
+              <p><strong>Proyecto:</strong> Billetera Digital</p>
+              <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
+              <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
+
+              <h3>1. Descripción del Cambio</h3>
+              <p>
+                Submódulo de Seguridad para Plataforma Local, con alertas
+                automáticas, RBAC, cifrado de datos, headers, registros y
+                auditoría básica.
+              </p>
+
+              <h3>2. Justificación / Sustento Legal</h3>
+              <p>
+                Ausencia de módulo de seguridad en la planificación actual. Se
+                sigue normativa OWASP y protección de datos.
+              </p>
+
+              <h3>3. Categoría del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Alcance</td>
+                  <td>☑ Cronograma</td>
+                  <td>☐ Costos</td>
+                  <td>☑ Calidad</td>
+                  <td>☑ Recursos</td>
+                  <td>☑ Procedimientos</td>
+                  <td>☐ Documentación</td>
+                  <td>☐ Otro</td>
+                </tr>
+              </table>
+              <p><strong>Marcar todas las que apliquen</strong></p>
+
+              <h3>4. Causa del Origen del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Solicitud de cliente</td>
+                  <td>☐ Reparación de defecto</td>
+                  <td>☐ Acción correctiva</td>
+                  <td>☑ Acción preventiva</td>
+                  <td>☑ Actualización / Modificación de documento</td>
+                  <td>☑ Otros</td>
+                </tr>
+              </table>
+              <p>
+                <strong>Descripción:</strong> Protección de contenedor, evitando
+                posibles fallas en su funcionamiento
+              </p>
+
+              <h3>5. Nuevos Entregables / Productos</h3>
+              <table>
+                <tr>
+                  <th>Producto</th>
+                  <th>Nuevo</th>
+                  <th>Criterio de Aceptación</th>
+                  <th>Revisor</th>
+                  <th>Fecha</th>
+                </tr>
+                <tr>
+                  <td>Plataforma Local</td>
+                  <td>Submódulo de Seguridad</td>
+                  <td>
+                    Alertas, control de accesos, auditoría, cifrado activo
+                  </td>
+                  <td>Jefferson Josué Esperanza Ortiz</td>
+                  <td>19 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>6. Afectaciones Relacionadas</h3>
+              <ul>
+                <li><strong>RBAC:</strong> Requiere permisos en backend</li>
+                <li><strong>Logs:</strong> Implica ajustes en base de datos</li>
+                <li><strong>Alertas:</strong> Validación de tráfico en red</li>
+              </ul>
+
+              <h3>7. Presupuesto</h3>
+              <p><strong>Original:</strong> $21,455.39</p>
+              <p>
+                <strong>Modificado:</strong> Sin cambios (uso de herramientas
+                internas)
+              </p>
+
+              <h3>8. Cronograma</h3>
+              <table>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Inicio</th>
+                  <th>Fin</th>
+                </tr>
+                <tr>
+                  <td>Seguridad</td>
+                  <td>20 de enero</td>
+                  <td>31 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>9. Riesgos</h3>
+              <ul>
+                <li>Capacitación en prácticas de seguridad</li>
+                <li>Tiempo adicional de pruebas</li>
+                <li>Dependencia del backend</li>
+              </ul>
+
+              <h3>10. Firmas</h3>
+              <table>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Cargo</th>
+                  <th>Rol</th>
+                  <th>Fecha</th>
+                  <th>Firma</th>
+                </tr>
+                <tr>
+                  <td>Jefferson Josué Esperanza Ortiz</td>
+                  <td>Coordinador Técnico</td>
+                  <td>Creador</td>
+                  <td>17-05-2025</td>
+                  <td>
+                    <img src="assets/img/jeff.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ángel Josué Guevara Portillo</td>
+                  <td>Líder del Proyecto</td>
+                  <td>Aprobador</td>
+                  <td>18-05-2025</td>
+                  <td>
+                    <img src="assets/img/ang.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+              </table>
+            </section>
+
+            <section id="propuesta-cesar">
+              <h2>Propuesta: César Alexander Romero Vázquez</h2>
+              <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
+              <p><strong>Proyecto:</strong> Billetera Digital</p>
+              <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
+              <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
+
+              <h3>1. Descripción del Cambio</h3>
+              <p>
+                Integración de un sistema de Reconocimiento Inteligente de
+                Direcciones para clasificar contactos como frecuentes,
+                sospechosos, duplicados o bloqueados. Alerta sobre riesgos
+                potenciales y patrones de estafa en transacciones.
+              </p>
+
+              <h3>2. Justificación / Sustento Legal</h3>
+              <p>
+                Mejora de la seguridad al prevenir fraudes y errores humanos.
+                Cumplimiento de normativas AML y KYC, aprovechando
+                infraestructura local para mayor control y privacidad.
+              </p>
+
+              <h3>3. Categoría del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Alcance</td>
+                  <td>☑ Cronograma</td>
+                  <td>☐ Costos</td>
+                  <td>☑ Calidad</td>
+                  <td>☑ Recursos</td>
+                  <td>☑ Procedimientos</td>
+                  <td>☐ Documentación</td>
+                  <td>☐ Otro</td>
+                </tr>
+              </table>
+              <p><strong>Marcar todas las que apliquen</strong></p>
+
+              <h3>4. Causa del Origen del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Solicitud de cliente</td>
+                  <td>☐ Reparación de defecto</td>
+                  <td>☐ Acción correctiva</td>
+                  <td>☑ Acción preventiva</td>
+                  <td>☑ Actualización / Modificación de documento</td>
+                  <td>☑ Otros</td>
+                </tr>
+              </table>
+              <p>
+                <strong>Descripción:</strong> Protección de contenedor, evitando
+                posibles fallas en su funcionamiento
+              </p>
+
+              <h3>5. Nuevos Entregables / Productos</h3>
+              <table>
+                <tr>
+                  <th>Producto</th>
+                  <th>Nuevo</th>
+                  <th>Criterio de Aceptación</th>
+                  <th>Revisor</th>
+                  <th>Fecha</th>
+                </tr>
+                <tr>
+                  <td>Plataforma Local</td>
+                  <td>Módulo de Reconocimiento Inteligente de Direcciones</td>
+                  <td>Clasificación, alertas y reputación histórica</td>
+                  <td>César Alexander Romero Vázquez</td>
+                  <td>19 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>6. Afectaciones Relacionadas</h3>
+              <ul>
+                <li>
+                  <strong>Historial:</strong> Nuevas tablas en base de datos
+                </li>
+                <li>
+                  <strong>Evaluación:</strong> Lógica de negocio para detección
+                </li>
+                <li><strong>Integración:</strong> Posible con IA existente</li>
+              </ul>
+
+              <h3>7. Presupuesto</h3>
+              <p><strong>Original:</strong> $21,455.39</p>
+              <p>
+                <strong>Modificado:</strong> Sin cambios (uso de recursos
+                internos)
+              </p>
+
+              <h3>8. Cronograma</h3>
+              <table>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Inicio</th>
+                  <th>Fin</th>
+                </tr>
+                <tr>
+                  <td>Seguridad</td>
+                  <td>20 de enero</td>
+                  <td>31 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>9. Riesgos</h3>
+              <ul>
+                <li>Clasificación errónea por falta de datos iniciales</li>
+                <li>Alta carga en base de datos</li>
+                <li>
+                  Pruebas exhaustivas necesarias para evitar falsos positivos
+                </li>
+              </ul>
+
+              <h3>10. Firmas</h3>
+              <table>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Cargo</th>
+                  <th>Rol</th>
+                  <th>Fecha</th>
+                  <th>Firma</th>
+                </tr>
+                <tr>
+                  <td>César Alexander Romero Vázquez</td>
+                  <td>Coordinador Técnico</td>
+                  <td>Creador</td>
+                  <td>17-05-2025</td>
+                  <td>
+                    <img src="assets/img/ces.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ángel Josué Guevara Portillo</td>
+                  <td>Líder del Proyecto</td>
+                  <td>Aprobador</td>
+                  <td>18-05-2025</td>
+                  <td>
+                    <img src="assets/img/ang.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+              </table>
+            </section>
+
+            <section id="propuesta-sofia">
+              <h2>Propuesta: Sofía Margarita Romero Rodríguez</h2>
+              <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
+              <p><strong>Proyecto:</strong> Billetera Digital</p>
+              <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
+              <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
+
+              <h3>1. Descripción del Cambio</h3>
+              <p>
+                Incorporación de un Asistente Virtual Inteligente (Chatbot con
+                IA) en la aplicación móvil. Brindará soporte en tiempo real,
+                resolverá dudas, errores comunes y facilitará el aprendizaje del
+                uso de la billetera digital.
+              </p>
+
+              <h3>2. Justificación / Sustento Legal</h3>
+              <p>
+                Mejora de experiencia del usuario, reducción de carga operativa
+                y aumento de accesibilidad. Refuerza los principios de
+                usabilidad y eficiencia, alineándose con la inclusión digital y
+                buenas prácticas de desarrollo.
+              </p>
+
+              <h3>3. Categoría del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Alcance</td>
+                  <td>☑ Cronograma</td>
+                  <td>☐ Costos</td>
+                  <td>☑ Calidad</td>
+                  <td>☑ Recursos</td>
+                  <td>☑ Procedimientos</td>
+                  <td>☐ Documentación</td>
+                  <td>☐ Otro</td>
+                </tr>
+              </table>
+              <p><strong>Marcar todas las que apliquen</strong></p>
+
+              <h3>4. Causa del Origen del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Solicitud de cliente</td>
+                  <td>☐ Reparación de defecto</td>
+                  <td>☐ Acción correctiva</td>
+                  <td>☑ Acción preventiva</td>
+                  <td>☑ Actualización / Modificación de documento</td>
+                  <td>☑ Otros</td>
+                </tr>
+              </table>
+              <p>
+                <strong>Descripción:</strong> Protección de contenedor, evitando
+                posibles fallas en su funcionamiento
+              </p>
+
+              <h3>5. Nuevos Entregables / Productos</h3>
+              <table>
+                <tr>
+                  <th>Producto</th>
+                  <th>Nuevo</th>
+                  <th>Criterio de Aceptación</th>
+                  <th>Revisor</th>
+                  <th>Fecha</th>
+                </tr>
+                <tr>
+                  <td>Aplicación móvil</td>
+                  <td>Aplicación móvil con Asistente Virtual Inteligente</td>
+                  <td>
+                    Respuestas automatizadas y funcionalidad dentro de la app
+                  </td>
+                  <td>Sofía Margarita Romero Rodríguez</td>
+                  <td>11 de junio</td>
+                </tr>
+              </table>
+
+              <h3>6. Afectaciones Relacionadas</h3>
+              <ul>
+                <li>
+                  <strong>Integración técnica:</strong> Coordinación con backend
+                </li>
+                <li><strong>Consultas internas:</strong> Aumento de tráfico</li>
+                <li>
+                  <strong>Interacción con cajeros:</strong> Mejora en
+                  orientación al usuario
+                </li>
+                <li>
+                  <strong>Uso de infraestructura existente:</strong>
+                  Optimización sin adquisiciones nuevas
+                </li>
+              </ul>
+
+              <h3>7. Presupuesto</h3>
+              <p><strong>Original:</strong> $27,148.62</p>
+              <p>
+                <strong>Modificado:</strong> $0.00 (usa infraestructura
+                existente)
+              </p>
+
+              <h3>8. Cronograma</h3>
+              <table>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Inicio</th>
+                  <th>Fin</th>
+                </tr>
+                <tr>
+                  <td>Integración del Asistente</td>
+                  <td>19 de mayo</td>
+                  <td>31 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>9. Riesgos</h3>
+              <ul>
+                <li>Respuestas imprecisas por entrenamiento insuficiente</li>
+                <li>Dependencia del equipo backend</li>
+                <li>Tiempo adicional para pruebas funcionales</li>
+                <li>Resistencia de usuarios a sistemas automatizados</li>
+              </ul>
+
+              <h3>10. Firmas</h3>
+              <table>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Cargo</th>
+                  <th>Rol</th>
+                  <th>Fecha</th>
+                  <th>Firma</th>
+                </tr>
+                <tr>
+                  <td>Sofía Margarita Romero Rodríguez</td>
+                  <td>Equipo desarrollador</td>
+                  <td>Creador</td>
+                  <td>15-05-2025</td>
+                  <td>
+                    <img src="assets/img/sof.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ángel Josué Guevara Portillo</td>
+                  <td>Líder del Proyecto</td>
+                  <td>Aprobador</td>
+                  <td>15-05-2025</td>
+                  <td>
+                    <img src="assets/img/ang.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+              </table>
+            </section>
+
+            <section id="propuesta-gerson">
+              <h2>Propuesta: Gerson Nahún Argueta Hernández</h2>
+              <p><strong>Fecha:</strong> 17 de mayo del 2025</p>
+              <p>
+                <strong>Proyecto:</strong> Implementación de billetera digital
+                de cripto-activos para Flowi
+              </p>
+              <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
+              <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
+
+              <h3>1. Descripción del Cambio</h3>
+              <p>
+                Implementación de un sistema de reconocimiento biométrico
+                (huella dactilar o facial) en los cajeros automáticos (ATM) para
+                autenticar la identidad del usuario sin necesidad de tarjeta
+                física, aumentando seguridad y reduciendo suplantaciones.
+              </p>
+
+              <h3>2. Justificación / Sustento Legal</h3>
+              <p>
+                Fortalece la seguridad en puntos de retiro físicos, mejora la
+                experiencia del usuario y cumple con estándares internacionales
+                de protección de datos y acceso seguro. Aplica buenas prácticas
+                en soluciones fintech.
+              </p>
+
+              <h3>3. Categoría del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Alcance</td>
+                  <td>☑ Cronograma</td>
+                  <td>☐ Costos</td>
+                  <td>☑ Calidad</td>
+                  <td>☑ Recursos</td>
+                  <td>☑ Procedimientos</td>
+                  <td>☐ Documentación</td>
+                  <td>☐ Otro</td>
+                </tr>
+              </table>
+              <p><strong>Marcar todas las que apliquen</strong></p>
+
+              <h3>4. Causa del Origen del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Solicitud de cliente</td>
+                  <td>☐ Reparación de defecto</td>
+                  <td>☐ Acción correctiva</td>
+                  <td>☑ Acción preventiva</td>
+                  <td>☑ Actualización / Modificación de documento</td>
+                  <td>☑ Otros</td>
+                </tr>
+              </table>
+              <p>
+                <strong>Descripción:</strong> Protección de contenedor, evitando
+                posibles fallas en su funcionamiento
+              </p>
+
+              <h3>5. Nuevos Entregables / Productos</h3>
+              <table>
+                <tr>
+                  <th>Producto</th>
+                  <th>Nuevo</th>
+                  <th>Criterio de Aceptación</th>
+                  <th>Revisor</th>
+                  <th>Fecha</th>
+                </tr>
+                <tr>
+                  <td>Cajeros Automáticos</td>
+                  <td>ATM con reconocimiento biométrico integrado</td>
+                  <td>
+                    Capacidad de autenticar usuarios mediante huella o rostro
+                  </td>
+                  <td>Gerson Nahún Argueta Hernández</td>
+                  <td>19 al 26 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>6. Afectaciones Relacionadas</h3>
+              <ul>
+                <li>
+                  <strong>Sensores:</strong> Rediseño parcial de
+                  hardware/software del cajero
+                </li>
+                <li>
+                  <strong>Base de datos:</strong> Necesidad de cifrado y
+                  validación de datos biométricos
+                </li>
+                <li>
+                  <strong>Interoperabilidad:</strong> Pruebas cruzadas entre app
+                  y cajero
+                </li>
+              </ul>
+
+              <h3>7. Presupuesto</h3>
+              <p><strong>Original:</strong> $24,789.96</p>
+              <p>
+                <strong>Modificado:</strong> $0.00 (uso de sensores existentes)
+              </p>
+
+              <h3>8. Cronograma</h3>
+              <table>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Inicio</th>
+                  <th>Fin</th>
+                </tr>
+                <tr>
+                  <td>Adquisición de sensores e integración</td>
+                  <td>19 de mayo</td>
+                  <td>25 de mayo</td>
+                </tr>
+                <tr>
+                  <td>Pruebas del sistema biométrico</td>
+                  <td>25 de mayo</td>
+                  <td>26 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>9. Riesgos</h3>
+              <ul>
+                <li>Fallos de lectura por condiciones ambientales</li>
+                <li>Resistencia por privacidad</li>
+                <li>Capacitación técnica del personal de soporte</li>
+                <li>Validación de compatibilidad con infraestructura actual</li>
+              </ul>
+
+              <h3>10. Firmas</h3>
+              <table>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Cargo</th>
+                  <th>Rol</th>
+                  <th>Fecha</th>
+                  <th>Firma</th>
+                </tr>
+                <tr>
+                  <td>Gerson Nahún Argueta Hernández</td>
+                  <td>Equipo desarrollador</td>
+                  <td>Creador</td>
+                  <td>17-05-2025</td>
+                  <td>
+                    <img src="assets/img/ger.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ángel Josué Guevara Portillo</td>
+                  <td>Líder del Proyecto</td>
+                  <td>Aprobador</td>
+                  <td>15-05-2025</td>
+                  <td>
+                    <img src="assets/img/ang.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+              </table>
+            </section>
+
+            <section id="propuesta-edwin">
+              <h2>Propuesta: Edwin Alexander Villalta Ortiz</h2>
+              <p><strong>Fecha:</strong> Jueves 15 de mayo del 2025</p>
+              <p><strong>Proyecto:</strong> Billetera Digital</p>
+              <p><strong>Líder:</strong> Ángel Josué Guevara Portillo</p>
+              <p><strong>Patrocinador:</strong> Universidad Gerardo Barrios</p>
+
+              <h3>1. Descripción del Cambio</h3>
+              <p>
+                Incorporación del componente “Seguridad” en el EDT del proyecto,
+                con la instalación de cámaras de reconocimiento facial en todos
+                los locales físicos. Permitirá identificación automática,
+                registro de acceso en tiempo real, detección de accesos no
+                autorizados e integración con el sistema central.
+              </p>
+
+              <h3>2. Justificación / Sustento Legal</h3>
+              <p>
+                Mejora la seguridad física del proyecto, permite trazabilidad de
+                accesos, reduce la dependencia de controles manuales y cumple
+                con normas de seguridad, gestión de riesgos y protección de
+                datos. Aporta control automatizado y mejora operativa.
+              </p>
+
+              <h3>3. Categoría del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Alcance</td>
+                  <td>☑ Cronograma</td>
+                  <td>☐ Costos</td>
+                  <td>☑ Calidad</td>
+                  <td>☑ Recursos</td>
+                  <td>☑ Procedimientos</td>
+                  <td>☐ Documentación</td>
+                  <td>☐ Otro</td>
+                </tr>
+              </table>
+              <p><strong>Marcar todas las que apliquen</strong></p>
+
+              <h3>4. Causa del Origen del Cambio</h3>
+              <table>
+                <tr>
+                  <td>☐ Solicitud de cliente</td>
+                  <td>☐ Reparación de defecto</td>
+                  <td>☐ Acción correctiva</td>
+                  <td>☑ Acción preventiva</td>
+                  <td>☑ Actualización / Modificación de documento</td>
+                  <td>☑ Otros</td>
+                </tr>
+              </table>
+              <p>
+                <strong>Descripción:</strong> Protección de contenedor, evitando
+                posibles fallas en su funcionamiento
+              </p>
+
+              <h3>5. Nuevos Entregables / Productos</h3>
+              <table>
+                <tr>
+                  <th>Producto</th>
+                  <th>Nuevo</th>
+                  <th>Criterio de Aceptación</th>
+                  <th>Revisor</th>
+                  <th>Fecha</th>
+                </tr>
+                <tr>
+                  <td>Infraestructura Física</td>
+                  <td>Sistema de cámaras de reconocimiento facial</td>
+                  <td>
+                    Instalación y funcionamiento completo en todos los locales
+                  </td>
+                  <td>Edwin Alexander Villalta Ortiz</td>
+                  <td>19 de mayo</td>
+                </tr>
+              </table>
+
+              <h3>6. Afectaciones Relacionadas</h3>
+              <ul>
+                <li>
+                  <strong>Infraestructura:</strong> Nuevas especificaciones
+                  técnicas
+                </li>
+                <li>
+                  <strong>Base de datos:</strong> Requiere almacenamiento en la
+                  nube
+                </li>
+                <li>
+                  <strong>Control de acceso:</strong> Integra reconocimiento
+                  facial
+                </li>
+              </ul>
+
+              <h3>7. Presupuesto</h3>
+              <p><strong>Original:</strong> $10,502.38</p>
+              <p>
+                <strong>Modificado:</strong> $0.00 (se implementa dentro del
+                rubro aprobado)
+              </p>
+
+              <h3>8. Cronograma</h3>
+              <table>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Inicio</th>
+                  <th>Fin</th>
+                </tr>
+                <tr>
+                  <td>Infraestructura y Seguridad</td>
+                  <td>20 de enero</td>
+                  <td>14 de junio</td>
+                </tr>
+              </table>
+
+              <h3>9. Riesgos</h3>
+              <ul>
+                <li>Capacitación técnica para instalación y configuración</li>
+                <li>Requiere hardware especializado (cámaras)</li>
+                <li>Conectividad estable para almacenamiento en la nube</li>
+                <li>
+                  Políticas de privacidad y protección de datos personales
+                </li>
+              </ul>
+
+              <h3>10. Firmas</h3>
+              <table>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Cargo</th>
+                  <th>Rol</th>
+                  <th>Fecha</th>
+                  <th>Firma</th>
+                </tr>
+                <tr>
+                  <td>Edwin Alexander Villalta Ortiz</td>
+                  <td>Miembro del proyecto</td>
+                  <td>Creador</td>
+                  <td>18/05/2025</td>
+                  <td>
+                    <img src="assets/img/edw.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ángel Josué Guevara Portillo</td>
+                  <td>Líder del Proyecto</td>
+                  <td>Aprobador</td>
+                  <td>18/05/2025</td>
+                  <td>
+                    <img src="assets/img/ang.jpg" width="100" height="100" />
+                  </td>
+                </tr>
+              </table>
+            </section>
+          </div>
+          <!-- row -->
         </div>
-        <!-- row -->
+        <!-- container -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer-site dark-background">
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
       </div>
-      <!-- container -->
-    </section>
-  </main>
+    </footer>
+    <!-- /Footer -->
 
-  <!-- Footer -->
-  <footer id="footer" class="footer-site dark-background">
-    <div class="container copyright text-center mt-4">
-      <p>
-        © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
-        <span>All Rights Reserved</span>
-      </p>
-      <div class="credits">Designed by Kompilo</div>
-    </div>
-  </footer>
-  <!-- /Footer -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <div id="preloader"></div>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
-  <div id="preloader"></div>
+    <script src="backend/sessionManager.js"></script>
+    <!-- Scripts -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
-  <script src="backend/sessionManager.js"></script>
-  <!-- Scripts -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
-
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>

@@ -1,654 +1,1023 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Acta de recepción</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <!-- Favicon -->
-  <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-    rel="stylesheet" />
-
-  <!-- Vendor CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-  <!-- Main CSS -->
-  <link href="assets/css/main.css" rel="stylesheet" />
-
-  <style>
- 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    p {
-      text-align: justify;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    table, th, td {
-      border: 1px solid #000;
-    }
-    th, td {
-      padding: 10px;
-      vertical-align: top;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .portfolio-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-      height: 100%;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .portfolio-card img {
-      border-radius: 10px;
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .portfolio-card h4 {
-      font-weight: 600;
-    }
-
-    .portfolio-card p {
-      margin-bottom: 1rem;
-    }
-
-    .navmenu a.active {
-      color: #007bff;
-      /* Texto en negro */
-      font-weight: bold;
-      /* Negrita */
-    }
-       .dropdown-menu {
-    max-height: 300px; /* ajusta el valor según lo que necesites */
-    overflow-y: auto;
-  }
-  
-
-  /* Cambiar toda la fuente a Poppins */
-body, h1, h2, h3, h4, h5, h6, p, ul, li, td, th, a, table, input, button {
-  font-family: 'Poppins', sans-serif !important;
-}
-
-/* Ajustar tamaños de títulos */
-h1 {
-  font-size: 1.8rem;  /* Antes podía estar > 2rem */
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-h4 {
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-h5 {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-h6 {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-/* Tamaños de párrafos y tablas */
-p, li, td, th {
-  font-size: 0.95rem;
-}
-
-/* Ajustes específicos para la tabla en facturas */
-.factura table th, .factura table td {
-  font-size: 0.95rem;
-}
-
-  </style>
-
-  <script src="backend/middlewareAdmin.js"></script>
-</head>
-
-<body class="portfolio-page">
-  <!-- Header / Nav -->
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="portafolio.html" class="active">Portafolio</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Asignaciones
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="champfrogs.html">Champfrogs</a></li>
-              <li><a class="dropdown-item" href="workexpo.html">WorkExpo</a></li>
-              <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
-              <li><a class="dropdown-item" href="casoNegocio.html">Caso de negocio</a></li>
-              <li><a class="dropdown-item" href="parcial1.html">Parcial 1</a></li>
-              <li><a class="dropdown-item" href="edt.html">EDT</a></li>
-              <li><a class="dropdown-item" href="roadmap.html">Roadmap</a></li>
-              <li><a class="dropdown-item" href="matrizComunicacion.html">Matriz de comunicación</a></li>
-              <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
-              <li><a class="dropdown-item" href="ofertaEconomica.html">Oferta economica</a></li>
-              <li><a class="dropdown-item" href="ofertaTecnica.html">Oferta tecnica</a></li>
-            <li><a class="dropdown-item" href="evaluandoOferta.html">Evaluando Oferta tecnica</a></li>
-              <li><a class="dropdown-item" href="actaRecepcion.html">Acta de recepción</a></li>
-              <li><a class="dropdown-item" href="solicitudCambios.html">Solicitud de cambios</a></li>
-              <li><a class="dropdown-item" href="informeCierre.html">Informe cierre de proyecto</a></li>
-               <li><a class="dropdown-item" href="parcialTres.html">Parcial 3</a></li>
-            </ul>
-          </li>
-          <li><a href="equipo.html">Equipo</a></li>
-          <li id="loginItem"><a href="login.html">login</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="section py-5">
-      <div class="container">
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-          
-       
-  <h2>Actas de Recepción</h2>
-
-  <ul class="nav nav-tabs" id="actasTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="acta1-tab" data-bs-toggle="tab" data-bs-target="#acta1" type="button" role="tab" aria-controls="acta1" aria-selected="true">Ángel</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="acta2-tab" data-bs-toggle="tab" data-bs-target="#acta2" type="button" role="tab" aria-controls="acta2" aria-selected="false">Jefferson</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="acta3-tab" data-bs-toggle="tab" data-bs-target="#acta3" type="button" role="tab" aria-controls="acta3" aria-selected="false">César</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="acta4-tab" data-bs-toggle="tab" data-bs-target="#acta4" type="button" role="tab" aria-controls="acta4" aria-selected="false">Sofía</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="acta5-tab" data-bs-toggle="tab" data-bs-target="#acta5" type="button" role="tab" aria-controls="acta5" aria-selected="false">Gerson</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="acta6-tab" data-bs-toggle="tab" data-bs-target="#acta6" type="button" role="tab" aria-controls="acta6" aria-selected="false">Edwin</button>
-    </li>
-  </ul>
-
-  <div class="tab-content mt-4" id="actasTabContent">
-    <!-- ACTA 1 -->
-    <div class="tab-pane fade show active" id="acta1" role="tabpanel" aria-labelledby="acta1-tab">
-  <p><strong>Referencia:</strong> Proyecto Tecnológico innovador</p>
-  <p><strong>Proyecto:</strong> Billetera digital de criptoActivos</p>
-  <p><strong>Cliente:</strong> Mauricio Funes</p>
-  <p><strong>Entrega de:</strong> Aplicación móvil</p>
-  <p><strong>Fecha:</strong> 12 febrero / 11 de junio</p>
-  <p><strong>Estado:</strong> Parcial</p>
-
-  <h5 class="mt-4">Elementos entregados – Aplicación móvil (ID #1.2)</h5>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Elemento</th>
-        <th>Estado</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Desarrollo Frontend</td>
-        <td>Finalizado</td>
-        <td>Interfaz gráfica completa para dispositivos móviles, enfocada en una experiencia de usuario intuitiva y navegación fluida.</td>
-      </tr>
-      <tr>
-        <td>Integración con Plataforma Local</td>
-        <td>Finalizado</td>
-        <td>Conexión funcional entre el frontend de la app móvil y la plataforma local, permitiendo el flujo de datos mediante APIs.</td>
-      </tr>
-      <tr>
-        <td>Funcionalidades de Transacciones</td>
-        <td>En desarrollo</td>
-        <td>Módulo para realizar transacciones rápidas y seguras dentro de la aplicación.</td>
-      </tr>
-      <tr>
-        <td>Seguridad de la Aplicación</td>
-        <td>En desarrollo</td>
-        <td>Sistema de protección que incluye autenticación segura, cifrado de datos y documentación de medidas de seguridad implementadas.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h5 class="mt-4">Pruebas</h5>
-  <p>No se han realizado pruebas formales sobre los módulos entregados. Se recomienda encarecidamente llevar a cabo pruebas funcionales, de usabilidad y de integración para garantizar el correcto desempeño y la estabilidad de la aplicación móvil.</p>
-
-  <h5 class="mt-4">Recomendaciones</h5>
-  <ul>
-    <li>Realizar pruebas exhaustivas en los módulos finalizados antes de su despliegue en producción.</li>
-    <li>Documentar los resultados de las pruebas para futuras referencias y mejoras.</li>
-    <li>Establecer un protocolo de validación continua durante el desarrollo de los módulos en curso.</li>
-    <li>Asegurar que el módulo de seguridad sea sometido a pruebas de vulnerabilidad antes de su liberación.</li>
-  </ul>
-
-  <h5 class="mt-4">Observaciones</h5>
-  <ul>
-    <li>No se realizaron pruebas formales sobre los módulos entregados.</li>
-    <li>Se recomienda ejecutar pruebas funcionales, de usabilidad e integración antes de su despliegue definitivo.</li>
-    <li>La documentación de seguridad fue entregada, pero no validada mediante pruebas técnicas específicas.</li>
-  </ul>
-
-  <table class="mt-4">
-    <thead>
-      <tr>
-        <th>Por el cliente</th>
-        <th>Por el contratista</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Nombre: Mauricio Funes <br>
-          Firma: MF <br>
-          Fecha: 08/05/2025
-        </td>
-        <td>
-          Nombre: Ángel Guevara <br>
-          Firma: <img src="assets/img/ang.jpg" width="100" height="100"><br>
-          Fecha: 08/05/2025
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-    <!-- ACTA 2 -->
-    <div class="tab-pane fade" id="acta2" role="tabpanel" aria-labelledby="acta2-tab">
-  <p><strong>Referencia:</strong> Proyecto Tecnológico Innovador</p>
-  <p><strong>Proyecto:</strong> Implementación de billetera digital de criptoactivos para Flowi</p>
-  <p><strong>Cliente:</strong> Salvador Sánchez Cerén</p>
-  <p><strong>Entrega de:</strong> Plataforma Local</p>
-  <p><strong>Fecha:</strong> 20/01/2025 - 23/04/2025</p>
-  <p><strong>Estado:</strong> Final</p>
-
-  <h5 class="mt-4">Elementos entregados</h5>
-  <ul>
-    <li>Base de datos</li>
-    <li>Software</li>
-    <li>Inteligencia Artificial</li>
-    <li>Hardware</li>
-    <li>Redes</li>
-  </ul>
-
-  <h5 class="mt-4">Pruebas realizadas</h5>
-  <p>No se especificaron pruebas realizadas sobre los entregables.</p>
-
-  <h5 class="mt-4">Acta de recepción</h5>
-  <p>El Cliente certifica que la totalidad de los suministros o servicios reseñados en la presente acta de recepción han sido entregados terminados y que, habiendo sido sometidos a las pruebas de validación y aceptación indicadas, están de acuerdo con las especificaciones formales y demás requisitos contractualmente convenidos y establecidos entre las partes.</p>
-
-  <h5 class="mt-4">Observaciones</h5>
-  <p>Se recomienda haber implementado pruebas sobre cada entregable para asegurar su calidad y funcionamiento.</p>
-
-  <table class="mt-4">
-    <thead>
-      <tr>
-        <th>Por el cliente</th>
-        <th>Por el contratista</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Nombre: Salvador Sánchez Cerén <br>
-          Firma: SSC <br>
-          Fecha: 08/05/2025
-        </td>
-        <td>
-          Nombre: Jefferson Josué Esperanza Ortiz <br>
-          Firma: <img src="assets/img/jeff.jpg" width="100" height="100"><br>
-          Fecha: 08/05/2025
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-    <!-- ACTA 3 -->
-    
-      <div class="tab-pane fade" id="acta3" role="tabpanel" aria-labelledby="acta3-tab">
-  <p><strong>Referencia:</strong> Proyecto tecnológico innovador</p>
-  <p><strong>Proyecto:</strong> Billetera digital de criptoactivos</p>
-  <p><strong>Cliente:</strong> Flowi</p>
-  <p><strong>Entrega de:</strong> Plataforma local</p>
-  <p><strong>Fecha:</strong> 20/01/2025 - 22/03/2025</p>
-  <p><strong>Estado:</strong> Finalizado</p>
-
-  <h5 class="mt-4">Elementos entregados para la plataforma local</h5>
-  <ul>
-    <li>1.1.1 - Base de datos</li>
-    <li>1.1.2 - Desarrollo Plataforma Software</li>
-    <li>1.1.2.1 - IA para Recomendaciones Financieras</li>
-    <li>1.1.3 - Hardware</li>
-    <li>1.1.4 - Redes</li>
-  </ul>
-
-  <h5 class="mt-4">Pruebas realizadas</h5>
-  <p>No se realizaron pruebas para estos componentes.</p>
-
-  <h5 class="mt-4">Acta de recepción</h5>
-  <p>El Cliente certifica que la totalidad de los suministros o servicios reseñados en la presente acta de recepción han sido entregados/terminados y que, habiendo sido sometidos a las pruebas de validación y aceptación indicadas, están de acuerdo con las especificaciones formales y demás requisitos contractualmente convenidos y establecidos entre las partes.</p>
-
-  <h5 class="mt-4">Observaciones</h5>
-  <p>Se pudo detectar que hubo un hueco en el proyecto ya que no se realizaban pruebas, lo que pudo afectar de gran manera ya que pudo haber un error que hiciera que el proceso se detuviera.</p>
-
-  <table class="mt-4">
-    <thead>
-      <tr>
-        <th>Por el cliente</th>
-        <th>Por el contratista</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Nombre: José Lazo <br>
-          Firma: Jla <br>
-          Fecha: 08/05/2025
-        </td>
-        <td>
-          Cesar Alexander Romero<br>
-          Firma: <img src="assets/img/ces.jpg" width="100" height="100"><br>
-          Fecha: 08/05/2025
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-    
-
-    <!-- ACTA 4 -->
-    <div class="tab-pane fade" id="acta4" role="tabpanel" aria-labelledby="acta4-tab">
-      <div class="tab-pane fade show active" id="acta4" role="tabpanel" aria-labelledby="acta4-tab">
-      <p><strong>Referencia:</strong> Proyecto tecnológico innovador</p>
-      <p><strong>Proyecto:</strong> Implementación de billetera digital de criptoActivos para Flowi</p>
-      <p><strong>Cliente:</strong> Mauricio Funes</p>
-      <p><strong>Entrega:</strong> Aplicación móvil</p>
-      <p><strong>Fecha:</strong> 12 de febrero / 11 junio</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Elementos entregados</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Desarrollo Frontend: Desarrollo de la interfaz gráfica para dispositivos móviles</td>
-            <td>Finalizado</td>
-          </tr>
-          <tr>
-            <td>Integración con Plataforma Local: Integración de la aplicación móvil con la plataforma local</td>
-            <td>Finalizado</td>
-          </tr>
-          <tr>
-            <td>Funcionalidades de Transacciones: Desarrollo de funcionalidades para realizar transacciones</td>
-            <td>En ejecución</td>
-          </tr>
-          <tr>
-            <td>Seguridad de la Aplicación: Implementación de medidas de seguridad, protección contra ataques y cifrado de datos</td>
-            <td>En espera</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><strong>Pruebas:</strong> Finalizadas. Se recomienda hacer pruebas adicionales dentro del componente.</p>
-      <p>El Cliente certifica que la totalidad de los suministros o servicios reseñados en la presente acta de recepción han sido entregados terminados y que, habiendo sido sometidos a las pruebas de validación y aceptación indicadas, están de acuerdo con las especificaciones formales y demás requisitos contractualmente convenidos y establecidos entre las partes.</p>
-      <p><strong>OBSERVACIONES:</strong> Se recomiendan hacer las pruebas necesarias dentro del componente.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Por el cliente</th>
-            <th>Por el contratista</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Nombre: Mauricio Funes <br>
-              Firma: MF <br>
-              Fecha: 08 de mayo
-            </td>
-            <td>
-              Sofía Margarita Romero Rodríguez<br>
-              Firma: <img src="assets/img/sof.jpg" width="100" height="100"><br>
-              Fecha: 08 de mayo
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-
-    <!-- ACTA 5 -->
-
-      <div class="tab-pane fade" id="acta5" role="tabpanel" aria-labelledby="acta5-tab">
-  <p><strong>Referencia:</strong> Proyecto Tecnológico Innovador</p>
-  <p><strong>Proyecto:</strong> Implementación de Billetera Digital de Cripto-activos</p>
-  <p><strong>Cliente:</strong> Mauricio Funes Guatemala</p>
-  <p><strong>Entrega de:</strong> Cajeros Automáticos</p>
-  <p><strong>Fecha:</strong> 15/04/2025 – 14/06/2025</p>
-  <p><strong>Estado:</strong> Parcial</p>
-
-  <h5 class="mt-4">Elementos entregados</h5>
-  <table>
-    <thead>
-      <tr>
-        <th>Elemento</th>
-        <th>Estado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Instalación y Configuración</td>
-        <td>Finalizada</td>
-      </tr>
-      <tr>
-        <td>Funcionalidad de Transacciones</td>
-        <td>En Proceso</td>
-      </tr>
-      <tr>
-        <td>Seguridad de los cajeros</td>
-        <td>En Proceso</td>
-      </tr>
-      <tr>
-        <td>Experiencia del Usuario</td>
-        <td>En Proceso</td>
-      </tr>
-      <tr>
-        <td>Redes</td>
-        <td>En Proceso</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h5 class="mt-4">Certificación del Cliente</h5>
-  <p>El cliente certifica el primer elemento entregado del componente de Cajeros Automáticos, que habiendo sido completado en su totalidad de acuerdo a las especificaciones técnicas y establecido entre ambas partes.</p>
-
-  <h5 class="mt-4">Observaciones</h5>
-  <p>Se recomienda realizar pruebas en el elemento finalizado y ejecutar la misma metodología de pruebas para los componentes posteriores, y hacer entregas de calidad y aprobadas con todas las pruebas exitosas.</p>
-
-  <table class="mt-4">
-    <thead>
-      <tr>
-        <th>Por el cliente</th>
-        <th>Por el contratista</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Nombre: Mauricio Funes Guatemala<br>
-          Firma: MF<br>
-          Fecha: 08/05/2025
-        </td>
-        <td>
-          Gerson Nahún Argueta <br>
-          Firma: <img src="assets/img/ger.jpg" width="100" height="100"><br>
-          Fecha: 08/05/2025
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-    <!-- ACTA 6 -->
-    <div class="tab-pane fade" id="acta6" role="tabpanel" aria-labelledby="acta6-tab">
-  <p><strong>Referencia:</strong> Proyecto tecnológico innovador</p>
-  <p><strong>Proyecto:</strong> Billetera digital de criptoactivos</p>
-  <p><strong>Cliente:</strong> Flowi</p>
-  <p><strong>Entrega de:</strong> 1.4 Infraestructura</p>
-  <p><strong>Fecha:</strong> 10 de marzo 2025 / 14 de junio 2025</p>
-  <p><strong>Estado:</strong> Parcial</p>
-
-  <h5 class="mt-4">Elementos entregados</h5>
-  <ul>
-    <li><strong>1.4.1 Locales físicos (Finalizado 20/04/2025):</strong> El componente de locales físicos ha sido finalizado según lo establecido en el roadmap.</li>
-    <li><strong>1.4.2 Integración de sistemas (Parcial):</strong> El componente de integración de sistemas sigue en proceso según lo establecido en el roadmap.</li>
-  </ul>
-
-  <h5 class="mt-4">Pruebas realizadas</h5>
-  <p>No se realizaron pruebas.</p>
-
-  <h5 class="mt-4">Descripción de acontecimientos</h5>
-  <p>El Cliente certifica que la totalidad de los suministros o servicios reseñados en la presente acta de recepción han sido entregados terminados y que, habiendo sido sometidos a las pruebas de validación y aceptación indicadas, están de acuerdo con las especificaciones formales y demás requisitos contractualmente convenidos y establecidos entre las partes.</p>
-
-  <h5 class="mt-4">Observaciones</h5>
-  <p>Se recomienda haber implementado pruebas en los componentes para garantizar su correcto funcionamiento dentro del sistema. Estas pruebas permiten detectar errores temprano en el desarrollo, lo que facilita la corrección de problemas antes de que se integren en entornos más complejos.</p>
-
-  <table class="mt-4">
-    <thead>
-      <tr>
-        <th>Por el cliente</th>
-        <th>Por el contratista</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Nombre: Mauricio Funes <br>
-          Firma: MF <br>
-          Fecha: 08/05/2025
-        </td>
-        <td>
-          Edwin Alexander Villalta Ortiz<br>
-          Firma: <img src="assets/img/edw.jpg" width="100" height="100"> <br>
-          Fecha: 08/05/2025
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-  </div>
- 
-
-        </div>
-        <!-- row -->
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Acta de recepción</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Favicon -->
+    <link href="./assets/img/logoFav.ico" sizes="48x48" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: justify;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #000;
+      }
+      th,
+      td {
+        padding: 10px;
+        vertical-align: top;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .portfolio-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        height: 100%;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .portfolio-card img {
+        border-radius: 10px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .portfolio-card h4 {
+        font-weight: 600;
+      }
+
+      .portfolio-card p {
+        margin-bottom: 1rem;
+      }
+
+      .navmenu a.active {
+        color: #007bff;
+        /* Texto en negro */
+        font-weight: bold;
+        /* Negrita */
+      }
+      .dropdown-menu {
+        max-height: 300px; /* ajusta el valor según lo que necesites */
+        overflow-y: auto;
+      }
+
+      /* Cambiar toda la fuente a Poppins */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ul,
+      li,
+      td,
+      th,
+      a,
+      table,
+      input,
+      button {
+        font-family: "Poppins", sans-serif !important;
+      }
+
+      /* Ajustar tamaños de títulos */
+      h1 {
+        font-size: 1.8rem; /* Antes podía estar > 2rem */
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      h5 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      h6 {
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      /* Tamaños de párrafos y tablas */
+      p,
+      li,
+      td,
+      th {
+        font-size: 0.95rem;
+      }
+
+      /* Ajustes específicos para la tabla en facturas */
+      .factura table th,
+      .factura table td {
+        font-size: 0.95rem;
+      }
+    </style>
+
+    <!-- <script src="backend/middlewareAdmin.js"></script> -->
+  </head>
+
+  <body class="portfolio-page">
+    <!-- Header / Nav -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <img src="assets/img/Flowi-Logo.png" alt="Flowi Logo" width="180" />
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html" class="active">Portafolio</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Asignaciones
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="champfrogs.html">Champfrogs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="workexpo.html">WorkExpo</a>
+                </li>
+                <li><a class="dropdown-item" href="okrs.html">OKRS</a></li>
+                <li>
+                  <a class="dropdown-item" href="casoNegocio.html"
+                    >Caso de negocio</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcial1.html">Parcial 1</a>
+                </li>
+                <li><a class="dropdown-item" href="edt.html">EDT</a></li>
+                <li>
+                  <a class="dropdown-item" href="roadmap.html">Roadmap</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizComunicacion.html"
+                    >Matriz de comunicación</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizRiesgo.html"
+                    >Matriz de riesgo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaEconomica.html"
+                    >Oferta economica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaTecnica.html"
+                    >Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="evaluandoOferta.html"
+                    >Evaluando Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="actaRecepcion.html"
+                    >Acta de recepción</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="solicitudCambios.html"
+                    >Solicitud de cambios</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="informeCierre.html"
+                    >Informe cierre de proyecto</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcialTres.html">Parcial 3</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li id="loginItem"><a href="login.html">login</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
       </div>
-      <!-- container -->
-    </section>
-  </main>
+    </header>
 
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background">
-    <div class="container copyright text-center mt-4">
-      <p class="text-center">
-        © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
-        <span>All Rights Reserved</span>
-      </p>
-      <div class="credits">Designed by Kompilo</div>
-    </div>
-  </footer>
-  <!-- /Footer -->
+    <main id="main">
+      <section class="section py-5">
+        <div class="container">
+          <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+            <h2>Actas de Recepción</h2>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
-  <div id="preloader"></div>
+            <ul class="nav nav-tabs" id="actasTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="acta1-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#acta1"
+                  type="button"
+                  role="tab"
+                  aria-controls="acta1"
+                  aria-selected="true"
+                >
+                  Ángel
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="acta2-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#acta2"
+                  type="button"
+                  role="tab"
+                  aria-controls="acta2"
+                  aria-selected="false"
+                >
+                  Jefferson
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="acta3-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#acta3"
+                  type="button"
+                  role="tab"
+                  aria-controls="acta3"
+                  aria-selected="false"
+                >
+                  César
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="acta4-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#acta4"
+                  type="button"
+                  role="tab"
+                  aria-controls="acta4"
+                  aria-selected="false"
+                >
+                  Sofía
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="acta5-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#acta5"
+                  type="button"
+                  role="tab"
+                  aria-controls="acta5"
+                  aria-selected="false"
+                >
+                  Gerson
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="acta6-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#acta6"
+                  type="button"
+                  role="tab"
+                  aria-controls="acta6"
+                  aria-selected="false"
+                >
+                  Edwin
+                </button>
+              </li>
+            </ul>
 
-  <script src="backend/sessionManager.js"></script>
-  <!-- Scripts -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+            <div class="tab-content mt-4" id="actasTabContent">
+              <!-- ACTA 1 -->
+              <div
+                class="tab-pane fade show active"
+                id="acta1"
+                role="tabpanel"
+                aria-labelledby="acta1-tab"
+              >
+                <p>
+                  <strong>Referencia:</strong> Proyecto Tecnológico innovador
+                </p>
+                <p>
+                  <strong>Proyecto:</strong> Billetera digital de criptoActivos
+                </p>
+                <p><strong>Cliente:</strong> Mauricio Funes</p>
+                <p><strong>Entrega de:</strong> Aplicación móvil</p>
+                <p><strong>Fecha:</strong> 12 febrero / 11 de junio</p>
+                <p><strong>Estado:</strong> Parcial</p>
 
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+                <h5 class="mt-4">
+                  Elementos entregados – Aplicación móvil (ID #1.2)
+                </h5>
 
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Elemento</th>
+                      <th>Estado</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Desarrollo Frontend</td>
+                      <td>Finalizado</td>
+                      <td>
+                        Interfaz gráfica completa para dispositivos móviles,
+                        enfocada en una experiencia de usuario intuitiva y
+                        navegación fluida.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Integración con Plataforma Local</td>
+                      <td>Finalizado</td>
+                      <td>
+                        Conexión funcional entre el frontend de la app móvil y
+                        la plataforma local, permitiendo el flujo de datos
+                        mediante APIs.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Funcionalidades de Transacciones</td>
+                      <td>En desarrollo</td>
+                      <td>
+                        Módulo para realizar transacciones rápidas y seguras
+                        dentro de la aplicación.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Seguridad de la Aplicación</td>
+                      <td>En desarrollo</td>
+                      <td>
+                        Sistema de protección que incluye autenticación segura,
+                        cifrado de datos y documentación de medidas de seguridad
+                        implementadas.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <h5 class="mt-4">Pruebas</h5>
+                <p>
+                  No se han realizado pruebas formales sobre los módulos
+                  entregados. Se recomienda encarecidamente llevar a cabo
+                  pruebas funcionales, de usabilidad y de integración para
+                  garantizar el correcto desempeño y la estabilidad de la
+                  aplicación móvil.
+                </p>
 
-</body>
+                <h5 class="mt-4">Recomendaciones</h5>
+                <ul>
+                  <li>
+                    Realizar pruebas exhaustivas en los módulos finalizados
+                    antes de su despliegue en producción.
+                  </li>
+                  <li>
+                    Documentar los resultados de las pruebas para futuras
+                    referencias y mejoras.
+                  </li>
+                  <li>
+                    Establecer un protocolo de validación continua durante el
+                    desarrollo de los módulos en curso.
+                  </li>
+                  <li>
+                    Asegurar que el módulo de seguridad sea sometido a pruebas
+                    de vulnerabilidad antes de su liberación.
+                  </li>
+                </ul>
 
+                <h5 class="mt-4">Observaciones</h5>
+                <ul>
+                  <li>
+                    No se realizaron pruebas formales sobre los módulos
+                    entregados.
+                  </li>
+                  <li>
+                    Se recomienda ejecutar pruebas funcionales, de usabilidad e
+                    integración antes de su despliegue definitivo.
+                  </li>
+                  <li>
+                    La documentación de seguridad fue entregada, pero no
+                    validada mediante pruebas técnicas específicas.
+                  </li>
+                </ul>
+
+                <table class="mt-4">
+                  <thead>
+                    <tr>
+                      <th>Por el cliente</th>
+                      <th>Por el contratista</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Nombre: Mauricio Funes <br />
+                        Firma: MF <br />
+                        Fecha: 08/05/2025
+                      </td>
+                      <td>
+                        Nombre: Ángel Guevara <br />
+                        Firma:
+                        <img
+                          src="assets/img/ang.jpg"
+                          width="100"
+                          height="100"
+                        /><br />
+                        Fecha: 08/05/2025
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- ACTA 2 -->
+              <div
+                class="tab-pane fade"
+                id="acta2"
+                role="tabpanel"
+                aria-labelledby="acta2-tab"
+              >
+                <p>
+                  <strong>Referencia:</strong> Proyecto Tecnológico Innovador
+                </p>
+                <p>
+                  <strong>Proyecto:</strong> Implementación de billetera digital
+                  de criptoactivos para Flowi
+                </p>
+                <p><strong>Cliente:</strong> Salvador Sánchez Cerén</p>
+                <p><strong>Entrega de:</strong> Plataforma Local</p>
+                <p><strong>Fecha:</strong> 20/01/2025 - 23/04/2025</p>
+                <p><strong>Estado:</strong> Final</p>
+
+                <h5 class="mt-4">Elementos entregados</h5>
+                <ul>
+                  <li>Base de datos</li>
+                  <li>Software</li>
+                  <li>Inteligencia Artificial</li>
+                  <li>Hardware</li>
+                  <li>Redes</li>
+                </ul>
+
+                <h5 class="mt-4">Pruebas realizadas</h5>
+                <p>
+                  No se especificaron pruebas realizadas sobre los entregables.
+                </p>
+
+                <h5 class="mt-4">Acta de recepción</h5>
+                <p>
+                  El Cliente certifica que la totalidad de los suministros o
+                  servicios reseñados en la presente acta de recepción han sido
+                  entregados terminados y que, habiendo sido sometidos a las
+                  pruebas de validación y aceptación indicadas, están de acuerdo
+                  con las especificaciones formales y demás requisitos
+                  contractualmente convenidos y establecidos entre las partes.
+                </p>
+
+                <h5 class="mt-4">Observaciones</h5>
+                <p>
+                  Se recomienda haber implementado pruebas sobre cada entregable
+                  para asegurar su calidad y funcionamiento.
+                </p>
+
+                <table class="mt-4">
+                  <thead>
+                    <tr>
+                      <th>Por el cliente</th>
+                      <th>Por el contratista</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Nombre: Salvador Sánchez Cerén <br />
+                        Firma: SSC <br />
+                        Fecha: 08/05/2025
+                      </td>
+                      <td>
+                        Nombre: Jefferson Josué Esperanza Ortiz <br />
+                        Firma:
+                        <img
+                          src="assets/img/jeff.jpg"
+                          width="100"
+                          height="100"
+                        /><br />
+                        Fecha: 08/05/2025
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- ACTA 3 -->
+
+              <div
+                class="tab-pane fade"
+                id="acta3"
+                role="tabpanel"
+                aria-labelledby="acta3-tab"
+              >
+                <p>
+                  <strong>Referencia:</strong> Proyecto tecnológico innovador
+                </p>
+                <p>
+                  <strong>Proyecto:</strong> Billetera digital de criptoactivos
+                </p>
+                <p><strong>Cliente:</strong> Flowi</p>
+                <p><strong>Entrega de:</strong> Plataforma local</p>
+                <p><strong>Fecha:</strong> 20/01/2025 - 22/03/2025</p>
+                <p><strong>Estado:</strong> Finalizado</p>
+
+                <h5 class="mt-4">
+                  Elementos entregados para la plataforma local
+                </h5>
+                <ul>
+                  <li>1.1.1 - Base de datos</li>
+                  <li>1.1.2 - Desarrollo Plataforma Software</li>
+                  <li>1.1.2.1 - IA para Recomendaciones Financieras</li>
+                  <li>1.1.3 - Hardware</li>
+                  <li>1.1.4 - Redes</li>
+                </ul>
+
+                <h5 class="mt-4">Pruebas realizadas</h5>
+                <p>No se realizaron pruebas para estos componentes.</p>
+
+                <h5 class="mt-4">Acta de recepción</h5>
+                <p>
+                  El Cliente certifica que la totalidad de los suministros o
+                  servicios reseñados en la presente acta de recepción han sido
+                  entregados/terminados y que, habiendo sido sometidos a las
+                  pruebas de validación y aceptación indicadas, están de acuerdo
+                  con las especificaciones formales y demás requisitos
+                  contractualmente convenidos y establecidos entre las partes.
+                </p>
+
+                <h5 class="mt-4">Observaciones</h5>
+                <p>
+                  Se pudo detectar que hubo un hueco en el proyecto ya que no se
+                  realizaban pruebas, lo que pudo afectar de gran manera ya que
+                  pudo haber un error que hiciera que el proceso se detuviera.
+                </p>
+
+                <table class="mt-4">
+                  <thead>
+                    <tr>
+                      <th>Por el cliente</th>
+                      <th>Por el contratista</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Nombre: José Lazo <br />
+                        Firma: Jla <br />
+                        Fecha: 08/05/2025
+                      </td>
+                      <td>
+                        Cesar Alexander Romero<br />
+                        Firma:
+                        <img
+                          src="assets/img/ces.jpg"
+                          width="100"
+                          height="100"
+                        /><br />
+                        Fecha: 08/05/2025
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- ACTA 4 -->
+              <div
+                class="tab-pane fade"
+                id="acta4"
+                role="tabpanel"
+                aria-labelledby="acta4-tab"
+              >
+                <div
+                  class="tab-pane fade show active"
+                  id="acta4"
+                  role="tabpanel"
+                  aria-labelledby="acta4-tab"
+                >
+                  <p>
+                    <strong>Referencia:</strong> Proyecto tecnológico innovador
+                  </p>
+                  <p>
+                    <strong>Proyecto:</strong> Implementación de billetera
+                    digital de criptoActivos para Flowi
+                  </p>
+                  <p><strong>Cliente:</strong> Mauricio Funes</p>
+                  <p><strong>Entrega:</strong> Aplicación móvil</p>
+                  <p><strong>Fecha:</strong> 12 de febrero / 11 junio</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Elementos entregados</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Desarrollo Frontend: Desarrollo de la interfaz gráfica
+                          para dispositivos móviles
+                        </td>
+                        <td>Finalizado</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Integración con Plataforma Local: Integración de la
+                          aplicación móvil con la plataforma local
+                        </td>
+                        <td>Finalizado</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Funcionalidades de Transacciones: Desarrollo de
+                          funcionalidades para realizar transacciones
+                        </td>
+                        <td>En ejecución</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Seguridad de la Aplicación: Implementación de medidas
+                          de seguridad, protección contra ataques y cifrado de
+                          datos
+                        </td>
+                        <td>En espera</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    <strong>Pruebas:</strong> Finalizadas. Se recomienda hacer
+                    pruebas adicionales dentro del componente.
+                  </p>
+                  <p>
+                    El Cliente certifica que la totalidad de los suministros o
+                    servicios reseñados en la presente acta de recepción han
+                    sido entregados terminados y que, habiendo sido sometidos a
+                    las pruebas de validación y aceptación indicadas, están de
+                    acuerdo con las especificaciones formales y demás requisitos
+                    contractualmente convenidos y establecidos entre las partes.
+                  </p>
+                  <p>
+                    <strong>OBSERVACIONES:</strong> Se recomiendan hacer las
+                    pruebas necesarias dentro del componente.
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Por el cliente</th>
+                        <th>Por el contratista</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Nombre: Mauricio Funes <br />
+                          Firma: MF <br />
+                          Fecha: 08 de mayo
+                        </td>
+                        <td>
+                          Sofía Margarita Romero Rodríguez<br />
+                          Firma:
+                          <img
+                            src="assets/img/sof.jpg"
+                            width="100"
+                            height="100"
+                          /><br />
+                          Fecha: 08 de mayo
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- ACTA 5 -->
+
+              <div
+                class="tab-pane fade"
+                id="acta5"
+                role="tabpanel"
+                aria-labelledby="acta5-tab"
+              >
+                <p>
+                  <strong>Referencia:</strong> Proyecto Tecnológico Innovador
+                </p>
+                <p>
+                  <strong>Proyecto:</strong> Implementación de Billetera Digital
+                  de Cripto-activos
+                </p>
+                <p><strong>Cliente:</strong> Mauricio Funes Guatemala</p>
+                <p><strong>Entrega de:</strong> Cajeros Automáticos</p>
+                <p><strong>Fecha:</strong> 15/04/2025 – 14/06/2025</p>
+                <p><strong>Estado:</strong> Parcial</p>
+
+                <h5 class="mt-4">Elementos entregados</h5>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Elemento</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Instalación y Configuración</td>
+                      <td>Finalizada</td>
+                    </tr>
+                    <tr>
+                      <td>Funcionalidad de Transacciones</td>
+                      <td>En Proceso</td>
+                    </tr>
+                    <tr>
+                      <td>Seguridad de los cajeros</td>
+                      <td>En Proceso</td>
+                    </tr>
+                    <tr>
+                      <td>Experiencia del Usuario</td>
+                      <td>En Proceso</td>
+                    </tr>
+                    <tr>
+                      <td>Redes</td>
+                      <td>En Proceso</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h5 class="mt-4">Certificación del Cliente</h5>
+                <p>
+                  El cliente certifica el primer elemento entregado del
+                  componente de Cajeros Automáticos, que habiendo sido
+                  completado en su totalidad de acuerdo a las especificaciones
+                  técnicas y establecido entre ambas partes.
+                </p>
+
+                <h5 class="mt-4">Observaciones</h5>
+                <p>
+                  Se recomienda realizar pruebas en el elemento finalizado y
+                  ejecutar la misma metodología de pruebas para los componentes
+                  posteriores, y hacer entregas de calidad y aprobadas con todas
+                  las pruebas exitosas.
+                </p>
+
+                <table class="mt-4">
+                  <thead>
+                    <tr>
+                      <th>Por el cliente</th>
+                      <th>Por el contratista</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Nombre: Mauricio Funes Guatemala<br />
+                        Firma: MF<br />
+                        Fecha: 08/05/2025
+                      </td>
+                      <td>
+                        Gerson Nahún Argueta <br />
+                        Firma:
+                        <img
+                          src="assets/img/ger.jpg"
+                          width="100"
+                          height="100"
+                        /><br />
+                        Fecha: 08/05/2025
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- ACTA 6 -->
+              <div
+                class="tab-pane fade"
+                id="acta6"
+                role="tabpanel"
+                aria-labelledby="acta6-tab"
+              >
+                <p>
+                  <strong>Referencia:</strong> Proyecto tecnológico innovador
+                </p>
+                <p>
+                  <strong>Proyecto:</strong> Billetera digital de criptoactivos
+                </p>
+                <p><strong>Cliente:</strong> Flowi</p>
+                <p><strong>Entrega de:</strong> 1.4 Infraestructura</p>
+                <p>
+                  <strong>Fecha:</strong> 10 de marzo 2025 / 14 de junio 2025
+                </p>
+                <p><strong>Estado:</strong> Parcial</p>
+
+                <h5 class="mt-4">Elementos entregados</h5>
+                <ul>
+                  <li>
+                    <strong
+                      >1.4.1 Locales físicos (Finalizado 20/04/2025):</strong
+                    >
+                    El componente de locales físicos ha sido finalizado según lo
+                    establecido en el roadmap.
+                  </li>
+                  <li>
+                    <strong>1.4.2 Integración de sistemas (Parcial):</strong> El
+                    componente de integración de sistemas sigue en proceso según
+                    lo establecido en el roadmap.
+                  </li>
+                </ul>
+
+                <h5 class="mt-4">Pruebas realizadas</h5>
+                <p>No se realizaron pruebas.</p>
+
+                <h5 class="mt-4">Descripción de acontecimientos</h5>
+                <p>
+                  El Cliente certifica que la totalidad de los suministros o
+                  servicios reseñados en la presente acta de recepción han sido
+                  entregados terminados y que, habiendo sido sometidos a las
+                  pruebas de validación y aceptación indicadas, están de acuerdo
+                  con las especificaciones formales y demás requisitos
+                  contractualmente convenidos y establecidos entre las partes.
+                </p>
+
+                <h5 class="mt-4">Observaciones</h5>
+                <p>
+                  Se recomienda haber implementado pruebas en los componentes
+                  para garantizar su correcto funcionamiento dentro del sistema.
+                  Estas pruebas permiten detectar errores temprano en el
+                  desarrollo, lo que facilita la corrección de problemas antes
+                  de que se integren en entornos más complejos.
+                </p>
+
+                <table class="mt-4">
+                  <thead>
+                    <tr>
+                      <th>Por el cliente</th>
+                      <th>Por el contratista</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Nombre: Mauricio Funes <br />
+                        Firma: MF <br />
+                        Fecha: 08/05/2025
+                      </td>
+                      <td>
+                        Edwin Alexander Villalta Ortiz<br />
+                        Firma:
+                        <img
+                          src="assets/img/edw.jpg"
+                          width="100"
+                          height="100"
+                        />
+                        <br />
+                        Fecha: 08/05/2025
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container copyright text-center mt-4">
+        <p class="text-center">
+          © <span>Copyright</span> <strong class="px-1 sitename">Flowi</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Designed by Kompilo</div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <div id="preloader"></div>
+
+    <script src="backend/sessionManager.js"></script>
+    <!-- Scripts -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

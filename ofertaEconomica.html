@@ -43,14 +43,14 @@
         --light-gray: #f5f5f5;
         --white: #ffffff;
       }
-      
+
       body {
         font-family: "Poppins", sans-serif;
         background-color: var(--light-gray);
         color: var(--text-color);
         line-height: 1.6;
       }
-      
+
       .propuesta-container {
         max-width: 1200px;
         margin: 20px auto;
@@ -59,23 +59,23 @@
         border-radius: 8px;
         overflow: hidden;
       }
-      
+
       .propuesta-header {
         background-color: var(--primary-color);
         color: white;
         padding: 30px 20px;
         text-align: center;
       }
-      
+
       .propuesta-header h1 {
         font-size: 28px;
         margin-bottom: 10px;
       }
-      
+
       .section {
         padding: 20px;
       }
-      
+
       h2 {
         color: var(--primary-color);
         margin: 25px 0 15px;
@@ -83,30 +83,33 @@
         border-bottom: 2px solid var(--secondary-color);
         font-size: 1.5em;
       }
-      
+
       h3 {
         color: var(--dark-blue);
         margin: 20px 0 10px;
         font-size: 1.2em;
       }
-      
-      p, ul, ol {
+
+      p,
+      ul,
+      ol {
         margin-bottom: 15px;
       }
-      
-      ul, ol {
+
+      ul,
+      ol {
         padding-left: 20px;
       }
-      
+
       li {
         margin-bottom: 8px;
       }
-      
+
       .highlight {
         font-weight: bold;
         color: var(--dark-blue);
       }
-      
+
       /* Estilos para tablas */
       .propuesta-table {
         width: 100%;
@@ -114,64 +117,64 @@
         margin: 20px 0;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
-      
+
       .propuesta-table th {
         background-color: var(--primary-color);
         color: white;
         padding: 12px;
         text-align: left;
       }
-      
+
       .propuesta-table td {
         padding: 10px 12px;
         border-bottom: 1px solid #ddd;
       }
-      
+
       .propuesta-table tr:nth-child(even) {
         background-color: var(--light-blue);
       }
-      
+
       .propuesta-table tr:hover {
         background-color: #d3e3fd;
       }
-      
+
       .total-table {
         margin-top: 30px;
       }
-      
+
       .total-table th {
         background-color: var(--dark-blue);
       }
-      
+
       .signature {
         margin-top: 40px;
         padding-top: 20px;
         border-top: 1px solid #ddd;
       }
-      
+
       .signature p {
         margin-bottom: 5px;
       }
-      
+
       .signature-name {
         font-weight: bold;
         font-size: 18px;
         color: var(--primary-color);
       }
-      
+
       @media (max-width: 768px) {
         .propuesta-header h1 {
           font-size: 24px;
         }
-        
+
         h2 {
           font-size: 20px;
         }
-        
+
         .section {
           padding: 15px;
         }
-        
+
         .table-container {
           overflow-x: auto;
         }
@@ -179,18 +182,18 @@
 
       /* Contenedor scrollable horizontal para la tabla */
       .table-container {
-          max-width: 100%;
-          overflow-x: auto;
-          margin: 20px 0;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        overflow-x: auto;
+        margin: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
-         .dropdown-menu {
-    max-height: 300px; /* ajusta el valor según lo que necesites */
-    overflow-y: auto;
-  }
+      .dropdown-menu {
+        max-height: 300px; /* ajusta el valor según lo que necesites */
+        overflow-y: auto;
+      }
     </style>
 
-    <script src="backend/middelwareGuessAdmin.js"></script>
+    <!-- <script src="backend/middelwareGuessAdmin.js"></script> -->
   </head>
 
   <body>
@@ -235,15 +238,49 @@
                 <li>
                   <a class="dropdown-item" href="roadmap.html">Roadmap</a>
                 </li>
-                <li><a class="dropdown-item" href="matrizComunicacion.html">Matriz de comunicación</a></li>
-                <li><a class="dropdown-item" href="matrizRiesgo.html">Matriz de riesgo</a></li>
-                <li><a class="dropdown-item" href="ofertaEconomica.html">Oferta economica</a></li>
-                <li><a class="dropdown-item" href="ofertaTecnica.html">Oferta tecnica</a></li>
-                              <li><a class="dropdown-item" href="evaluandoOferta.html">Evaluando Oferta tecnica</a></li>
-              <li><a class="dropdown-item" href="actaRecepcion.html">Acta de recepción</a></li>
-              <li><a class="dropdown-item" href="solicitudCambios.html">Solicitud de cambios</a></li>
-              <li><a class="dropdown-item" href="informeCierre.html">Informe cierre de proyecto</a></li>
-              <li><a class="dropdown-item" href="parcialTres.html">Parcial 3</a></li>
+                <li>
+                  <a class="dropdown-item" href="matrizComunicacion.html"
+                    >Matriz de comunicación</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="matrizRiesgo.html"
+                    >Matriz de riesgo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaEconomica.html"
+                    >Oferta economica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ofertaTecnica.html"
+                    >Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="evaluandoOferta.html"
+                    >Evaluando Oferta tecnica</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="actaRecepcion.html"
+                    >Acta de recepción</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="solicitudCambios.html"
+                    >Solicitud de cambios</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="informeCierre.html"
+                    >Informe cierre de proyecto</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="parcialTres.html">Parcial 3</a>
+                </li>
               </ul>
             </li>
             <li><a href="equipo.html">Equipo</a></li>
@@ -256,31 +293,97 @@
 
     <div class="propuesta-container">
       <div class="propuesta-header">
-        <h1>OFERTA ECONÓMICA PARA EL DESARROLLO DE UN PROYECTO INFORMÁTICO INNOVADOR</h1>
-        <p>CON SOFTWARE, HARDWARE, BASE DE DATOS, PROGRAMACIÓN, REDES, COMUNICACIÓN, ROBÓTICA Y DOMÓTICA</p>
+        <h1>
+          OFERTA ECONÓMICA PARA EL DESARROLLO DE UN PROYECTO INFORMÁTICO
+          INNOVADOR
+        </h1>
+        <p>
+          CON SOFTWARE, HARDWARE, BASE DE DATOS, PROGRAMACIÓN, REDES,
+          COMUNICACIÓN, ROBÓTICA Y DOMÓTICA
+        </p>
       </div>
-      
+
       <div class="section">
         <h2>1. Introducción</h2>
-        <p>La presente oferta económica tiene como objetivo presentar los costos asociados al desarrollo de un proyecto informático innovador que integra tecnologías de software, hardware, base de datos, programación, redes, comunicación, robótica y domótica, además de las herramientas básicas necesarias para su implementación. Esta solución tiene como fin optimizar procesos, mejorar la interacción usuario-tecnología, y crear un entorno automatizado e inteligente.</p>
-        
+        <p>
+          La presente oferta económica tiene como objetivo presentar los costos
+          asociados al desarrollo de un proyecto informático innovador que
+          integra tecnologías de software, hardware, base de datos,
+          programación, redes, comunicación, robótica y domótica, además de las
+          herramientas básicas necesarias para su implementación. Esta solución
+          tiene como fin optimizar procesos, mejorar la interacción
+          usuario-tecnología, y crear un entorno automatizado e inteligente.
+        </p>
+
         <h2>2. Resumen del proyecto</h2>
         <p>El proyecto tiene un enfoque multidisciplinario que abarca:</p>
         <ul>
-          <li><span class="highlight">Desarrollo de soluciones de IA:</span> Incorporación de algoritmos de machine learning, procesamiento de lenguaje natural (PLN) y visión artificial, con el fin de ofrecer análisis predictivos, asistencia inteligente y mejora continua de procesos.</li>
-          <li><span class="highlight">Integración de sistemas domóticos:</span> Control de dispositivos inteligentes mediante tecnologías de automatización, especialmente en la gestión energética y funcional de los cajeros automáticos que formarán parte del sistema.</li>
-          <li><span class="highlight">Desarrollo de robótica:</span> Aplicado en la implementación de cajeros automáticos inteligentes (como elementos robotizados semi-autónomos), que permiten la interacción directa con los usuarios y la ejecución automatizada de procesos financieros como envío y recepción de dinero.</li>
-          <li><span class="highlight">Desarrollo de Software:</span> Construcción de aplicaciones web y móviles con interfaces intuitivas, escalables y seguras. Se utilizarán metodologías ágiles como Scrum para facilitar la iteración y entrega continua de valor.</li>
-          <li><span class="highlight">Infraestructura de Hardware:</span> Selección de servidores, sensores, controladores y dispositivos físicos robustos que aseguren alto rendimiento, baja latencia y disponibilidad 24/7 en los puntos de servicio.</li>
-          <li><span class="highlight">Bases de Datos:</span> Implementación de soluciones estructuradas (SQL) y no estructuradas (NoSQL) con altos estándares de seguridad, respaldos periódicos, y consultas eficientes para la gestión de información sensible y transaccional.</li>
-          <li><span class="highlight">Programación:</span> Utilización de lenguajes y frameworks actuales como Node.js, Python, Angular y herramientas de automatización que faciliten la integración entre frontend, backend y hardware.</li>
-          <li><span class="highlight">Redes y Comunicación:</span> Diseño de una arquitectura de red confiable y segura, utilizando protocolos como TCP/IP, HTTPS, MQTT y WebSockets para garantizar la conectividad entre dispositivos, cajeros automáticos, servidores y plataformas móviles/web.</li>
-          <li><span class="highlight">Interconectividad:</span> Desarrollo de APIs RESTful y servicios de mensajería que permiten una interacción fluida y en tiempo real entre todos los elementos del sistema (usuarios, hardware, software, bases de datos).</li>
+          <li>
+            <span class="highlight">Desarrollo de soluciones de IA:</span>
+            Incorporación de algoritmos de machine learning, procesamiento de
+            lenguaje natural (PLN) y visión artificial, con el fin de ofrecer
+            análisis predictivos, asistencia inteligente y mejora continua de
+            procesos.
+          </li>
+          <li>
+            <span class="highlight">Integración de sistemas domóticos:</span>
+            Control de dispositivos inteligentes mediante tecnologías de
+            automatización, especialmente en la gestión energética y funcional
+            de los cajeros automáticos que formarán parte del sistema.
+          </li>
+          <li>
+            <span class="highlight">Desarrollo de robótica:</span> Aplicado en
+            la implementación de cajeros automáticos inteligentes (como
+            elementos robotizados semi-autónomos), que permiten la interacción
+            directa con los usuarios y la ejecución automatizada de procesos
+            financieros como envío y recepción de dinero.
+          </li>
+          <li>
+            <span class="highlight">Desarrollo de Software:</span> Construcción
+            de aplicaciones web y móviles con interfaces intuitivas, escalables
+            y seguras. Se utilizarán metodologías ágiles como Scrum para
+            facilitar la iteración y entrega continua de valor.
+          </li>
+          <li>
+            <span class="highlight">Infraestructura de Hardware:</span>
+            Selección de servidores, sensores, controladores y dispositivos
+            físicos robustos que aseguren alto rendimiento, baja latencia y
+            disponibilidad 24/7 en los puntos de servicio.
+          </li>
+          <li>
+            <span class="highlight">Bases de Datos:</span> Implementación de
+            soluciones estructuradas (SQL) y no estructuradas (NoSQL) con altos
+            estándares de seguridad, respaldos periódicos, y consultas
+            eficientes para la gestión de información sensible y transaccional.
+          </li>
+          <li>
+            <span class="highlight">Programación:</span> Utilización de
+            lenguajes y frameworks actuales como Node.js, Python, Angular y
+            herramientas de automatización que faciliten la integración entre
+            frontend, backend y hardware.
+          </li>
+          <li>
+            <span class="highlight">Redes y Comunicación:</span> Diseño de una
+            arquitectura de red confiable y segura, utilizando protocolos como
+            TCP/IP, HTTPS, MQTT y WebSockets para garantizar la conectividad
+            entre dispositivos, cajeros automáticos, servidores y plataformas
+            móviles/web.
+          </li>
+          <li>
+            <span class="highlight">Interconectividad:</span> Desarrollo de APIs
+            RESTful y servicios de mensajería que permiten una interacción
+            fluida y en tiempo real entre todos los elementos del sistema
+            (usuarios, hardware, software, bases de datos).
+          </li>
         </ul>
-        
+
         <h2>3. Desglose de costos</h2>
-        <p>El siguiente desglose de costos cubre todas las fases del proyecto, desde la planificación hasta la implementación y soporte post-desarrollo.</p>
-        
+        <p>
+          El siguiente desglose de costos cubre todas las fases del proyecto,
+          desde la planificación hasta la implementación y soporte
+          post-desarrollo.
+        </p>
+
         <h3>3.1: Plataforma Local</h3>
         <div class="table-container">
           <table class="propuesta-table">
@@ -292,7 +395,10 @@
             <tr>
               <td>Desarrollo FrontEnd</td>
               <td>$9,303.66</td>
-              <td>Desarrollo de la interfaz visual y navegación de la aplicación móvil.</td>
+              <td>
+                Desarrollo de la interfaz visual y navegación de la aplicación
+                móvil.
+              </td>
             </tr>
             <tr>
               <td>Integración con Plataforma Local</td>
@@ -316,7 +422,7 @@
             </tr>
           </table>
         </div>
-        
+
         <h3>3.2 Aplicación Móvil</h3>
         <div class="table-container">
           <table class="propuesta-table">
@@ -328,7 +434,10 @@
             <tr>
               <td>Base de datos</td>
               <td>$3,566.04</td>
-              <td>Almacena, organiza y gestiona la información del sistema de forma estructurada y accesible.</td>
+              <td>
+                Almacena, organiza y gestiona la información del sistema de
+                forma estructurada y accesible.
+              </td>
             </tr>
             <tr>
               <td>Software</td>
@@ -357,7 +466,7 @@
             </tr>
           </table>
         </div>
-        
+
         <h3>3.3 Cajeros automáticos</h3>
         <div class="table-container">
           <table class="propuesta-table">
@@ -374,7 +483,9 @@
             <tr>
               <td>Funcionalidades de Transacciones</td>
               <td>$6,508.46</td>
-              <td>Software que permite enviar, recibir y consultar críptoactivos.</td>
+              <td>
+                Software que permite enviar, recibir y consultar críptoactivos.
+              </td>
             </tr>
             <tr>
               <td>Seguridad de los Cajeros</td>
@@ -398,7 +509,7 @@
             </tr>
           </table>
         </div>
-        
+
         <h3>3.4: Infraestructura</h3>
         <div class="table-container">
           <table class="propuesta-table">
@@ -410,12 +521,18 @@
             <tr>
               <td>Locales Físicos</td>
               <td>$10,502.38</td>
-              <td>Acondicionamiento de los espacios físicos donde se ubicarán los cajeros.</td>
+              <td>
+                Acondicionamiento de los espacios físicos donde se ubicarán los
+                cajeros.
+              </td>
             </tr>
             <tr>
               <td>Integración de Sistemas</td>
               <td>$16,103.65</td>
-              <td>Conexión entre sistemas internos y externos en el entorno físico.</td>
+              <td>
+                Conexión entre sistemas internos y externos en el entorno
+                físico.
+              </td>
             </tr>
             <tr>
               <td class="highlight">Subtotal Infraestructura</td>
@@ -424,7 +541,7 @@
             </tr>
           </table>
         </div>
-        
+
         <h2>4. Resumen de COSTOS TOTALES</h2>
         <div class="table-container">
           <table class="propuesta-table total-table">
@@ -454,14 +571,26 @@
             </tr>
           </table>
         </div>
-        
+
         <h2>5. Condiciones de Pago</h2>
         <ul>
-          <li><span class="highlight">Pago inicial (20%)</span> : $20,000.00 al inicio del proyecto, tras la firma del contrato y la entrega de los primeros documentos de diseño.</li>
-          <li><span class="highlight">Pago intermedio (40%)</span> : $40,000.00 al finalizar la fase de desarrollo e implementación de la Aplicación Móvil, Plataforma Local, Cajeros Automáticos e Infraestructura.</li>
-          <li><span class="highlight">Pago final (40%)</span> : $40,000.00 al completar la fase de pruebas, despliegue y entrega final, con la validación de todos los sistemas implementados y operativos.</li>
+          <li>
+            <span class="highlight">Pago inicial (20%)</span> : $20,000.00 al
+            inicio del proyecto, tras la firma del contrato y la entrega de los
+            primeros documentos de diseño.
+          </li>
+          <li>
+            <span class="highlight">Pago intermedio (40%)</span> : $40,000.00 al
+            finalizar la fase de desarrollo e implementación de la Aplicación
+            Móvil, Plataforma Local, Cajeros Automáticos e Infraestructura.
+          </li>
+          <li>
+            <span class="highlight">Pago final (40%)</span> : $40,000.00 al
+            completar la fase de pruebas, despliegue y entrega final, con la
+            validación de todos los sistemas implementados y operativos.
+          </li>
         </ul>
-        
+
         <h2>6. Cronograma del proyecto</h2>
         <div class="table-container">
           <table class="propuesta-table">
@@ -477,42 +606,68 @@
               <td>Análisis y Planificación</td>
               <td>15 días</td>
               <td>- Software-Hardware-Infraestructura de red</td>
-              <td>Recolección de requisitos técnicos, análisis de los sistemas actuales, planificación y diseño preliminar de la infraestructura tecnológica necesaria.</td>
+              <td>
+                Recolección de requisitos técnicos, análisis de los sistemas
+                actuales, planificación y diseño preliminar de la
+                infraestructura tecnológica necesaria.
+              </td>
             </tr>
             <tr>
               <td>2</td>
               <td>Diseño del Sistema</td>
               <td>45 días</td>
               <td>- Software-Base de datos- IA</td>
-              <td>Elaboración del diseño técnico del sistema, definición de la arquitectura, interfaces de usuario, diseño de bases de datos e integración inicial con sistemas de IA.</td>
+              <td>
+                Elaboración del diseño técnico del sistema, definición de la
+                arquitectura, interfaces de usuario, diseño de bases de datos e
+                integración inicial con sistemas de IA.
+              </td>
             </tr>
             <tr>
               <td>3</td>
               <td>Desarrollo e Implementación de IA y Robótica</td>
               <td>25 días</td>
               <td>- IA-Robótica</td>
-              <td>Desarrollo e integración de algoritmos de IA para automatización y optimización de procesos, diseño y programación de sistemas robóticos para tareas específicas.</td>
+              <td>
+                Desarrollo e integración de algoritmos de IA para automatización
+                y optimización de procesos, diseño y programación de sistemas
+                robóticos para tareas específicas.
+              </td>
             </tr>
             <tr>
               <td>4</td>
               <td>Desarrollo e Implementación de Domótica</td>
               <td>20 días</td>
               <td>- Domótica- Hardware</td>
-              <td>Implementación de sistemas de control domótico (seguridad, climatización, iluminación) a través de plataformas móviles o web, integración de hardware necesario.</td>
+              <td>
+                Implementación de sistemas de control domótico (seguridad,
+                climatización, iluminación) a través de plataformas móviles o
+                web, integración de hardware necesario.
+              </td>
             </tr>
             <tr>
               <td>5</td>
               <td>Pruebas y Ajustes Finales</td>
               <td>15 días</td>
               <td>- Software- Hardware- IA- Robótica- Domótica</td>
-              <td>Realización de pruebas funcionales, de integración y de seguridad, ajustes para optimizar el sistema completo y validación final de todos los componentes.</td>
+              <td>
+                Realización de pruebas funcionales, de integración y de
+                seguridad, ajustes para optimizar el sistema completo y
+                validación final de todos los componentes.
+              </td>
             </tr>
           </table>
         </div>
-        
+
         <h2>Conclusión</h2>
-        <p>La presente oferta económica ha sido diseñada para garantizar un equilibrio entre calidad, innovación y viabilidad financiera. Kompilo se compromete a ejecutar el proyecto con eficiencia, transparencia y responsabilidad, asegurando el uso óptimo de los recursos en cada fase del desarrollo.</p>
-        
+        <p>
+          La presente oferta económica ha sido diseñada para garantizar un
+          equilibrio entre calidad, innovación y viabilidad financiera. Kompilo
+          se compromete a ejecutar el proyecto con eficiencia, transparencia y
+          responsabilidad, asegurando el uso óptimo de los recursos en cada fase
+          del desarrollo.
+        </p>
+
         <div class="signature">
           <p>Atentamente,</p>
           <p class="signature-name">Ángel Josué Guevara Portillo</p>
