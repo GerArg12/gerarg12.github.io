@@ -92,11 +92,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <input id="BTNLogin" type="submit" value="Iniciar Sesión" class="btn btn-primary btn-block m-0 mx-auto">
-                                    <button id="BTNLogin_Loading" class="btn btn-primary btn-block m-0 mx-auto" type="button" disabled="" style="display:none;">
-                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                        Iniciando Sesión...
-                                    </button>
+                                    <a id="BTNLogin" class="btn btn-primary btn-block m-0 mx-auto" href="https://admacad.udb.edu.sv/portalweb">Iniciar Sesión</a>
                                 </div>
 
                             </div>
@@ -525,10 +521,19 @@
             });
         }
 
+        // Mostrar cargando y redirigir al portal
         $(document).ready(function () {
             $('#footer-udb-logos').load('https://admacad.udb.edu.sv/Recursos/html/footer-login.html');
             verificarInput();
             ReiniciarToolTips();
+
+            $('#BTNLogin').on('click', function () {
+                $('#BTNLogin').hide();
+                $('#BTNLogin_Loading').show();
+                setTimeout(function () {
+                    window.location.href = 'https://admacad.udb.edu.sv/portalweb';
+                }, 1500);
+            });
         });
 
         function verificarInput() {
